@@ -1,12 +1,9 @@
 categories: ["cs.CV", "cs.LG", "cs.AI"]
 keywords:
-  - "open vocabulary"
-  - "open-vocabulary"
-  - "open vocabulary segmentation"
-  - "open-vocabulary segmentation"
-  - "vision language model"
-  - "training-free"
-  - "training free"
+  - "multimodal large language model"
+  - "latent chain of thought"
+  - "knowledge distillation"
+  - "multimodal knowledge graph"
 
 # exclude_keywords: # 选择排除的关键词
 #   - "Large Language Model"
