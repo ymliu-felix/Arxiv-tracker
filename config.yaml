@@ -1,6 +1,5 @@
 categories: ["cs.CV", "cs.LG", "cs.AI"]
 keywords:
-  - "multimodal large language model"
   - "latent chain of thought"
   - "knowledge distillation"
   - "multimodal knowledge graph"
