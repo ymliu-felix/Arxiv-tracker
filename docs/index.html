@@ -74,12 +74,58 @@ summary{cursor:pointer;color:var(--acc)}
   <button class="btn" onclick="__expandAll(false)">Collapse All</button>
 </div>
 
-        <span class="badge">2026-10-12 06:39</span>
+        <span class="badge">2026-10-13 09:06</span>
       </div>
     </div>
     <div class="hr"></div>
     <div>Latest digest</div>
     <div class="row"><div class="card">
+<div class="title">CLIDD: Cross-Layer Independent Deformable Description for Efficient and Discriminative Local Feature Representation</div>
+<div class="meta-line">Authors: Haodi Yao, Fenghua He, Ning Hao, Yao Su</div>
+<div class="meta-line">First: 2026-01-14T07:03:01+00:00 · Latest: 2026-10-09T08:52:28+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2601.09230v2">Abs</a> · <a href="https://arxiv.org/pdf/2601.09230v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Robust local feature representations are essential for spatial intelligence tasks such as robot navigation and augmented reality. Establishing reliable correspondences requires descriptors that provide both high discriminative power and computational efficiency. To address this, we introduce Cross-Layer Independent Deformable Description (CLIDD), a method that achieves superior discriminability by sampling directly from independent feature hierarchies. This approach utilizes learnable offsets to capture fine-grained structural details across scales, without ever constructing a unified dense feature map, eliminating the memory and computation overhead of building a full-scale representation for a sparse sampling process. The per-keypoint per-layer offsets further break interpolation-induced correlation, preserving descriptor discriminability even at high keypoint densities. To ensure real-time performance, we implement a hardware-aware kernel fusion strategy that maximizes inference throughput. Furthermore, we develop a scalable framework that integrates lightweight architectures with a training protocol leveraging both metric learning and knowledge distillation. This scheme generates a wide spectrum of model variants optimized for diverse deployment constraints. Extensive evaluations demonstrate that our approach achieves superior matching accuracy and exceptional computational efficiency simultaneously. Furthermore, our high-performance configuration outperforms a broad range of current state-of-the-art methods while exceeding 200 FPS on edge devices. These results demonstrate that CLIDD delivers high-precision local feature matching with minimal computational overhead, providing a robust and scalable solution for real-time spatial intelligence tasks.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Robust local feature representations are essential for spatial intelligence tasks such as robot navigation and augmented reality.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">TernaryLLM: Ternarized Large Language Model</div>
+<div class="meta-line">Authors: Tianqi Chen, Zhe Li, Weixiang Xu, Zeyu Zhu, Dong Li, Lu Tian, Emad Barsoum, Peisong Wang, Jian Cheng</div>
+<div class="meta-line">Venue: Machine Intelligence Research (2026)</div>
+<div class="meta-line">First: 2024-06-11T11:40:12+00:00 · Latest: 2026-10-09T06:58:39+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2406.07177v2">Abs</a> · <a href="https://arxiv.org/pdf/2406.07177v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Large language models (LLMs) have achieved remarkable performance on Natural Language Processing (NLP) tasks, but they are hindered by high computational costs and memory requirements. Ternarization, an extreme form of quantization, offers a solution by reducing memory usage and enabling energy-efficient floating-point additions. However, applying ternarization to LLMs faces challenges stemming from outliers in both weights and activations. In this work, observing asymmetric outliers and non-zero means in weights, we introduce Dual Learnable Ternarization (DLT), which enables both scales and shifts to be learnable. We also propose Outlier-Friendly Feature Knowledge Distillation (OFF) to recover the information lost in extremely low-bit quantization. The proposed OFF can incorporate semantic information and is insensitive to outliers. At the core of OFF is maximizing the mutual information between features in ternarized and floating-point models using cosine similarity. Extensive experiments demonstrate that our TernaryLLM surpasses previous low-bit quantization methods on the standard text generation and zero-shot benchmarks for different LLM families. Specifically, for one of the most powerful open-source models, LLaMA-3, our approach (W1.58A16) outperforms the previous state-of-the-art method (W2A16) by 5.8 in terms of perplexity on C4 and by 8.2% in terms of average accuracy on zero-shot tasks.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Large language models (LLMs) have achieved remarkable performance on Natural Language Processing (NLP) tasks, but they are hindered by high computational costs and memory requirements.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Dynamics as Code: On Model Compression via Dynamic System</div>
+<div class="meta-line">Authors: Fan Gao, Wei Su, Juntong Fan, Renfeng Peng, Hongyu Liu, Jinqiao Duan, Feng-Lei Fan</div>
+<div class="meta-line">First: 2026-10-08T02:39:24+00:00 · Latest: 2026-10-09T04:15:37+00:00</div>
+<div class="meta-line">Comments: 17 pages including supplementary material</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.11115v2">Abs</a> · <a href="https://arxiv.org/pdf/2610.11115v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">The escalating size of pretrained neural networks has rendered model compression a prerequisite for deployment under stringent memory and compute constraints. With the irrational winding as an example, earlier work introduced a dynamic system (DS) paradigm that reconceptualizes compression as compact weight representation: high-dimensional parameters are encoded by the index of a trajectory produced by a dynamic system, from which the vector is recovered during decompression. This mechanism is fundamentally distinct from pruning, quantization, knowledge distillation, and low-rank decomposition. Along this direction, we prove that under a Diophantine condition, a finite trajectory of \(M = O(ε^{-(d+ν)})\) states in the irrational winding constitutes an \(ε\)-net over the \(d\)-dimensional weight space, thereby linking state resolution, decompression error, and compression ratio in a predictable manner. Furthermore, we propose a generalized DS-based model compression framework by unifying four DS families---space-filling curves (Hilbert, Peano, Morton/Z-order, Snake), chaotic systems (Lorenz), congruential and pseudo-random generators (LCG, PCG), and low-discrepancy sequences (Halton). Also, we introduce the KD-tree and coordinate-template acceleration to scale to large models as well as outlier identification to control the error. Experiments on ResNet-18 and Qwen2.5-1.5B/Qwen1.5-7B validate that DS-based compression achieves competitive compression ratios without post-hoc retraining, with controllable decompression error and flexible state-space design, establishing it as a principled and practical compression approach.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">The escalating size of pretrained neural networks has rendered model compression a prerequisite for deployment under stringent memory and compute constraints.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">COFFEQA: Counterfactual-Guided Few-Shot Distillation for LLM Question Answering</div>
+<div class="meta-line">Authors: Kavinda Kehelella, Sanghamitra Dutta</div>
+<div class="meta-line">First: 2026-10-09T00:41:00+00:00 · Latest: 2026-10-09T00:41:00+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.12837v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.12837v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Knowledge distillation aims to train a smaller student model to mimic a larger teacher model for resource-constrained environments. However, the process of distillation is typically data-intensive and computationally expensive, particularly for generative tasks. Few-shot distillation offers an alternative by transferring teacher knowledge using limited training samples. However, we observe that few-shot distillation performance is heavily dependent on the choice of these training samples. In fact, we demonstrate that using more uncertain samples near the teacher&#x27;s decision boundary can significantly deteriorate distillation performance. Motivated by this observation, we propose Counterfactual-guided Few-shot Distillation in Open-book Question Answering (COFFEQA), a novel strategy that aptly uses counterfactuals to provide additional supervision around challenging factual samples. In the generative QA setting, we define a counterfactual as a minimally modified context that induces the teacher to change its response to an alternative answer. We provide geometric insights on how factual-counterfactual pairs can constrain the deviation between the teacher&#x27;s and student&#x27;s decision boundaries. We further introduce a new metric, Context Following Difficulty (CFD) that further validates counterfactuals prior to distillation based on agreement with the intended alternative answer and dependence on the modified context. COFFEQA uses CFD-validated factual-counterfactual pairs for few-shot distillation. Experiments across five in-domain and three out-of-domain QA benchmarks using T5 and Qwen2.5 families show that COFFEQA outperforms factual-only distillation baselines under the same few-shot budget. For instance, on TriviaQA, COFFEQA improves over the factual-only baseline by 8.77 average EM points and 9.98 average F1 points under the T5 setting with 32 few-shot pairs.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Knowledge distillation aims to train a smaller student model to mimic a larger teacher model for resource-constrained environments.</div>
+</details>
+</div>
+<div class="card">
 <div class="title">Universal Textual Teaching for LLMs</div>
 <div class="meta-line">Authors: Zhanyi Lu, Huan Wang</div>
 <div class="meta-line">First: 2026-10-08T15:11:16+00:00 · Latest: 2026-10-08T15:11:16+00:00</div>
@@ -139,18 +185,6 @@ summary{cursor:pointer;color:var(--acc)}
 </details>
 </div>
 <div class="card">
-<div class="title">Dynamics as Code: On Model Compression via Dynamic System</div>
-<div class="meta-line">Authors: Fan Gao, Wei Su, Juntong Fan, Renfeng Peng, Hongyu Liu, Jinqiao Duan, Feng-Lei Fan</div>
-<div class="meta-line">First: 2026-10-08T02:39:24+00:00 · Latest: 2026-10-08T02:39:24+00:00</div>
-<div class="meta-line">Comments: 17 pages including supplementary material</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.11115v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.11115v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">The escalating size of pretrained neural networks has rendered model compression a prerequisite for deployment under stringent memory and compute constraints. With the irrational winding as an example, earlier work introduced a dynamic system (DS) paradigm that reconceptualizes compression as compact weight representation: high-dimensional parameters are encoded by the index of a trajectory produced by a dynamic system, from which the vector is recovered during decompression. This mechanism is fundamentally distinct from pruning, quantization, knowledge distillation, and low-rank decomposition. Along this direction, we prove that under a Diophantine condition, a finite trajectory of \(M = O(ε^{-(d+ν)})\) states in the irrational winding constitutes an \(ε\)-net over the \(d\)-dimensional weight space, thereby linking state resolution, decompression error, and compression ratio in a predictable manner. Furthermore, we propose a generalized DS-based model compression framework by unifying four DS families---space-filling curves (Hilbert, Peano, Morton/Z-order, Snake), chaotic systems (Lorenz), congruential and pseudo-random generators (LCG, PCG), and low-discrepancy sequences (Halton). Also, we introduce the KD-tree and coordinate-template acceleration to scale to large models as well as outlier identification to control the error. Experiments on ResNet-18 and Qwen2.5-1.5B/Qwen1.5-7B validate that DS-based compression achieves competitive compression ratios without post-hoc retraining, with controllable decompression error and flexible state-space design, establishing it as a principled and practical compression approach.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">The escalating size of pretrained neural networks has rendered model compression a prerequisite for deployment under stringent memory and compute constraints.</div>
-</details>
-</div>
-<div class="card">
 <div class="title">KDFP: A first-principles approach to knowledge distillation in large language models</div>
 <div class="meta-line">Authors: Ryan Swift, Konstantinos Psounis</div>
 <div class="meta-line">First: 2026-10-07T19:59:07+00:00 · Latest: 2026-10-07T19:59:07+00:00</div>
@@ -200,7 +234,7 @@ summary{cursor:pointer;color:var(--acc)}
 <div class="title">Catastrophic Forgetting in Sequential Thermal Anti-UAV Detection: The Role of Scale-Conditioned Gradient Imbalance</div>
 <div class="meta-line">Authors: Khac Duc Giang Nguyen, Seyed Sahand Mohammadi Ziabari, Ali Mohammed Mansoor Alsahag</div>
 <div class="meta-line">First: 2026-10-06T13:18:10+00:00 · Latest: 2026-10-06T13:18:10+00:00</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.08315v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.08315v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.08315v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.08315v1">PDF</a></div>
 <details class="detail"><summary>Abstract</summary>
 <div class="mono">Counter-UAV systems based on thermal infrared detection must stay accurate as operational datasets evolve, yet sequential fine-tuning causes catastrophic forgetting of prior tasks, a problem that remains insufficiently characterized in this domain. This continual-learning study measures the stability-plasticity trade-off in YOLOMG, a YOLOv5-based detector run as a single thermal-infrared stream with the motion channel disabled, trained sequentially across three anti-UAV benchmarks of rising scale difficulty: Anti-UAV-RGBT, Anti-UAV410, and CST Anti-UAV. Naive fine-tuning on CST yields a Forgetting Measure of -0.605 against the Stage 1 ceiling, corresponding to a 90% capability loss, with -0.572 occurring in Stage 3 alone. In contrast, knowledge distillation from a frozen teacher is associated with FM = -0.033 +/- 0.004 across three seeds, corresponding to 95% retention. Because no Stage 2 no-KD control is included, this result establishes retention under KD training rather than a causal KD effect. Per-stratum analysis shows large-target detection collapsing to near zero within the first epoch, despite an inter-stage cosine similarity of 0.987 over the gradient-updated weights, pointing to scale-conditioned gradient imbalance, rather than weight drift, as a candidate mechanism. Scale-Stratified Herding (SSH), a 300-exemplar buffer balanced across four UAV size strata, roughly halves the forgetting (FM = -0.605 to -0.311) and keeps large-target detection non-zero. An ablation attributes the gain primarily to scale stratification rather than herding: random-stratified replay performs at least as well (FM = -0.221 versus -0.311 for SSH). These replay results are single-seed and should therefore be treated as preliminary.</div></details>
 <details class="detail"><summary>Summary / 总结</summary>
@@ -393,45 +427,10 @@ summary{cursor:pointer;color:var(--acc)}
 <details class="detail"><summary>Summary / 总结</summary>
 <div class="mono">Knowledge distillation is crucial for deploying vision-language models on resource-constrained devices.</div>
 </details>
-</div>
-<div class="card">
-<div class="title">Towards Unified Music Emotion Recognition across Dimensional and Categorical Models</div>
-<div class="meta-line">Authors: Jaeyong Kang, Dorien Herremans</div>
-<div class="meta-line">Venue: Proceedings of ICPR, 2026, Lyon, France</div>
-<div class="meta-line">First: 2025-02-06T11:20:22+00:00 · Latest: 2026-10-02T04:03:40+00:00</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2502.03979v3">Abs</a> · <a href="https://arxiv.org/pdf/2502.03979v3">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">One of the most significant challenges in Music Emotion Recognition (MER) comes from the fact that emotion labels can be heterogeneous across datasets with regard to the emotion representation, including categorical (e.g., happy, sad) versus dimensional labels (e.g., valence-arousal). In this paper, we present a unified multitask learning framework that combines these two types of labels and is thus able to be trained on multiple datasets. This framework uses an effective input representation that combines musical features (i.e., key and chords) and MERT embeddings. Moreover, knowledge distillation is employed to transfer the knowledge of teacher models trained on individual datasets to a student model, enhancing its ability to generalize across multiple tasks. To validate our proposed framework, we conducted extensive experiments on a variety of datasets, including MTG-Jamendo, DEAM, PMEmo, and EmoMusic. According to our experimental results, the inclusion of musical features, multitask learning, and knowledge distillation significantly enhances performance. In particular, our model outperforms the state-of-the-art models, including the best-performing model from the MediaEval 2021 competition on the MTG-Jamendo dataset. Our work makes a significant contribution to MER by allowing the combination of categorical and dimensional emotion labels in one unified framework, thus enabling training across datasets.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">One of the most significant challenges in Music Emotion Recognition (MER) comes from the fact that emotion labels can be heterogeneous across datasets with regard to the emotion representation, including categorical (e.g., happy, sad) versus dimensional labels (e.g., valence-arousal).</div>
-</details>
-</div>
-<div class="card">
-<div class="title">GRAFT: Growing Agglomerative Foundation Models via Continual Teacher Distillation</div>
-<div class="meta-line">Authors: Zhenghao Zhao, Chi Zhang, Qingshuang Chen, Yelin Kim</div>
-<div class="meta-line">First: 2026-10-01T23:49:56+00:00 · Latest: 2026-10-01T23:49:56+00:00</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.02597v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.02597v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Vision foundation models such as DINOv2, SigLIP2, and MASt3R develop complementary capabilities from different pretraining objectives, yet their knowledge remains distributed across separate, specialized models. Multi-teacher knowledge distillation offers a path toward consolidating these capabilities into a single agglomerative backbone, but existing approaches assume a fixed set of teachers, and incorporating a new teacher requires repeating expensive joint distillation over the entire teacher set. We introduce GRAFT, a continual multi-teacher distillation framework that enables a unified backbone to progressively acquire capabilities from an open-ended sequence of foundation models. When a new teacher arrives, GRAFT treats the previously distilled model as a teacher for preserving learned capabilities, while the current student jointly learns from both the previous model and the incoming teacher. Furthermore, to reconcile the incompatible representation geometries of heterogeneous teachers, we introduce Teacher Specific Readout Tokens, which grant each teacher an independent read-out of the shared encoder, together with Geometry Agnostic Relational Loss that aligns a vision-language teacher by matching image-text similarity structures rather than raw feature values. We provide GRAFT model, which is a single, continually extensible backbone that unifies five domains, including image understanding, 2D dense prediction, 3D human pose estimation, 3D vision, and vision-language, delivering strong performance across all of them while acquiring each new capability at the cost of a single distillation rather than a full re-distillation.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Vision foundation models such as DINOv2, SigLIP2, and MASt3R develop complementary capabilities from different pretraining objectives, yet their knowledge remains distributed across separate, specialized models.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">What Makes High-Magnification Knowledge Transferable? A Study of Cross-Resolution Distillation in Whole-Slide Imaging</div>
-<div class="meta-line">Authors: Zhiyuan Yang, Jiahao Cheng, Mahdi S. Hosseini</div>
-<div class="meta-line">Venue: ICLR 2027</div>
-<div class="meta-line">First: 2026-09-29T00:02:16+00:00 · Latest: 2026-10-01T16:23:52+00:00</div>
-<div class="meta-line">Comments: Under review as a conference paper at ICLR 2027</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2609.36407v2">Abs</a> · <a href="https://arxiv.org/pdf/2609.36407v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Cross-resolution knowledge distillation aims to improve low-magnification whole- slide analysis by transferring high-magnification representations, yet the conditions for useful transfer remain unclear. We develop a decomposition-based analysis of teacher access, representation loss, and model excess, motivating three questions: whether (a) teacher targets help the task, (b) low-magnification students can predict them, and (c) slide models benefit from those predictions. We investigate them through controlled experiments across ten pathology cohorts spanning classifi- cation, grading, and survival prediction. In the main comparison, providing teacher regional means alongside native low-magnification features improves downstream performance in all ten cohorts. Direct prediction achieves lower reconstruction error than residual prediction, yet the predicted features underrepresent variation in the teacher targets. Moreover, better reconstruction does not consistently improve downstream scores, and retaining native features changes performance even when the predicted teacher features are held fixed. Together, these findings expose a gap between reconstructing teacher representations and realizing their downstream value. They challenge the sufficiency of reconstruction error as a measure of cross-resolution transfer and provide a diagnostic framework for examining where that transfer breaks down. Future distillation designs must account for both what students can predict and how slide models use those predictions.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Cross-resolution knowledge distillation aims to improve low-magnification whole- slide analysis by transferring high-magnification representations, yet the conditions for useful transfer remain unclear.</div>
-</details>
 </div></div>
     <details style="margin-top:16px" class="detail"><summary>History</summary>
-      <div class="history-list"><a href="archive/20261011_0611.html">20261011_0611</a>
+      <div class="history-list"><a href="archive/20261012_0639.html">20261012_0639</a>
+<a href="archive/20261011_0611.html">20261011_0611</a>
 <a href="archive/20261010_0700.html">20261010_0700</a>
 <a href="archive/20261009_0738.html">20261009_0738</a>
 <a href="archive/20261008_0727.html">20261008_0727</a>
