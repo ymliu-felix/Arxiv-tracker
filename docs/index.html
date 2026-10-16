@@ -74,12 +74,61 @@ summary{cursor:pointer;color:var(--acc)}
   <button class="btn" onclick="__expandAll(false)">Collapse All</button>
 </div>
 
-        <span class="badge">2026-10-16 05:55</span>
+        <span class="badge">2026-10-17 05:53</span>
       </div>
     </div>
     <div class="hr"></div>
     <div>Latest digest</div>
     <div class="row"><div class="card">
+<div class="title">Clean Data Can Still Carry Backdoors: Support-Persistent Backdoors for Model Reuse</div>
+<div class="meta-line">Authors: Junhoo Lee, Baekseung Kim, Seungyeon Kim, Nojun Kwak</div>
+<div class="meta-line">Venue: NeurIPS 2026</div>
+<div class="meta-line">First: 2026-10-15T04:04:19+00:00 · Latest: 2026-10-15T04:04:19+00:00</div>
+<div class="meta-line">Comments: Accepted to NeurIPS 2026</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.21208v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.21208v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Traditional backdoor attacks inject artificial trigger patterns into training data, causing models to misclassify triggered inputs while maintaining normal behavior on clean samples. Since these artificial triggers are absent in clean datasets, standard knowledge distillation (KD) typically eliminates them, leading to the common belief that KD serves as an effective purification defense. In this paper, we propose DAR (Discover-and-Relabel), a support-persistent backdoor method that retains its behavior even after clean-data distillation. DAR identifies naturally abundant patterns in low-dimensional feature subspaces using subspace clustering and applies label-only poisoning to samples that inherently satisfy the discovered rule. At test time, the backdoor is activated by locally modifying the corresponding subspace of the target images. By instantiating spatial and frequency operators, DAR achieves attack accuracy comparable to state-of-the-art backdoor attacks in ImageNet classification and CLIP-based prompt tuning. Notably, DAR keeps attack success above 96% after clean KD and remains defense-resistant in practice. Project page: https://junhoo.me/backdoor</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Traditional backdoor attacks inject artificial trigger patterns into training data, causing models to misclassify triggered inputs while maintaining normal behavior on clean samples.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">LLMR: Knowledge Distillation with a Large Language Model-Induced Reward</div>
+<div class="meta-line">Authors: Dongheng Li, Yongchang Hao, Lili Mou</div>
+<div class="meta-line">Venue: COLING 2024</div>
+<div class="meta-line">First: 2024-09-19T06:27:58+00:00 · Latest: 2026-10-15T03:54:48+00:00</div>
+<div class="meta-line">Comments: Accepted by LREC COLING 2024</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2409.12500v2">Abs</a> · <a href="https://arxiv.org/pdf/2409.12500v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Large language models have become increasingly popular and demonstrated remarkable performance in various natural language processing (NLP) tasks. However, these models are typically computationally expensive and difficult to be deployed in resource-constrained environments. In this paper, we propose LLMR, a novel knowledge distillation (KD) method based on a reward function induced from large language models. We conducted experiments on multiple datasets in the dialogue generation and summarization tasks. Empirical results demonstrate that our LLMR approach consistently outperforms traditional KD methods in different tasks and datasets.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Large language models have become increasingly popular and demonstrated remarkable performance in various natural language processing (NLP) tasks.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Does Latent Chain-of-Thought Actually Reason? A Single, Unifying Taxonomy for Latent Reasoning</div>
+<div class="meta-line">Authors: Jingjie Qiu, Sheldon Yu, Xunyi Jiang, Jiajin Liu, Zihan Huang, Zhendong Chu, Tong Yu, Julian McAuley, Junda Wu</div>
+<div class="meta-line">First: 2026-10-15T03:37:32+00:00 · Latest: 2026-10-15T03:37:32+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.21182v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.21182v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Latent chain-of-thought replaces written reasoning steps with continuous hidden states, giving models additional steps to compute before answering. It remains unclear what computation these steps actually perform. High task accuracy and decodable intermediate answers do not establish that a model uses its latent chain to reach an answer. We study this question across twenty-one model-task configurations covering three training recipes, three reasoning tasks, and two backbones. We combine chain deletion and content replacement with probes and trajectory analysis to test whether the chain affects the answer, what it encodes, and how its states change. On logical tasks, COCONUT often carries an answer that is already readable before the chain begins. Its states settle early, and deleting the chain leaves predictions almost unchanged. Per-step supervision produces an ordered layout of reasoning steps and can make the model depend on the chain. Yet even an ordered chain can act as a placeholder, with deletion hurting performance while content replacement leaves answers unchanged. On arithmetic tasks, all tested recipes show dependence on chain content. These results show why readable latent states alone are insufficient evidence of reasoning. We introduce a taxonomy that separates what a chain represents from how the model uses it. Seen this way, earlier reports no longer compete: placeholder tokens, collapsed superposition and step-dependent causal roles are each consistent with a different kind of chain, each obtained on a different task, training recipe or measurement. Once a study says which property it tested, whether the model uses the chain, what the chain holds, or how its state moves, claims about latent reasoning can be compared.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Latent chain-of-thought replaces written reasoning steps with continuous hidden states, giving models additional steps to compute before answering.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">HERO: Preserving Structure and Semantics in Heterogeneous Continual Graph Learning</div>
+<div class="meta-line">Authors: Guiquan Sun, Xikun Zhang, Jingchao Ni, Dongjin Song</div>
+<div class="meta-line">First: 2025-05-23T04:37:57+00:00 · Latest: 2026-10-14T17:48:39+00:00</div>
+<div class="meta-line">Comments: under review</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2505.17458v4">Abs</a> · <a href="https://arxiv.org/pdf/2505.17458v4">PDF</a> · <a href="https://github.com/gqBond/HCGL">Code1</a> · <a href="https://huggingface.co/huggingface">Code2</a> · <a href="https://huggingface.co/docs/hub/spaces">Code3</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Machine learning on heterogeneous graphs has advanced rapidly, driven by the diverse entities, relations, and semantics inherent in real-world data. However, most existing studies assume static graphs, whereas real-world graph data are often continuously updated. Continual learning in this setting is particularly challenging because historical knowledge is encoded not only in target-node representations, but also in their heterogeneous structural contexts and relation-dependent semantic responses. To this end, we introduce HERO, a heterogeneous continual graph learning framework that preserves historical knowledge at both structural and semantic levels while adapting to incoming tasks. We analyze experience replay as an approximation to the unavailable historical gradient and decompose its error into target-selection and context-reconstruction terms. This analysis shows that replaying target nodes alone is generally insufficient for relation-sensitive HGNNs, as removing typed neighborhood context can alter both representations and historical gradients. Motivated by this, HERO employs DiSCo to select representative target nodes and reconstruct compact heterogeneous contexts through relation-aware multi-type neighbor expansion. To further preserve knowledge that cannot be captured by replayed subgraphs alone, HERO aligns task-conditioned predictions and heterogeneous semantic responses through multi-level knowledge distillation. A lightweight look-ahead adaptation step is additionally used to improve plasticity on incoming tasks. Experiments on four datasets with three HGNN backbones show that HERO achieves the best or tied-best average performance among state-of-the-art baselines, while maintaining competitive forgetting. Our code is available at https://github.com/gqBond/HCGL.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Machine learning on heterogeneous graphs has advanced rapidly, driven by the diverse entities, relations, and semantics inherent in real-world data.</div>
+</details>
+</div>
+<div class="card">
 <div class="title">Bridging the Topological Divide: Dual-Branch Graph Distillation with Semantic Priors for Robust Cold-Start Recommendation</div>
 <div class="meta-line">Authors: Yuanfeng Qiu</div>
 <div class="meta-line">First: 2026-10-14T04:43:38+00:00 · Latest: 2026-10-14T04:43:38+00:00</div>
@@ -380,54 +429,10 @@ summary{cursor:pointer;color:var(--acc)}
 <details class="detail"><summary>Summary / 总结</summary>
 <div class="mono">Knowledge distillation is an established technique for improving the capabilities of small, efficient student models by training them with the representations of larger, more capable teacher models.</div>
 </details>
-</div>
-<div class="card">
-<div class="title">Learning to Accumulate Knowledge with Mutual Information</div>
-<div class="meta-line">Authors: Yuyang Zhao, Lizi Liao, Leyang Shen, Xiaoyan Zhao, Yang Zhang, Fuli Feng, Xiangnan He</div>
-<div class="meta-line">First: 2026-10-07T13:20:18+00:00 · Latest: 2026-10-07T13:20:18+00:00</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.10042v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.10042v1">PDF</a> · <a href="https://github.com/LaoKuiZe/Knowledge-Weaver">Code1</a> · <a href="https://huggingface.co/huggingface">Code2</a> · <a href="https://huggingface.co/docs/hub/spaces">Code3</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Large language model (LLM) agents can improve their performance by reusing knowledge distilled from past interactions. However, curating new experiences into a knowledge bank that becomes more useful as it grows remains challenging. Effective knowledge accumulation should limit redundant overlap among entries and ensure that new knowledge contributes beyond what the bank already provides. Yet training a curator with Group Relative Policy Optimization (GRPO) on standalone task success can reinforce general guidance even when it duplicates existing knowledge. Therefore, we propose Knowledge Weaver, a reinforcement learning framework that trains a language model to curate reusable knowledge from agent trajectories. We couple feedback inspired by token-wise mutual information (MI) with marginal success rewards to guide knowledge accumulation. Together, these signals encourage the curator to preserve distinct information from experience and produce entries that improve task success when added to existing knowledge. Standalone success rewards also favor entries that are useful on their own. On ALFWorld and WebShop, Knowledge Weaver achieves mean success rates of 54.0\% and 42.0\% with k=10 retrieved entries, exceeding GRPO by 16.9 and 18.7 percentage points, respectively. Its knowledge banks also outperform the evaluated prompt-based and established banks, including human-written banks, in overall ALFWorld success rate and WebShop score with the executor frozen. Our codebase is available at https://github.com/LaoKuiZe/Knowledge-Weaver.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Large language model (LLM) agents can improve their performance by reusing knowledge distilled from past interactions.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">LoopFM: Learning frOm HistOrical RePresentations of Foundation Model for Recommendation</div>
-<div class="meta-line">Authors: Hua Zheng, Shali Jiang, Boyang Liu, Laming Chen, Kenny Lov, Chuanqi Xu, Lisang Ding, Qinghai Zhou, Can Cui, Xiaolong Liu, Xiaoyi Liu, Yasmine Badr, Xin Xu, Mingfu Liang, Jiyan Yang, Ellie Dingqiao Wen, Gerard Jonathan Mugisha Akkerhuis, Jason Rudy, Xi Liu, Chenxiao Guan, Rong Jin, Ruichao Qiu, Xian Chen, Zhehui Zhou, Ping Chen, Rui Yang, Haicheng Chen, Meet Raval, Song Zhou, Dharak Kharod, Shuyu Xu, Xingyuan Wang, Liang Tao, Qiang Jin, Qiao Yang, Wankun Zhu, Qin Huang, Yuzhen Huang, Darren Liu, Parish Aggarwal, Hui Zhou, Erzhuo Wang, Shuo Chang, Xiaorui Gan, Wenlin Chen, Santanu Kolay, Huayu Li</div>
-<div class="meta-line">First: 2026-05-28T02:59:46+00:00 · Latest: 2026-10-07T03:55:40+00:00</div>
-<div class="meta-line">Comments: Hua Zheng, Shali Jiang, Boyang Liu contributed equally to this work</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2605.29280v3">Abs</a> · <a href="https://arxiv.org/pdf/2605.29280v3">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Knowledge distillation (KD) transfers a single scalar prediction from a large foundation model (FM) to compact vertical models (VMs), suffering from diminishing transfer ratio -- the fraction of FM improvement captured by the VM -- as a single scalar cannot convey the rich intermediate knowledge that larger FMs learn. To address this bottleneck, we propose LoopFM (Learning frOm HistOrical RePresentations of FM), a framework that opens a high-bandwidth transfer channel by structuring FM intermediate embeddings as input features (e.g., user history sequence) for downstream VMs, without requiring real-time FM inference at serving and architectural coupling between FM and VM. We provide a theoretical framework for LoopFM with a gain decomposition and transfer-ratio analysis. On three public benchmarks, LoopFM demonstrates strong AUC improvements (e.g., 6%+ on TaobaoAd) and complementary knowledge transfer capability with KD. On industrial-scale systems (billions of examples, trillion-parameter FMs), LoopFM approximately doubles the knowledge transfer ratio on top of KD, delivering a +0.5% conversion improvement in the first half after its initial launch, and +1.03% and +1.22% conversion improvement from two individual launches in the subsequent half. Through systematic experiments, LoopFM demonstrates a scaling law in sequence length, embedding dimension, and upstream FM size.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Knowledge distillation (KD) transfers a single scalar prediction from a large foundation model (FM) to compact vertical models (VMs), suffering from diminishing transfer ratio -- the fraction of FM improvement captured by the VM -- as a single scalar cannot convey the rich intermediate knowledge that larger FMs learn.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">Multi-Objective Aligned Small Language Model Framework for SUD Patient Dialogue Generation</div>
-<div class="meta-line">Authors: Thushara Manjari Naduvilakandy, Hyeju Jang, Mohammad Al Hasan</div>
-<div class="meta-line">First: 2026-10-06T23:10:21+00:00 · Latest: 2026-10-06T23:10:21+00:00</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.09209v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.09209v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Substance Use Disorder (SUD) counseling requires patient responses that reflect underlying cognitive states such as beliefs, coping strategies, and readiness for change. Although large language models (LLMs) can generate fluent text, they often fail to produce cognitively coherent and clinically realistic patient behavior, especially under ethical and data-scarce clinical settings. Moreover, deploying frontier-scale LLMs in healthcare applications presents practical challenges including high computational cost, latency, privacy concerns, and limited deployability in resource-constrained environments, motivating the need for cognitively aligned small language models (SLMs). We propose a cognitively grounded framework for SUD patient dialogue generation that explicitly models and aligns latent cognitive components with patient histories and counselor questions. Our pipeline consists of two stages: cognitive component detection and cognitive component-aligned dialogue generation. To enable effective learning with smaller models, we combine knowledge distillation from high-capacity teacher models, preference optimization from human-annotations, and attention-guided reward shaping. Extensive evaluations using automatic scores like BERTScore, ROUGE, METEOR and BLEU, and LLM-as-judge hit-metrics against both human and teacher-model references show that cognitively informed fine-tuning substantially improves cognitive realization and alignment over a generic instruction-tuned baselines and mental health domain specific SLMs, with particularly strong gains for open-ended cognitive components.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Substance Use Disorder (SUD) counseling requires patient responses that reflect underlying cognitive states such as beliefs, coping strategies, and readiness for change.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">Catastrophic Forgetting in Sequential Thermal Anti-UAV Detection: The Role of Scale-Conditioned Gradient Imbalance</div>
-<div class="meta-line">Authors: Khac Duc Giang Nguyen, Seyed Sahand Mohammadi Ziabari, Ali Mohammed Mansoor Alsahag</div>
-<div class="meta-line">First: 2026-10-06T13:18:10+00:00 · Latest: 2026-10-06T13:18:10+00:00</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.08315v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.08315v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Counter-UAV systems based on thermal infrared detection must stay accurate as operational datasets evolve, yet sequential fine-tuning causes catastrophic forgetting of prior tasks, a problem that remains insufficiently characterized in this domain. This continual-learning study measures the stability-plasticity trade-off in YOLOMG, a YOLOv5-based detector run as a single thermal-infrared stream with the motion channel disabled, trained sequentially across three anti-UAV benchmarks of rising scale difficulty: Anti-UAV-RGBT, Anti-UAV410, and CST Anti-UAV. Naive fine-tuning on CST yields a Forgetting Measure of -0.605 against the Stage 1 ceiling, corresponding to a 90% capability loss, with -0.572 occurring in Stage 3 alone. In contrast, knowledge distillation from a frozen teacher is associated with FM = -0.033 +/- 0.004 across three seeds, corresponding to 95% retention. Because no Stage 2 no-KD control is included, this result establishes retention under KD training rather than a causal KD effect. Per-stratum analysis shows large-target detection collapsing to near zero within the first epoch, despite an inter-stage cosine similarity of 0.987 over the gradient-updated weights, pointing to scale-conditioned gradient imbalance, rather than weight drift, as a candidate mechanism. Scale-Stratified Herding (SSH), a 300-exemplar buffer balanced across four UAV size strata, roughly halves the forgetting (FM = -0.605 to -0.311) and keeps large-target detection non-zero. An ablation attributes the gain primarily to scale stratification rather than herding: random-stratified replay performs at least as well (FM = -0.221 versus -0.311 for SSH). These replay results are single-seed and should therefore be treated as preliminary.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Counter-UAV systems based on thermal infrared detection must stay accurate as operational datasets evolve, yet sequential fine-tuning causes catastrophic forgetting of prior tasks, a problem that remains insufficiently characterized in this domain.</div>
-</details>
 </div></div>
     <details style="margin-top:16px" class="detail"><summary>History</summary>
-      <div class="history-list"><a href="archive/20261015_0601.html">20261015_0601</a>
+      <div class="history-list"><a href="archive/20261016_0555.html">20261016_0555</a>
+<a href="archive/20261015_0601.html">20261015_0601</a>
 <a href="archive/20261014_0712.html">20261014_0712</a>
 <a href="archive/20261013_0906.html">20261013_0906</a>
 <a href="archive/20261012_0639.html">20261012_0639</a>
