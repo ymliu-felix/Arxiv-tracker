@@ -74,12 +74,59 @@ summary{cursor:pointer;color:var(--acc)}
   <button class="btn" onclick="__expandAll(false)">Collapse All</button>
 </div>
 
-        <span class="badge">2026-10-19 05:14</span>
+        <span class="badge">2026-10-20 06:46</span>
       </div>
     </div>
     <div class="hr"></div>
     <div>Latest digest</div>
     <div class="row"><div class="card">
+<div class="title">When Evidence Vanishes: Distilling Visual-Evidence Dependency in Medical Vision-Language Models</div>
+<div class="meta-line">Authors: Qizhen Lan, Yiling Ma, Ruiqi Chen, Mengchen Fan, Xi Xiao, Lin Zhao, Liang He, Baocheng Geng, Pulin Che, Tianyang Wang, Xiaoqian Jiang</div>
+<div class="meta-line">First: 2026-10-16T13:48:30+00:00 · Latest: 2026-10-16T13:48:30+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.23469v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.23469v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Compact medical vision-language models (VLMs) can answer clinical questions correctly without reliably using the image, relying instead on question wording or learned priors. Standard knowledge distillation copies a teacher&#x27;s answer preference on the original image, but it leaves unchecked whether that preference is conditional on the visual evidence required by the question. We study this missing target as medical visual evidence dependency: support for the correct answer should decrease when the matched evidence is absent. We introduce Evidence-Conditioned Dependency Distillation (ECDD), which pairs each training image with a control matched to the evidence level and distills the teacher&#x27;s drop in answer margin across the pair. A lower bound objective transfers positive dependency by penalizing only shortfalls, while original-image supervision preserves task accuracy. The same formulation applies when the evidence is a queried clinical region, a surgical instrument, or whole-image visual content. Across three medical VQA settings, ECDD keeps original-image accuracy competitive with distillation and alignment baselines while making answer support more sensitive to evidence removal. Under the DME headline objective, for example, the positive-case margin response to target rather than random masking rises from 0.786 with KD to 2.023 with ECDD, while original-image accuracy differs by 0.11 points. These results suggest that medical VLM distillation should transfer both the teacher&#x27;s answer preference and its dependence on visual evidence.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Compact medical vision-language models (VLMs) can answer clinical questions correctly without reliably using the image, relying instead on question wording or learned priors.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">HydraLLM: Adaptive Width Slicing for Elastic Text and Vision-Language Models</div>
+<div class="meta-line">Authors: Oscar Kemme, Janek Haberer, Ali Hojjat, Olaf Landsiedel</div>
+<div class="meta-line">Venue: EMNLP 2026</div>
+<div class="meta-line">First: 2026-10-16T13:38:11+00:00 · Latest: 2026-10-16T13:38:11+00:00</div>
+<div class="meta-line">Comments: Accepted at the BabyLM Workshop at EMNLP 2026</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.23455v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.23455v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">LLMs and LVLMs are increasingly deployed across heterogeneous hardware, ranging from data-center GPUs to resource-constrained edge devices. Their fixed-size architectures limit the ability to reuse a single model across deployment settings with different compute, latency, and model-size targets. We introduce HydraLLM, an elastic MQA-based architecture. Its number of active attention heads determines the effective widths of the embeddings, attention projections, feed-forward layers, and the output head, forming a nested family of subnetworks within a single parameter set. We introduce a static-to-elastic conversion pipeline that, starting from a pre-trained model checkpoint, includes importance-driven weight reordering and stochastic subnetwork training with knowledge distillation. We extend this principle to multimodal inference through an elastic projection module whose output width follows the active text width. HydraLLM covers a wider range of active parameter configurations than FFN-only elastic architectures. With 75% of heads active, HydraLLM achieves 2.2 percentage points higher TriviaQA accuracy than a state-of-the-art nested baseline configuration which has 17.25% more parameters. With 50% of heads active, our multimodal model achieves a CLIPScore comparable to that of the 7$\times$ larger Gemma 3 4B model. With only 25% of heads active, HydraLLM increases token-generation throughput by 75.3% over the full-width configuration.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">LLMs and LVLMs are increasingly deployed across heterogeneous hardware, ranging from data-center GPUs to resource-constrained edge devices.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">SETAREH Transform: A Sorting-Assisted Haar-Wavelet Sparsification Method for Approximate Inner-Product Computation</div>
+<div class="meta-line">Authors: Seyed Kamaledin Setarehdan</div>
+<div class="meta-line">First: 2026-10-16T11:42:29+00:00 · Latest: 2026-10-16T11:42:29+00:00</div>
+<div class="meta-line">Comments: 22 pages, 2 figures, 5 Tables, 21 References</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.23338v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.23338v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Modern deep learning systems increasingly rely on high-dimensional vector operations, in which large input and parameter vectors are repeatedly stored, transferred, and processed. Although substantial research has focused on reducing neural-network model size through pruning, quantization, knowledge distillation, and efficient architectures, the storage, memory-traffic, and communication costs associated with repeatedly presented high-dimensional input vectors remain important practical considerations, particularly in distributed and edge-computing environments. This paper proposes the SETAREH (Sorting-assisted Energy-concentrating Transform for Approximate Representation using Haar wavelets) transform, a Haar-wavelet-based sparsification approach for approximating the inner product between a fixed high-dimensional coefficient vector and successive input vectors. By applying the same sequence of permutations and Haar transforms to both vectors, SETAREH preserves the exact inner product before truncation. It then retains only a subset of the transformed coefficient-input pairs, reducing their representation cost while introducing a controllable approximation error. To evaluate SETAREH, we consider two complementary experimental settings: a synthetic Gaussian-vector baseline and a real apparent-age estimation task using a convolutional neural network on the APPA-REAL dataset. The results show that SETAREH can approximate the evaluated inner products using substantially fewer transformed coefficient-input pairs than the original vector dimension. The findings support its use as a potential structured data-representation method for repeated inner products with fixed weights, while the practical benefit depends on approximation accuracy and the cost of storing or transmitting permutation metadata.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Modern deep learning systems increasingly rely on high-dimensional vector operations, in which large input and parameter vectors are repeatedly stored, transferred, and processed.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Replay Pruning and Few-Bit Integer Inference for Hardware-Efficient Speed-Sign Recognition</div>
+<div class="meta-line">Authors: Se Un Park, Kyungkeon Chung, Huigeol Kim, Junyoung Park</div>
+<div class="meta-line">First: 2026-10-16T01:41:06+00:00 · Latest: 2026-10-16T01:41:06+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.22811v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.22811v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Speed-limit sign recognition on an automotive camera system-on-chip (SoC) must fit a detector and a classifier (the reader) into the memory, arithmetic, and energy budgets of the device. In our two-stage recognizer, the detector, a YOLO-family network with ReLU and hard-sigmoid operators, is compressed by channel replay: an iterative pruning cascade identifies the channels to remove, the recorded deletions are replayed on the original task-trained network, the parent, and one continuous knowledge-distillation recovery follows. On a YOLOv5n, replay removes 60.3% of the parameters at the accuracy of the parent and, in validation mAP50-95 over five matched seeds, outperforms iterative pruning and training from scratch, and its per-step variant (per-step replay) is the most accurate pruning method. On a YOLOv8n, replay and per-step replay outperform every other method and the unpruned parent. The reader, a five-layer CNN with 18k parameters, and the post-processing of the YOLOv5n and YOLOv8n heads use integer arithmetic only. With 4-bit weights and 8-bit activations (W4A8), the reader matches FP32 accuracy in 12.1 KB of on-chip memory, and an executable streaming model reproduces the INT8 class predictions of its runtime on all 9,850 test crops. On a Jetson AGX Orin, INT8 is faster than FP16 only in the implicit formulation of TensorRT, and the replay detector runs fastest on the deep-learning accelerator (DLA). Trained on public data only, the combined system of 0.72 M parameters recognizes 95.2% of the signs of a held-out automotive camera at 90% precision and 94 frames per second.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Speed-limit sign recognition on an automotive camera system-on-chip (SoC) must fit a detector and a classifier (the reader) into the memory, arithmetic, and energy budgets of the device.</div>
+</details>
+</div>
+<div class="card">
 <div class="title">Clean Data Can Still Carry Backdoors: Support-Persistent Backdoors for Model Reuse</div>
 <div class="meta-line">Authors: Junhoo Lee, Baekseung Kim, Seungyeon Kim, Nojun Kwak</div>
 <div class="meta-line">Venue: NeurIPS 2026</div>
@@ -381,57 +428,10 @@ summary{cursor:pointer;color:var(--acc)}
 <details class="detail"><summary>Summary / 总结</summary>
 <div class="mono">Knowledge distillation (KD) transfers knowledge from stronger Teacher models to weaker Student models, but most methods require training the Student parameters, thereby binding the distilled knowledge to a specific architecture and checkpoint.</div>
 </details>
-</div>
-<div class="card">
-<div class="title">TAM: Task-Aware Memory Distillation for Efficient Spatiotemporal Prediction</div>
-<div class="meta-line">Authors: Yuqi Li, Xiaoqin Feng, Fan Xu, Weilun Feng, Chuanguang Yang, Yingli Tian, Hao Wu</div>
-<div class="meta-line">First: 2026-10-08T09:58:23+00:00 · Latest: 2026-10-08T09:58:23+00:00</div>
-<div class="meta-line">Comments: 19 pages</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.11617v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.11617v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Knowledge distillation enables efficient spatiotemporal prediction by transferring knowledge from an accurate teacher to a compact student. However, matching outputs or features independently for each sample leaves cross-sample predictive structure underused. Exploiting this structure requires representations and historical references that reflect the dynamics of each task. We propose TAM, a Task-Aware Memory Distillation framework that organizes a frozen teacher&#x27;s knowledge into a bounded, retrievable history. Memory entries encode latent features, forecast changes, or flow residuals, while task-specific selection rules identify relevant historical references. The student either matches the teacher&#x27;s similarity distribution over shared references or regresses observation-conditioned residual prototypes. These objectives complement supervised prediction and conventional distillation. The teacher, memory, and auxiliary adapters are used only during training, leaving student inference unchanged. We evaluate TAM on video prediction, weather forecasting, and traffic flow prediction across multiple teacher-student configurations. Averaged over four paired runs, adding TAM improves SSIM on all six video datasets and reduces MSE on five relative to the corresponding KD baselines. Mean paired MSE reductions reach 1.86% on KittiCaltech, 1.93% on WeatherBench with a gSTA teacher, and 1.01% on TaxiBJ. These results demonstrate the utility of historical teacher supervision across distinct forecasting tasks without additional student inference cost.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Knowledge distillation enables efficient spatiotemporal prediction by transferring knowledge from an accurate teacher to a compact student.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">S$^3$Geo: Structure-Semantic Synergistic Learning for Cross-View Geo-Localization</div>
-<div class="meta-line">Authors: Ziqian Mo, Hill Zhang, Haosheng Tan, Ling Li, Jiaheng Wei</div>
-<div class="meta-line">First: 2026-10-08T09:51:31+00:00 · Latest: 2026-10-08T09:51:31+00:00</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.11608v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.11608v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Cross-view geo-localization (CVGL) aims to estimate geographic locations by matching images captured from different viewpoints, such as drone and satellite views. Existing methods mainly rely on visual representations, but often fail to jointly model fine-grained structural correspondences and semantic priors, making them prone to confusion between visually similar but semantically different regions, and thus limiting robustness under large viewpoint variations. To address these challenges, we propose \textbf{S$^3$Geo}, a structure-semantic synergistic learning framework for cross-view matching. Specifically, we first introduce a Decoupled Query Pooling (DQP) module to extract a compact set of region-aware features from dense tokens, enabling explicit modeling of local structural patterns. We then design a query-level contrastive learning scheme with an optimal transport (OT)-based formulation to establish soft correspondences under cross-view spatial misalignment. Furthermore, we incorporate a Semantic Knowledge Distillation (SKD) strategy from a frozen CLIP teacher to transfer semantic priors and relational structures, thereby improving discrimination on hard negatives. By operating synergistically, the semantic priors provide robust contextual filtering, which guides the structural module to establish precise spatial alignments. Experiments on the University-1652 and SUES-200 datasets demonstrate that \textbf{S$^3$Geo} consistently outperforms state-of-the-art approaches without increasing inference complexity, validating the effectiveness of jointly modeling structural and semantic information for CVGL.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Cross-view geo-localization (CVGL) aims to estimate geographic locations by matching images captured from different viewpoints, such as drone and satellite views.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">Learning from Own Solutions: Self-Conditioned Credit Assignment for Reinforcement Learning with Verifiable Rewards</div>
-<div class="meta-line">Authors: Yingyu Shan, Yuhang Guo, Zihao Cheng, Zeming Liu, Xiangrong Zhu, Xinyi Wang, Jiashu Yao, Wei Lin, Hongru Wang, Heyan Huang</div>
-<div class="meta-line">Venue: EMNLP 2026</div>
-<div class="meta-line">First: 2026-06-17T08:26:02+00:00 · Latest: 2026-10-08T09:46:38+00:00</div>
-<div class="meta-line">Comments: Accepted by EMNLP 2026 Findings</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2606.18810v2">Abs</a> · <a href="https://arxiv.org/pdf/2606.18810v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Reinforcement learning with verifiable rewards (RLVR) has driven substantial progress in training LLMs for reasoning tasks, but representative methods such as GRPO assign uniform credit across all tokens, wasting gradient on routine tokens while under-crediting pivotal reasoning steps. Existing token-level credit assignment methods require resources beyond the model&#x27;s own rollouts. GRPO variants rely on process reward models or ground-truth answers. Knowledge distillation assigns credit through per-token divergence but requires external teachers (On-Policy Distillation) or privileged information (On-Policy Self Distillation). However, these dependencies limit applicability in the pure RLVR setting. We observe that conditioning the model on its own verified trajectories induces a measurable per-token KL divergence between the original and conditioned distributions, and prove that distilling from a self-teacher constructed by verified trajectories leads to infeasible weighted-average solutions when multiple verified trajectories exist. We propose SC-GRPO (Self-Conditioned GRPO), which uses KL divergence mentioned before as a multiplicative weight on GRPO gradients. Across five benchmarks spanning math, code, and agentic tasks, SC-GRPO consistently outperforms 8.1% over GRPO and 5.9% over DAPO with stronger OOD performance. Moreover, SC-GRPO achieves higher performance than OPD.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Reinforcement learning with verifiable rewards (RLVR) has driven substantial progress in training LLMs for reasoning tasks, but representative methods such as GRPO assign uniform credit across all tokens, wasting gradient on routine tokens while under-crediting pivotal reasoning steps.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">KDFP: A first-principles approach to knowledge distillation in large language models</div>
-<div class="meta-line">Authors: Ryan Swift, Konstantinos Psounis</div>
-<div class="meta-line">First: 2026-10-07T19:59:07+00:00 · Latest: 2026-10-07T19:59:07+00:00</div>
-<div class="meta-line">Comments: 30 pages, 6 figures, submitted to COLM 2026</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.10854v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.10854v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Knowledge distillation is an established technique for improving the capabilities of small, efficient student models by training them with the representations of larger, more capable teacher models. Much of the recent work in the distillation of large language models (LLMs) has focused on distilling abilities learned during post-training, such as instruction following, chain-of-thought reasoning, and tool usage. This has left a large research gap in general knowledge distillation for LLMs, which is essential for developing efficient and private systems suitable for deployment on edge devices. We take a first-principles approach, evaluating previous lessons from prior works and conducting new explorations to develop a distillation methodology suitable for modern LLMs. We present KDFP, a novel methodology for white-box general knowledge distillation in LLMs. We demonstrate that KDFP outperforms existing methods by 1.6% $-$ 4.9% across 9 benchmarks while increasing training efficiency by up to 99.1% through ephemeral parameter reduction.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Knowledge distillation is an established technique for improving the capabilities of small, efficient student models by training them with the representations of larger, more capable teacher models.</div>
-</details>
 </div></div>
     <details style="margin-top:16px" class="detail"><summary>History</summary>
-      <div class="history-list"><a href="archive/20261018_0512.html">20261018_0512</a>
+      <div class="history-list"><a href="archive/20261019_0514.html">20261019_0514</a>
+<a href="archive/20261018_0512.html">20261018_0512</a>
 <a href="archive/20261017_0553.html">20261017_0553</a>
 <a href="archive/20261016_0555.html">20261016_0555</a>
 <a href="archive/20261015_0601.html">20261015_0601</a>

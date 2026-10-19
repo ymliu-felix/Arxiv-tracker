@@ -1,0 +1,893 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>arXiv 论文速递</title><style>
+:root {
+  --bg:#f8fafc; --card:#ffffff; --text:#0f172a; --muted:#667085; --border:#e5e7eb; --acc:#2563eb;
+}
+:root[data-theme="dark"] {
+  --bg:#0b0f17; --card:#111827; --text:#e5e7eb; --muted:#9ca3af; --border:#1f2937; --acc:#2563eb;
+}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);
+  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.6;}
+.container{max-width:900px;margin:0 auto;padding:18px;}
+.header{display:flex;gap:10px;justify-content:space-between;align-items:center;margin:8px 0 16px;flex-wrap:wrap}
+h1{font-size:22px;margin:0}
+.badge{font-size:12px;color:#111827;background:var(--acc);padding:2px 8px;border-radius:999px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px 18px;margin:14px 0;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.title{font-weight:700;margin:0 0 6px 0;font-size:18px}
+.meta-line{color:var(--muted);font-size:13px;margin:2px 0}
+.links a{color:var(--acc);text-decoration:none;margin-right:12px}
+.detail{margin-top:10px;background:rgba(2,6,23,.03);border:1px solid var(--border);border-radius:10px;padding:8px 10px}
+summary{cursor:pointer;color:var(--acc)}
+.mono{white-space:pre-wrap;background:rgba(2,6,23,.03);border:1px solid var(--border);padding:10px;border-radius:10px}
+.row{display:grid;grid-template-columns:1fr;gap:12px}
+@media (min-width: 860px) {
+  .row-2{grid-template-columns:1fr 1fr}
+}
+.footer{color:var(--muted);font-size:13px;margin:20px 0 10px}
+.hr{height:1px;background:var(--border);margin:14px 0}
+.history-list a{display:block;color:var(--acc);text-decoration:none;margin:4px 0}
+.controls{display:flex;gap:8px;align-items:center}
+.btn{border:1px solid var(--border);background:var(--card);padding:6px 10px;border-radius:10px;cursor:pointer;color:var(--text)}
+.btn:hover{border-color:var(--acc)}
+</style>
+<script>
+(function() {
+  const root = document.documentElement;
+  function apply(t) {
+    if (t==='dark') root.setAttribute('data-theme','dark');
+    else if (t==='light') root.removeAttribute('data-theme');
+    else {
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        root.setAttribute('data-theme','dark');
+      else root.removeAttribute('data-theme');
+    }
+  }
+  let t = localStorage.getItem('theme') || 'light';
+  if (!['light','dark','auto'].includes(t)) t='light';
+  apply(t);
+  window.__toggleTheme = function() {
+    let cur = localStorage.getItem('theme') || 'light';
+    if (cur==='light') cur='dark';
+    else if (cur==='dark') cur='auto';
+    else cur='light';
+    localStorage.setItem('theme', cur);
+    apply(cur);
+    const el=document.getElementById('theme-label');
+    if(el) el.textContent = cur.toUpperCase();
+  }
+  window.__expandAll = function(open) {
+    document.querySelectorAll('details').forEach(d => d.open = !!open);
+  }
+})();
+</script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>arXiv 论文速递</h1>
+      <div style="display:flex;gap:10px;align-items:center">
+        
+<div class="controls">
+  <button class="btn" onclick="__toggleTheme()">Theme: <span id="theme-label" style="margin-left:6px">AUTO</span></button>
+  <button class="btn" onclick="__expandAll(true)">Expand All</button>
+  <button class="btn" onclick="__expandAll(false)">Collapse All</button>
+</div>
+
+        <span class="badge">2026-10-20 06:46</span>
+      </div>
+    </div>
+    <div class="hr"></div>
+    <div>Snapshot: 20261020_0646</div>
+    <div class="row"><div class="card">
+<div class="title">When Evidence Vanishes: Distilling Visual-Evidence Dependency in Medical Vision-Language Models</div>
+<div class="meta-line">Authors: Qizhen Lan, Yiling Ma, Ruiqi Chen, Mengchen Fan, Xi Xiao, Lin Zhao, Liang He, Baocheng Geng, Pulin Che, Tianyang Wang, Xiaoqian Jiang</div>
+<div class="meta-line">First: 2026-10-16T13:48:30+00:00 · Latest: 2026-10-16T13:48:30+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.23469v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.23469v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Compact medical vision-language models (VLMs) can answer clinical questions correctly without reliably using the image, relying instead on question wording or learned priors. Standard knowledge distillation copies a teacher&#x27;s answer preference on the original image, but it leaves unchecked whether that preference is conditional on the visual evidence required by the question. We study this missing target as medical visual evidence dependency: support for the correct answer should decrease when the matched evidence is absent. We introduce Evidence-Conditioned Dependency Distillation (ECDD), which pairs each training image with a control matched to the evidence level and distills the teacher&#x27;s drop in answer margin across the pair. A lower bound objective transfers positive dependency by penalizing only shortfalls, while original-image supervision preserves task accuracy. The same formulation applies when the evidence is a queried clinical region, a surgical instrument, or whole-image visual content. Across three medical VQA settings, ECDD keeps original-image accuracy competitive with distillation and alignment baselines while making answer support more sensitive to evidence removal. Under the DME headline objective, for example, the positive-case margin response to target rather than random masking rises from 0.786 with KD to 2.023 with ECDD, while original-image accuracy differs by 0.11 points. These results suggest that medical VLM distillation should transfer both the teacher&#x27;s answer preference and its dependence on visual evidence.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Compact medical vision-language models (VLMs) can answer clinical questions correctly without reliably using the image, relying instead on question wording or learned priors.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">HydraLLM: Adaptive Width Slicing for Elastic Text and Vision-Language Models</div>
+<div class="meta-line">Authors: Oscar Kemme, Janek Haberer, Ali Hojjat, Olaf Landsiedel</div>
+<div class="meta-line">Venue: EMNLP 2026</div>
+<div class="meta-line">First: 2026-10-16T13:38:11+00:00 · Latest: 2026-10-16T13:38:11+00:00</div>
+<div class="meta-line">Comments: Accepted at the BabyLM Workshop at EMNLP 2026</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.23455v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.23455v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">LLMs and LVLMs are increasingly deployed across heterogeneous hardware, ranging from data-center GPUs to resource-constrained edge devices. Their fixed-size architectures limit the ability to reuse a single model across deployment settings with different compute, latency, and model-size targets. We introduce HydraLLM, an elastic MQA-based architecture. Its number of active attention heads determines the effective widths of the embeddings, attention projections, feed-forward layers, and the output head, forming a nested family of subnetworks within a single parameter set. We introduce a static-to-elastic conversion pipeline that, starting from a pre-trained model checkpoint, includes importance-driven weight reordering and stochastic subnetwork training with knowledge distillation. We extend this principle to multimodal inference through an elastic projection module whose output width follows the active text width. HydraLLM covers a wider range of active parameter configurations than FFN-only elastic architectures. With 75% of heads active, HydraLLM achieves 2.2 percentage points higher TriviaQA accuracy than a state-of-the-art nested baseline configuration which has 17.25% more parameters. With 50% of heads active, our multimodal model achieves a CLIPScore comparable to that of the 7$\times$ larger Gemma 3 4B model. With only 25% of heads active, HydraLLM increases token-generation throughput by 75.3% over the full-width configuration.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">LLMs and LVLMs are increasingly deployed across heterogeneous hardware, ranging from data-center GPUs to resource-constrained edge devices.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">SETAREH Transform: A Sorting-Assisted Haar-Wavelet Sparsification Method for Approximate Inner-Product Computation</div>
+<div class="meta-line">Authors: Seyed Kamaledin Setarehdan</div>
+<div class="meta-line">First: 2026-10-16T11:42:29+00:00 · Latest: 2026-10-16T11:42:29+00:00</div>
+<div class="meta-line">Comments: 22 pages, 2 figures, 5 Tables, 21 References</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.23338v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.23338v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Modern deep learning systems increasingly rely on high-dimensional vector operations, in which large input and parameter vectors are repeatedly stored, transferred, and processed. Although substantial research has focused on reducing neural-network model size through pruning, quantization, knowledge distillation, and efficient architectures, the storage, memory-traffic, and communication costs associated with repeatedly presented high-dimensional input vectors remain important practical considerations, particularly in distributed and edge-computing environments. This paper proposes the SETAREH (Sorting-assisted Energy-concentrating Transform for Approximate Representation using Haar wavelets) transform, a Haar-wavelet-based sparsification approach for approximating the inner product between a fixed high-dimensional coefficient vector and successive input vectors. By applying the same sequence of permutations and Haar transforms to both vectors, SETAREH preserves the exact inner product before truncation. It then retains only a subset of the transformed coefficient-input pairs, reducing their representation cost while introducing a controllable approximation error. To evaluate SETAREH, we consider two complementary experimental settings: a synthetic Gaussian-vector baseline and a real apparent-age estimation task using a convolutional neural network on the APPA-REAL dataset. The results show that SETAREH can approximate the evaluated inner products using substantially fewer transformed coefficient-input pairs than the original vector dimension. The findings support its use as a potential structured data-representation method for repeated inner products with fixed weights, while the practical benefit depends on approximation accuracy and the cost of storing or transmitting permutation metadata.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Modern deep learning systems increasingly rely on high-dimensional vector operations, in which large input and parameter vectors are repeatedly stored, transferred, and processed.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Replay Pruning and Few-Bit Integer Inference for Hardware-Efficient Speed-Sign Recognition</div>
+<div class="meta-line">Authors: Se Un Park, Kyungkeon Chung, Huigeol Kim, Junyoung Park</div>
+<div class="meta-line">First: 2026-10-16T01:41:06+00:00 · Latest: 2026-10-16T01:41:06+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.22811v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.22811v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Speed-limit sign recognition on an automotive camera system-on-chip (SoC) must fit a detector and a classifier (the reader) into the memory, arithmetic, and energy budgets of the device. In our two-stage recognizer, the detector, a YOLO-family network with ReLU and hard-sigmoid operators, is compressed by channel replay: an iterative pruning cascade identifies the channels to remove, the recorded deletions are replayed on the original task-trained network, the parent, and one continuous knowledge-distillation recovery follows. On a YOLOv5n, replay removes 60.3% of the parameters at the accuracy of the parent and, in validation mAP50-95 over five matched seeds, outperforms iterative pruning and training from scratch, and its per-step variant (per-step replay) is the most accurate pruning method. On a YOLOv8n, replay and per-step replay outperform every other method and the unpruned parent. The reader, a five-layer CNN with 18k parameters, and the post-processing of the YOLOv5n and YOLOv8n heads use integer arithmetic only. With 4-bit weights and 8-bit activations (W4A8), the reader matches FP32 accuracy in 12.1 KB of on-chip memory, and an executable streaming model reproduces the INT8 class predictions of its runtime on all 9,850 test crops. On a Jetson AGX Orin, INT8 is faster than FP16 only in the implicit formulation of TensorRT, and the replay detector runs fastest on the deep-learning accelerator (DLA). Trained on public data only, the combined system of 0.72 M parameters recognizes 95.2% of the signs of a held-out automotive camera at 90% precision and 94 frames per second.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Speed-limit sign recognition on an automotive camera system-on-chip (SoC) must fit a detector and a classifier (the reader) into the memory, arithmetic, and energy budgets of the device.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Clean Data Can Still Carry Backdoors: Support-Persistent Backdoors for Model Reuse</div>
+<div class="meta-line">Authors: Junhoo Lee, Baekseung Kim, Seungyeon Kim, Nojun Kwak</div>
+<div class="meta-line">Venue: NeurIPS 2026</div>
+<div class="meta-line">First: 2026-10-15T04:04:19+00:00 · Latest: 2026-10-15T04:04:19+00:00</div>
+<div class="meta-line">Comments: Accepted to NeurIPS 2026</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.21208v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.21208v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Traditional backdoor attacks inject artificial trigger patterns into training data, causing models to misclassify triggered inputs while maintaining normal behavior on clean samples. Since these artificial triggers are absent in clean datasets, standard knowledge distillation (KD) typically eliminates them, leading to the common belief that KD serves as an effective purification defense. In this paper, we propose DAR (Discover-and-Relabel), a support-persistent backdoor method that retains its behavior even after clean-data distillation. DAR identifies naturally abundant patterns in low-dimensional feature subspaces using subspace clustering and applies label-only poisoning to samples that inherently satisfy the discovered rule. At test time, the backdoor is activated by locally modifying the corresponding subspace of the target images. By instantiating spatial and frequency operators, DAR achieves attack accuracy comparable to state-of-the-art backdoor attacks in ImageNet classification and CLIP-based prompt tuning. Notably, DAR keeps attack success above 96% after clean KD and remains defense-resistant in practice. Project page: https://junhoo.me/backdoor</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Traditional backdoor attacks inject artificial trigger patterns into training data, causing models to misclassify triggered inputs while maintaining normal behavior on clean samples.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">LLMR: Knowledge Distillation with a Large Language Model-Induced Reward</div>
+<div class="meta-line">Authors: Dongheng Li, Yongchang Hao, Lili Mou</div>
+<div class="meta-line">Venue: COLING 2024</div>
+<div class="meta-line">First: 2024-09-19T06:27:58+00:00 · Latest: 2026-10-15T03:54:48+00:00</div>
+<div class="meta-line">Comments: Accepted by LREC COLING 2024</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2409.12500v2">Abs</a> · <a href="https://arxiv.org/pdf/2409.12500v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Large language models have become increasingly popular and demonstrated remarkable performance in various natural language processing (NLP) tasks. However, these models are typically computationally expensive and difficult to be deployed in resource-constrained environments. In this paper, we propose LLMR, a novel knowledge distillation (KD) method based on a reward function induced from large language models. We conducted experiments on multiple datasets in the dialogue generation and summarization tasks. Empirical results demonstrate that our LLMR approach consistently outperforms traditional KD methods in different tasks and datasets.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Large language models have become increasingly popular and demonstrated remarkable performance in various natural language processing (NLP) tasks.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Does Latent Chain-of-Thought Actually Reason? A Single, Unifying Taxonomy for Latent Reasoning</div>
+<div class="meta-line">Authors: Jingjie Qiu, Sheldon Yu, Xunyi Jiang, Jiajin Liu, Zihan Huang, Zhendong Chu, Tong Yu, Julian McAuley, Junda Wu</div>
+<div class="meta-line">First: 2026-10-15T03:37:32+00:00 · Latest: 2026-10-15T03:37:32+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.21182v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.21182v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Latent chain-of-thought replaces written reasoning steps with continuous hidden states, giving models additional steps to compute before answering. It remains unclear what computation these steps actually perform. High task accuracy and decodable intermediate answers do not establish that a model uses its latent chain to reach an answer. We study this question across twenty-one model-task configurations covering three training recipes, three reasoning tasks, and two backbones. We combine chain deletion and content replacement with probes and trajectory analysis to test whether the chain affects the answer, what it encodes, and how its states change. On logical tasks, COCONUT often carries an answer that is already readable before the chain begins. Its states settle early, and deleting the chain leaves predictions almost unchanged. Per-step supervision produces an ordered layout of reasoning steps and can make the model depend on the chain. Yet even an ordered chain can act as a placeholder, with deletion hurting performance while content replacement leaves answers unchanged. On arithmetic tasks, all tested recipes show dependence on chain content. These results show why readable latent states alone are insufficient evidence of reasoning. We introduce a taxonomy that separates what a chain represents from how the model uses it. Seen this way, earlier reports no longer compete: placeholder tokens, collapsed superposition and step-dependent causal roles are each consistent with a different kind of chain, each obtained on a different task, training recipe or measurement. Once a study says which property it tested, whether the model uses the chain, what the chain holds, or how its state moves, claims about latent reasoning can be compared.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Latent chain-of-thought replaces written reasoning steps with continuous hidden states, giving models additional steps to compute before answering.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">HERO: Preserving Structure and Semantics in Heterogeneous Continual Graph Learning</div>
+<div class="meta-line">Authors: Guiquan Sun, Xikun Zhang, Jingchao Ni, Dongjin Song</div>
+<div class="meta-line">First: 2025-05-23T04:37:57+00:00 · Latest: 2026-10-14T17:48:39+00:00</div>
+<div class="meta-line">Comments: under review</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2505.17458v4">Abs</a> · <a href="https://arxiv.org/pdf/2505.17458v4">PDF</a> · <a href="https://github.com/gqBond/HCGL">Code1</a> · <a href="https://huggingface.co/huggingface">Code2</a> · <a href="https://huggingface.co/docs/hub/spaces">Code3</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Machine learning on heterogeneous graphs has advanced rapidly, driven by the diverse entities, relations, and semantics inherent in real-world data. However, most existing studies assume static graphs, whereas real-world graph data are often continuously updated. Continual learning in this setting is particularly challenging because historical knowledge is encoded not only in target-node representations, but also in their heterogeneous structural contexts and relation-dependent semantic responses. To this end, we introduce HERO, a heterogeneous continual graph learning framework that preserves historical knowledge at both structural and semantic levels while adapting to incoming tasks. We analyze experience replay as an approximation to the unavailable historical gradient and decompose its error into target-selection and context-reconstruction terms. This analysis shows that replaying target nodes alone is generally insufficient for relation-sensitive HGNNs, as removing typed neighborhood context can alter both representations and historical gradients. Motivated by this, HERO employs DiSCo to select representative target nodes and reconstruct compact heterogeneous contexts through relation-aware multi-type neighbor expansion. To further preserve knowledge that cannot be captured by replayed subgraphs alone, HERO aligns task-conditioned predictions and heterogeneous semantic responses through multi-level knowledge distillation. A lightweight look-ahead adaptation step is additionally used to improve plasticity on incoming tasks. Experiments on four datasets with three HGNN backbones show that HERO achieves the best or tied-best average performance among state-of-the-art baselines, while maintaining competitive forgetting. Our code is available at https://github.com/gqBond/HCGL.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Machine learning on heterogeneous graphs has advanced rapidly, driven by the diverse entities, relations, and semantics inherent in real-world data.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Bridging the Topological Divide: Dual-Branch Graph Distillation with Semantic Priors for Robust Cold-Start Recommendation</div>
+<div class="meta-line">Authors: Yuanfeng Qiu</div>
+<div class="meta-line">First: 2026-10-14T04:43:38+00:00 · Latest: 2026-10-14T04:43:38+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.19578v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.19578v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Graph Collaborative Filtering models have achieved remarkable success in recommendation systems. However, they inherently suffer from a catastrophic representation collapse in strict cold-start scenarios due to the topological isolation of unobserved items. While integrating multi-modal semantic features offers a potential remedy, directly mapping isolated semantic attributes into a globally topology-driven collaborative space frequently precipitates representation degradation and optimization conflicts. To bridge this fundamental structural divide, we propose DualGCN, an innovative Dual-Branch Graph Knowledge Distillation Framework. Operating under a decoupled two-stage training paradigm, DualGCN first constructs a robust collaborative teacher network where item representations are anchored by a topology-smoothed semantic prior, effectively reshaping the latent manifold. Subsequently, a semantic student branch employs a residual mapping mechanism and a magnitude-agnostic cosine distillation objective to achieve high-fidelity cross-modal alignment without disrupting established collaborative signals. Furthermore, we introduce a dynamic norm reconstruction mechanism to rigorously calibrate the physical scales of novel and warm items during global retrieval. Extensive experiments across three real-world benchmark datasets demonstrate that DualGCN significantly outperforms state-of-the-art baselines in strict cold-start scenarios while comprehensively preserving recommendation accuracy for highly active items.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Graph Collaborative Filtering models have achieved remarkable success in recommendation systems.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Platonic Projection Structures: Operator-Induced Observability in Representation Learning</div>
+<div class="meta-line">Authors: Kazuo Ishii, Bishnu Prasad Gautam, Jieling Wu, Saher Javaid</div>
+<div class="meta-line">Venue: Entropy 2026, 28(7), 768</div>
+<div class="meta-line">First: 2026-07-06T14:57:26+00:00 · Latest: 2026-10-14T03:01:50+00:00</div>
+<div class="meta-line">Comments: 29 pages, 7 figures. Published in Entropy</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2607.05175v2">Abs</a> · <a href="https://arxiv.org/pdf/2607.05175v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We characterize observability in representation learning through Platonic Projection Structures (PPS), an operator-theoretic framework for analyzing representation accessibility under partial observation. Rather than treating observable outputs as direct reflections of latent representations, PPS models observation through a self-adjoint positive semidefinite operator acting on a latent representation space. A system is represented as a triple $(H, Π, O)$, where $H$ is a latent representation space, $Π\succeq 0$ is an observation operator, and $O(v)=\langle v,Πv\rangle$ defines an induced scalar observable. Observability is characterized by the quotient geometry $H/\ker(Π)$, representing equivalence classes of latent states indistinguishable under observation. We show that quantum measurement and representation inference under linear observation models share this operator-theoretic structure while differing in the algebraic properties of their observation operators; the correspondence is structural rather than physical. Representation transfer and knowledge distillation can likewise be interpreted as approximate preservation of observable geometry through $ΦΠ_T \approx Π_S Φ$. PPS also reveals a structural limitation of output-based interpretability: latent components in $\ker(Π)$ are inaccessible from induced observables, imposing intrinsic constraints on attribution and explanation methods. Controlled empirical validations demonstrate kernel-invariant observability, projection-induced attribution gaps, and rank-controlled observable geometry in latent representation spaces. PPS thus provides an explicit characterization of observability through operator-induced quotient geometry and a unified perspective on representation accessibility, interpretability, and projection-mediated inference.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We characterize observability in representation learning through Platonic Projection Structures (PPS), an operator-theoretic framework for analyzing representation accessibility under partial observation.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">MMKG-R1: Constructing Multimodal Knowledge Graphs via Reinforcement Learning</div>
+<div class="meta-line">Authors: Zongyu Wu, Yilong Wang, Xiaochen Wang, Minhua Lin, Yuan Zhong, Fenglong Ma, Xiang Zhang, Suhang Wang</div>
+<div class="meta-line">First: 2026-10-14T00:35:59+00:00 · Latest: 2026-10-14T00:35:59+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.19341v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.19341v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Multimodal knowledge graphs (MMKGs) organize information across different modalities to support multimodal Graph Retrieval-Augmented Generation (RAG), which aims to improve the performance of multimodal large language models (MLLMs). The effectiveness of these multimodal Graph RAG methods largely depends on the quality of the constructed MMKGs. However, most existing methods construct MMKGs without explicit guidance on graph quality, while reinforcement learning (RL)-based methods that rely on final-answer correctness may provide only indirect feedback on MMKG quality. To address these limitations, we propose MMKG-R1, a novel MMKG-quality-driven RL framework for training an MLLM as a multimodal knowledge constructor. To be specific, MMKG-R1 introduces multiple quality-aware rewards to directly evaluate both the quality of information extracted from individual knowledge sources and the quality of the assembled MMKG. These rewards are then used to guide the RL training. Experiments across multiple datasets show that MMKG-R1 constructs MMKGs that improve downstream question-answering accuracy.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Multimodal knowledge graphs (MMKGs) organize information across different modalities to support multimodal Graph Retrieval-Augmented Generation (RAG), which aims to improve the performance of multimodal large language models (MLLMs).</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Demystifying On-Policy Distillation: Where Does the Teacher&#x27;s Advantage Live?</div>
+<div class="meta-line">Authors: Yiping Li, Fan Zhao, Zhibo Hou, Zhiyu An, Wan Du</div>
+<div class="meta-line">First: 2026-10-13T20:11:48+00:00 · Latest: 2026-10-13T20:11:48+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.19145v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.19145v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">On-policy distillation (OPD) is increasingly studied as a cheaper alternative to reinforcement learning, yet it remains a form of knowledge distillation (KD) that relies on teacher supervision. We revisit OPD from the KD perspective by asking where the teacher&#x27;s advantage lies along student-generated trajectories. Controlled token flips at teacher-student disagreements directly measure the accuracy gained from teacher corrections. Single-token flips yield a modest average gain on selected failed trajectories, whereas repeated flips raise accuracy from 28.4% to 74.5%, close to the teacher&#x27;s 76.9%. Gains continue to accumulate with more flips, but mass- and KL-based selection outperform random flips by 15-18 percentage points at counts of similar magnitude. Selective intervention remains useful after OPD, but greater argmax agreement does not consistently improve accuracy across model pairs. We advocate training schedules that learn more valuable teacher corrections while maintaining distributional stability. Controlled flips and fork-resolution analysis evaluate OPD beyond accuracy by measuring which teacher preferences the student acquires and what further correction can recover.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">On-policy distillation (OPD) is increasingly studied as a cheaper alternative to reinforcement learning, yet it remains a form of knowledge distillation (KD) that relies on teacher supervision.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Multi-View Relational Distillation for Spatial Reasoning with Vision-Language Models</div>
+<div class="meta-line">Authors: Kiet T. Nguyen, Hanbo Shim, Jinwoo Kim, Seunghoon Hong</div>
+<div class="meta-line">First: 2026-08-11T12:34:41+00:00 · Latest: 2026-10-13T11:26:41+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2608.10864v2">Abs</a> · <a href="https://arxiv.org/pdf/2608.10864v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Vision-language models (VLMs) have achieved strong image and video understanding, yet their visual-spatial representations remain geometrically fragile, leading to failures in spatial reasoning needed for embodied AI, robotics, and autonomous driving. Prior approaches to geometry grounding either fine-tune VLMs on spatial question answering, which can perpetuate spurious visual representations, or fuse features from large geometry-grounded vision models, which substantially increases model size at inference. Knowledge distillation from geometry-grounded vision models offers an alternative, but directly matching multi-view teacher features can disrupt the pretrained alignment between visual and textual representations, degrading object- and language-semantic capabilities. We propose multi-view relational distillation (MVRD), which distills patch-wise cosine similarities across views instead of the teacher features themselves. These relations encode geometric correspondences adequate for spatial understanding, while leaving the student representation underdetermined, allowing it to remain close to its pretrained vision- language space. Across representative VLMs, MVRD improves visual-spatial reasoning, outperforming supervised fine-tuning and feature distillation while approaching feature fusion methods with considerably fewer added parameters and lower latency. We show that MVRD makes visual representations more geometric while retaining language alignment, and generalizes to 3D scene understanding tasks such as object grounding, dense captioning, and question answering.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Vision-language models (VLMs) have achieved strong image and video understanding, yet their visual-spatial representations remain geometrically fragile, leading to failures in spatial reasoning needed for embodied AI, robotics, and autonomous driving.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">DVTR-KD: Distilling Vision-Language Models via Intermediate Visual Token Reconstruction</div>
+<div class="meta-line">Authors: Haolan Wei, Jiahui Wang, Junli Zha, Xinkai Lu, Yunxiao Zou, Chao Zhou, Xiang Song</div>
+<div class="meta-line">First: 2026-10-13T07:18:14+00:00 · Latest: 2026-10-13T07:18:14+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.17853v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.17853v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Multimodal large language models (MLLMs) have achieved strong performance on diverse vision-language tasks, but their computational demands limit deployment under constrained budgets, particularly on edge devices. Many works focus on Knowledge Distillation (KD) and try to transfer knowledge from powerful teacher models to students. In addition to reducing model size, visual token compression provides a complementary route to efficiency, but introduces mismatched visual token counts that complicate direct token-wise knowledge transfer. To mitigate this, we propose DVTR-KD, a knowledge distillation framework based on \textbf{D}ense \textbf{V}isual \textbf{T}oken \textbf{R}econstruction, which reconstructs the teacher&#x27;s dense visual tokens from the student&#x27;s compressed tokens. We reconstruct visual states after the final LLM layer and at the input to an intermediate layer identified as important for visual-information readout. At the intermediate layer, reconstruction is supervised through the teacher&#x27;s response predictions rather than by direct token-wise KL or MSE matching. An auxiliary attention-readout loss complements this response-level supervision by aligning how the student and the original teacher integrate contextual information when predicting responses. Evaluations on diverse benchmarks demonstrate that DVTR-KD improves the performance of token-compressed students while retaining the inference efficiency afforded by visual token compression.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Multimodal large language models (MLLMs) have achieved strong performance on diverse vision-language tasks, but their computational demands limit deployment under constrained budgets, particularly on edge devices.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Efficient Multi-Granularity Knowledge Transfer for Radiology Report Generation</div>
+<div class="meta-line">Authors: Xubin Zhong, Zheyu Zhang, Wenjian Qin, Ning Wen</div>
+<div class="meta-line">First: 2026-10-08T06:09:28+00:00 · Latest: 2026-10-13T06:40:20+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.11303v2">Abs</a> · <a href="https://arxiv.org/pdf/2610.11303v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Radiology report generation can automatically generate clinical descriptions from X-ray images, thereby significantly improving the efficiency of radiologists. This task is challenging because it requires medical knowledge to accurately identify diseases and describe them in a professional manner. However, existing methods often overlook the importance of enhancing medical knowledge in describing pivotal areas, a capability that requires models to effectively extract and aggregate knowledge at multiple levels of granularity. Accordingly, we herein propose a novel and compact Efficient Multi-Granularity Knowledge Transfer (\textbf{EMGKT}) method to address the above issues. First, we encode global knowledge embeddings using a medical vision-language model, which provides contextual medical knowledge. Moreover, we devise a novel Fine-Grained Knowledge Distillation (FGKD) training task which efficiently extract fine-grained knowledge. Specifically, the FGKD training task contains teacher embeddings and student embeddings. Teacher embeddings are encoded using extra priors; while student embeddings are learned from the teacher embeddings through knowledge distillation. During inference, the student embeddings are used to enhance fine-grained knowledge while the teacher embeddings are discarded, resulting in negligible computational costs and no need for extra priors. Finally, we further develop a mixture of disease diagnosis expert classifiers to enhance knowledge extraction. The classifiers are initialized using disease embeddings and are modeled as different experts to address various granularity features. Notably, \textbf{EMGKT} can be efficiently applied to most existing methods. Extensive experiments are conducted on two widely-used public datasets and various baselines, which demonstrates the effectiveness and transferability of \textbf{EMGKT}.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Radiology report generation can automatically generate clinical descriptions from X-ray images, thereby significantly improving the efficiency of radiologists.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">DisaggKD: Efficient Knowledge Distillation through Teacher-Student Disaggregation and a Fused Loss</div>
+<div class="meta-line">Authors: Ruixuan Tu, Yuyang Dong</div>
+<div class="meta-line">First: 2026-10-13T03:17:08+00:00 · Latest: 2026-10-13T03:17:08+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.17644v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.17644v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Knowledge distillation (KD) frameworks place teacher and student on the same GPUs, so per-GPU memory limits the teachers that fit. DisaggKD separates them across nodes: teacher replicas stream hidden states to the student, a KD loss over row windows and vocabulary shards equals the full-vocabulary loss in exact arithmetic without forming the full-vocabulary logits, and a prefetch ring paces producer and trainer. Closed-form memory and traffic models locate the memory limits of each layout. On the Qwen3.5-35B-A3B to 9B pair, the disaggregated layout matches the LM loss of the colocated run with the same loss and is faster than that run; our fused loss also lets a colocated run train on as few nodes at faster speed, while the split is memory efficient when the student spans several nodes. On the larger pairs, colocated runs with a fused loss still run OOM where the split trains, because teacher weights and student states fill the budget.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Knowledge distillation (KD) frameworks place teacher and student on the same GPUs, so per-GPU memory limits the teachers that fit.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">NeuroRule: Making Black-Box Neural Networks Explainable through Rule-set Evolution</div>
+<div class="meta-line">Authors: Tapaswini Kodavanti, Hormoz Shahrzad, Risto Miikkulainen</div>
+<div class="meta-line">First: 2026-09-22T01:52:52+00:00 · Latest: 2026-10-12T02:11:46+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2609.26841v2">Abs</a> · <a href="https://arxiv.org/pdf/2609.26841v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">High-capacity neural network models have achieved state-of-the-art performance across diverse classification tasks, yet they frequently operate as black-box models, lacking the transparency necessary for critical decision-making. Such opacity creates a persistent trade-off between performance and explainability. This paper proposes a solution to address this gap: the NeuroRule knowledge distillation framework that results in explainable rule-sets from neural network models. NeuroRule adapts the EVOTER rule-set evolution infrastructure to treat neural networks as targets for the evolution process, distilling their performance into concise sets of propositional logic expressions. There are three primary contributions: (1) an evolutionary method for distilling black-box neural network models into explicit rule-set models; (2) a method for making rule sets more explainable by including a conciseness objective to evolution; and (3) a demonstration that the distillation is viable even without access to the original neural network training data. The paper thus establishes that black-box neural network models can be made explainable and therefore useful in real-world applications where trustworthiness is paramount.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">High-capacity neural network models have achieved state-of-the-art performance across diverse classification tasks, yet they frequently operate as black-box models, lacking the transparency necessary for critical decision-making.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Representational Difference Distillation</div>
+<div class="meta-line">Authors: Abdulkarim Mugisha, Divin Irakiza</div>
+<div class="meta-line">First: 2026-10-11T23:57:03+00:00 · Latest: 2026-10-11T23:57:03+00:00</div>
+<div class="meta-line">Comments: 9 pages, 7 figures, 1 table</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.15997v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.15997v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Knowledge distillation transfers representational knowledge from a large teacher network to a compact student. Existing relational and contrastive distillation methods treat all samples uniformly, spending equal gradient on well-matched and poorly-matched regions of the representation space alike. We propose Representational Difference Distillation (RDD), which diagnoses where teacher and student representations structurally disagree and concentrates the distillation signal on those regions. RDD uses two asymmetric affinity matrices that capture opposing directions of misalignment: one identifies samples the student incorrectly considers similar, the other identifies teacher relationships the student has yet to learn. These affinities determine which sample pairs the distillation loss aligns and how strongly it corrects each misaligned sample. On CIFAR-100 with resnet32x4 to resnet8x4, RDD reaches 75.58% test accuracy in our runs, on par with CRD (75.45%) and above KD and RKD. We additionally explore curriculum-based and sampling-based variants, finding that weighting the loss is more effective than filtering the data.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Knowledge distillation transfers representational knowledge from a large teacher network to a compact student.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Teaching MLP More Graph Information: A Three-stage Multitask Knowledge Distillation Framework</div>
+<div class="meta-line">Authors: Junxian Li, Bin Shi, Erfei Cui, Hua Wei, Qinghua Zheng</div>
+<div class="meta-line">First: 2024-03-02T03:29:11+00:00 · Latest: 2026-10-11T15:31:27+00:00</div>
+<div class="meta-line">Comments: 20 pages, with Appendix</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2403.01079v2">Abs</a> · <a href="https://arxiv.org/pdf/2403.01079v2">PDF</a> · <a href="https://github.com/lijunxian111/KMP">Code1</a> · <a href="https://huggingface.co/huggingface">Code2</a> · <a href="https://huggingface.co/docs/hub/spaces">Code3</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">We study the challenging problem for inference tasks on large-scale graph datasets of Graph Neural Networks: huge time and memory consumption, and try to overcome it by reducing reliance on graph structure. Even though distilling graph knowledge to student MLP is an excellent idea, it faces two major problems of positional information loss and low generalization. To solve the problems, we propose a new three-stage multitask distillation framework. In detail, we use Positional Encoding to capture positional information. Also, we introduce Neural Heat Kernels responsible for graph data processing in GNN and utilize hidden layer outputs matching for better performance of student MLP&#x27;s hidden layers. To the best of our knowledge, it is the first work to include hidden layer distillation for student MLP on graphs and to combine graph Positional Encoding with MLP. We test its performance and robustness with several settings and draw the conclusion that our work can outperform well with good stability. Code implementation is in https://github.com/lijunxian111/KMP.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">We study the challenging problem for inference tasks on large-scale graph datasets of Graph Neural Networks: huge time and memory consumption, and try to overcome it by reducing reliance on graph structure.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Radioactive Feedback: Tracing Models Trained by Label-Only LLM Supervision</div>
+<div class="meta-line">Authors: Yuejia Li, JunHeng Li, Hao Wu, Ke He, Mang Ye</div>
+<div class="meta-line">First: 2026-10-11T15:09:58+00:00 · Latest: 2026-10-11T15:09:58+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.15685v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.15685v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Conventional distillation transfers capability through teacher-generated demonstrations. LLM-as-a-Judge knowledge distillation offers a distinct and increasingly practical alternative. In the label-only variant studied here, the student generates every response and improves from scalar scores alone. Prior work shows that this non-demonstrative feedback can improve student capability, but it creates a fundamentally different provenance problem. No teacher-generated answer enters the student&#x27;s training set, so any evaluator-specific trace must pass through a low-bandwidth reward signal rather than copied text. Existing watermarks and distillation detectors do not cover this score-only channel. We introduce Radioactive Feedback, which encodes a registered pattern of behavioral preferences in the rewards themselves. The evaluator applies bounded pointwise adjustments to quality-qualified responses, allowing repeated optimization to transfer the pattern to a student trained by another party. Experiments on code and mathematics show that the registered preferences transfer through scores alone and across datasets, enabling black-box detection against a fixed reference pool.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Conventional distillation transfers capability through teacher-generated demonstrations.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">GA-SVD: Generation-aware Singular Value Decomposition for LLM Compression</div>
+<div class="meta-line">Authors: Shengkun Tang, Cong Zeng, Zongfang Liu, Dan Alistarh, Zhiqiang Shen</div>
+<div class="meta-line">First: 2026-10-11T06:53:27+00:00 · Latest: 2026-10-11T06:53:27+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.15398v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.15398v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Large language models (LLMs) demonstrate strong generalization across a broad range of reasoning and generation tasks, but their large parameter counts impose substantial memory and computation costs, hindering deployment in practical resource-constrained settings. One-shot low-rank compression is a promising solution since it reduces model size and inference cost effectively. However, existing SVD-based methods primarily target multiple-choice benchmarks and often fail to preserve performance on generation tasks. Moreover, their rank allocation strategies are typically heuristic. We propose GA-SVD, a generation-aware low-rank compression framework for LLMs. First, we introduce Generation-Aware Weight Whitening (GAWW), which leverages gradients from on-policy knowledge distillation to construct whitening transformations aligned with generative behavior. Second, we develop an evolutionary global rank allocation method that searches for effective layer-wise rank allocation under a given global compression ratio. Across extensive experiments on Mistral-7B, Qwen3 series, and Llama-3.3 models, evaluated on both multiple-choice and generative benchmarks, GA-SVD consistently outperforms existing SVD-based baselines and achieves state-of-the-art (SoTA) results. We further demonstrate scalability by applying our method to models with up to 70B parameters.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Large language models (LLMs) demonstrate strong generalization across a broad range of reasoning and generation tasks, but their large parameter counts impose substantial memory and computation costs, hindering deployment in practical resource-constrained settings.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">D$^{2}$-VPR: A Parameter-efficient Visual-foundation-model-based Visual Place Recognition Method via Knowledge Distillation and Deformable Aggregation</div>
+<div class="meta-line">Authors: Zheyuan Zhang, Jiwei Zhang, Boyu Zhou, Linzhimeng Duan, Hong Chen</div>
+<div class="meta-line">First: 2025-11-16T09:47:45+00:00 · Latest: 2026-10-10T14:51:13+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2511.12528v5">Abs</a> · <a href="https://arxiv.org/pdf/2511.12528v5">PDF</a> · <a href="https://github.com/tony19980810/D2VPR">Code1</a> · <a href="https://huggingface.co/huggingface">Code2</a> · <a href="https://huggingface.co/docs/hub/spaces">Code3</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Visual Place Recognition (VPR) aims to determine the geographic location of a query image by retrieving its most visually similar counterpart from a geo-tagged reference database. Recently, the emergence of the powerful visual foundation model, DINOv2, trained in a self-supervised manner on massive datasets, has significantly improved VPR performance. This improvement stems from DINOv2&#x27;s exceptional feature generalization capabilities but is often accompanied by increased model complexity and computational overhead that impede deployment on resource-constrained devices. To address this challenge, we propose $D^{2}$-VPR, a $D$istillation- and $D$eformable-based framework that retains the strong feature extraction capabilities of visual foundation models while significantly reducing model parameters and achieving a more favorable performance-efficiency trade-off. Specifically, first, we employ a two-stage training strategy that integrates knowledge distillation and fine-tuning. Additionally, we introduce a Distillation Recovery Module (DRM) to better align the feature spaces between the teacher and student models, thereby minimizing knowledge transfer losses to the greatest extent possible. Second, we design a Top-Down-attention-based Deformable Aggregator (TDDA) that leverages global semantic features to dynamically and adaptively adjust the Regions of Interest (ROI) used for aggregation, thereby improving adaptability to irregular structures. Extensive experiments demonstrate that our method achieves competitive performance compared to state-of-the-art approaches. Meanwhile, it reduces the parameter count by approximately 64.2% (compared to CricaVPR).Code is available at https://github.com/tony19980810/D2VPR.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Visual Place Recognition (VPR) aims to determine the geographic location of a query image by retrieving its most visually similar counterpart from a geo-tagged reference database.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Demystifying Hidden-State Recurrence: Switchable Latent Reasoning with On-Policy Reinforcement Learning</div>
+<div class="meta-line">Authors: Jiayu Yang, Chao Chen, Shengen Wu, Yinhong Liu, Yuxuan Fan, Lujundong Li, Songning Lai, Chengwei Qin, Zhijiang Guo</div>
+<div class="meta-line">Venue: EMNLP 2026</div>
+<div class="meta-line">First: 2026-06-11T09:33:40+00:00 · Latest: 2026-10-10T09:04:00+00:00</div>
+<div class="meta-line">Comments: Accepted to Findings of EMNLP 2026</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2606.13106v2">Abs</a> · <a href="https://arxiv.org/pdf/2606.13106v2">PDF</a> · <a href="https://github.com/LARK-AI-Lab/SWITCH">Code1</a> · <a href="https://huggingface.co/huggingface">Code2</a> · <a href="https://huggingface.co/docs/hub/spaces">Code3</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Latent chain-of-thought compresses reasoning through continuous hidden-state recurrence, but existing approaches are difficult to optimize with standard on-policy reinforcement learning (RL) and hard to analyze mechanistically. We introduce SWITCH, a switchable latent reasoning framework that addresses both challenges with two discrete boundary tokens: &lt;swi&gt; enters latent reasoning and &lt;/swi&gt; exits it. These discrete anchors make policy ratios well-defined for standard on-policy RL while providing natural intervention points for mechanistic analysis. We train SWITCH with a visible-to-latent curriculum and Switch-GRPO, which propagates gradients through recurrent latent computation. SWITCH consistently outperforms prior hidden-state-recurrence approaches at similar model scales. Mechanistic analysis reveals that (i) &lt;swi&gt; implements a localized, learned switching policy rather than a stylistic artifact; (ii) the latent step performs problem-specific, causally important computation; and (iii) this computation is concentrated in a single hidden-state transition upon entering latent mode. Together, these results show that hidden-state-recurrence latent reasoning can be both effectively optimized with on-policy RL and directly analyzed mechanistically, enabling us to study how RL reshapes internal reasoning computation. Code is available at https://github.com/LARK-AI-Lab/SWITCH.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Latent chain-of-thought compresses reasoning through continuous hidden-state recurrence, but existing approaches are difficult to optimize with standard on-policy reinforcement learning (RL) and hard to analyze mechanistically.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Fine-Tuning Strategy, Not Just Data: A Statistically Rigorous Audit of Gender and Stereotypical Bias in Embedding Models for HR Recommendation Systems</div>
+<div class="meta-line">Authors: Ekta Yadav</div>
+<div class="meta-line">First: 2026-10-10T04:57:38+00:00 · Latest: 2026-10-10T04:57:38+00:00</div>
+<div class="meta-line">Comments: 8 pages, 4 figures, 5 tables. Accepted at RecSys in HR &#x27;26 (The 6th Workshop on Recommender Systems for Human Resources)</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.14579v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.14579v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Embedding models underpin modern job-candidate matching: resumes, job descriptions, and queries are encoded as dense vectors, and recommendations come from nearest-neighbor retrieval over that space. Any social bias in the embeddings therefore feeds directly into HR recommendations. We audit six multilingual sentence-embedding models (LaBSE- and E5-family, both public and custom fine-tuned) using Bias-in-Bios (occupational gender bias) and StereoSet (stereotypes across profession, race, gender, and religion). We treat statistical validity as a first-class concern: we identify a non-independence error in a naive significance test, where pooling non-independent pairwise similarities inflated a trivial 0.0046 mean difference to $p \approx 0$, and replace it with a profession-level paired Wilcoxon signed-rank test, individual-resampling bootstrap confidence intervals, and permutation tests for StereoSet. Under the corrected methodology, knowledge-distillation (KD) fine-tuning of E5-Base significantly increases measured bias on Bias-in-Bios ($Δ= -0.177$, $p &lt; 10^{-8}$; more negative means more bias), although this measure is sensitive to global embedding geometry. The KD result is corroborated by pro-stereotype patterns in the StereoSet profession category (uncorrected $p &lt; 0.05$). Binary-classification fine-tuning of the same base model shows no statistically distinguishable change ($p = 0.218$). Fine-tuning strategy is thus an actionable design lever for practitioners building HR recommenders. We also report which benchmark categories are underpowered, and note that two domain-adapted models could not be included in significance testing due to a software-access constraint, which limits our conclusions.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Embedding models underpin modern job-candidate matching: resumes, job descriptions, and queries are encoded as dense vectors, and recommendations come from nearest-neighbor retrieval over that space.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Reviving Stale Updates: Data-Free Knowledge Distillation for Asynchronous Federated Learning</div>
+<div class="meta-line">Authors: Baris Askin, Holger R. Roth, Zhenyu Sun, Carlee Joe-Wong, Gauri Joshi, Ziyue Xu</div>
+<div class="meta-line">Venue: NeurIPS 2026</div>
+<div class="meta-line">First: 2025-11-01T18:35:20+00:00 · Latest: 2026-10-09T22:37:22+00:00</div>
+<div class="meta-line">Comments: Accepted to NeurIPS 2026</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2511.00655v3">Abs</a> · <a href="https://arxiv.org/pdf/2511.00655v3">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Federated learning (FL) enables collaborative model training across distributed clients without sharing raw data, yet its scalability is limited by synchronization overhead. Asynchronous federated learning (AFL) alleviates this issue by allowing clients to communicate independently, thereby improving wall-clock efficiency in large-scale, hardware-heterogeneous environments. However, asynchrony introduces updates computed on outdated global models (staleness) that can destabilize optimization and hinder convergence. We propose FedRevive, an AFL framework that revives stale updates through data-free knowledge distillation (DFKD). FedRevive integrates parameter-space aggregation with a server-side DFKD process that transfers knowledge from stale client updates to the current global model without access to data. A meta-learned generator synthesizes pseudo-samples for multi-teacher distillation. A hybrid aggregation scheme combining raw with DFKD updates effectively mitigates staleness while retaining AFL scalability. Experiments on vision and text benchmarks show that FedRevive achieves faster training by up to 29.7% and higher final accuracy by up to 11.4 percentage points than baselines.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Federated learning (FL) enables collaborative model training across distributed clients without sharing raw data, yet its scalability is limited by synchronization overhead.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">CLIDD: Cross-Layer Independent Deformable Description for Efficient and Discriminative Local Feature Representation</div>
+<div class="meta-line">Authors: Haodi Yao, Fenghua He, Ning Hao, Yao Su</div>
+<div class="meta-line">First: 2026-01-14T07:03:01+00:00 · Latest: 2026-10-09T08:52:28+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2601.09230v2">Abs</a> · <a href="https://arxiv.org/pdf/2601.09230v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Robust local feature representations are essential for spatial intelligence tasks such as robot navigation and augmented reality. Establishing reliable correspondences requires descriptors that provide both high discriminative power and computational efficiency. To address this, we introduce Cross-Layer Independent Deformable Description (CLIDD), a method that achieves superior discriminability by sampling directly from independent feature hierarchies. This approach utilizes learnable offsets to capture fine-grained structural details across scales, without ever constructing a unified dense feature map, eliminating the memory and computation overhead of building a full-scale representation for a sparse sampling process. The per-keypoint per-layer offsets further break interpolation-induced correlation, preserving descriptor discriminability even at high keypoint densities. To ensure real-time performance, we implement a hardware-aware kernel fusion strategy that maximizes inference throughput. Furthermore, we develop a scalable framework that integrates lightweight architectures with a training protocol leveraging both metric learning and knowledge distillation. This scheme generates a wide spectrum of model variants optimized for diverse deployment constraints. Extensive evaluations demonstrate that our approach achieves superior matching accuracy and exceptional computational efficiency simultaneously. Furthermore, our high-performance configuration outperforms a broad range of current state-of-the-art methods while exceeding 200 FPS on edge devices. These results demonstrate that CLIDD delivers high-precision local feature matching with minimal computational overhead, providing a robust and scalable solution for real-time spatial intelligence tasks.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Robust local feature representations are essential for spatial intelligence tasks such as robot navigation and augmented reality.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">TernaryLLM: Ternarized Large Language Model</div>
+<div class="meta-line">Authors: Tianqi Chen, Zhe Li, Weixiang Xu, Zeyu Zhu, Dong Li, Lu Tian, Emad Barsoum, Peisong Wang, Jian Cheng</div>
+<div class="meta-line">Venue: Machine Intelligence Research (2026)</div>
+<div class="meta-line">First: 2024-06-11T11:40:12+00:00 · Latest: 2026-10-09T06:58:39+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2406.07177v2">Abs</a> · <a href="https://arxiv.org/pdf/2406.07177v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Large language models (LLMs) have achieved remarkable performance on Natural Language Processing (NLP) tasks, but they are hindered by high computational costs and memory requirements. Ternarization, an extreme form of quantization, offers a solution by reducing memory usage and enabling energy-efficient floating-point additions. However, applying ternarization to LLMs faces challenges stemming from outliers in both weights and activations. In this work, observing asymmetric outliers and non-zero means in weights, we introduce Dual Learnable Ternarization (DLT), which enables both scales and shifts to be learnable. We also propose Outlier-Friendly Feature Knowledge Distillation (OFF) to recover the information lost in extremely low-bit quantization. The proposed OFF can incorporate semantic information and is insensitive to outliers. At the core of OFF is maximizing the mutual information between features in ternarized and floating-point models using cosine similarity. Extensive experiments demonstrate that our TernaryLLM surpasses previous low-bit quantization methods on the standard text generation and zero-shot benchmarks for different LLM families. Specifically, for one of the most powerful open-source models, LLaMA-3, our approach (W1.58A16) outperforms the previous state-of-the-art method (W2A16) by 5.8 in terms of perplexity on C4 and by 8.2% in terms of average accuracy on zero-shot tasks.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Large language models (LLMs) have achieved remarkable performance on Natural Language Processing (NLP) tasks, but they are hindered by high computational costs and memory requirements.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Dynamics as Code: On Model Compression via Dynamic System</div>
+<div class="meta-line">Authors: Fan Gao, Wei Su, Juntong Fan, Renfeng Peng, Hongyu Liu, Jinqiao Duan, Feng-Lei Fan</div>
+<div class="meta-line">First: 2026-10-08T02:39:24+00:00 · Latest: 2026-10-09T04:15:37+00:00</div>
+<div class="meta-line">Comments: 17 pages including supplementary material</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.11115v2">Abs</a> · <a href="https://arxiv.org/pdf/2610.11115v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">The escalating size of pretrained neural networks has rendered model compression a prerequisite for deployment under stringent memory and compute constraints. With the irrational winding as an example, earlier work introduced a dynamic system (DS) paradigm that reconceptualizes compression as compact weight representation: high-dimensional parameters are encoded by the index of a trajectory produced by a dynamic system, from which the vector is recovered during decompression. This mechanism is fundamentally distinct from pruning, quantization, knowledge distillation, and low-rank decomposition. Along this direction, we prove that under a Diophantine condition, a finite trajectory of \(M = O(ε^{-(d+ν)})\) states in the irrational winding constitutes an \(ε\)-net over the \(d\)-dimensional weight space, thereby linking state resolution, decompression error, and compression ratio in a predictable manner. Furthermore, we propose a generalized DS-based model compression framework by unifying four DS families---space-filling curves (Hilbert, Peano, Morton/Z-order, Snake), chaotic systems (Lorenz), congruential and pseudo-random generators (LCG, PCG), and low-discrepancy sequences (Halton). Also, we introduce the KD-tree and coordinate-template acceleration to scale to large models as well as outlier identification to control the error. Experiments on ResNet-18 and Qwen2.5-1.5B/Qwen1.5-7B validate that DS-based compression achieves competitive compression ratios without post-hoc retraining, with controllable decompression error and flexible state-space design, establishing it as a principled and practical compression approach.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">The escalating size of pretrained neural networks has rendered model compression a prerequisite for deployment under stringent memory and compute constraints.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">COFFEQA: Counterfactual-Guided Few-Shot Distillation for LLM Question Answering</div>
+<div class="meta-line">Authors: Kavinda Kehelella, Sanghamitra Dutta</div>
+<div class="meta-line">First: 2026-10-09T00:41:00+00:00 · Latest: 2026-10-09T00:41:00+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.12837v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.12837v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Knowledge distillation aims to train a smaller student model to mimic a larger teacher model for resource-constrained environments. However, the process of distillation is typically data-intensive and computationally expensive, particularly for generative tasks. Few-shot distillation offers an alternative by transferring teacher knowledge using limited training samples. However, we observe that few-shot distillation performance is heavily dependent on the choice of these training samples. In fact, we demonstrate that using more uncertain samples near the teacher&#x27;s decision boundary can significantly deteriorate distillation performance. Motivated by this observation, we propose Counterfactual-guided Few-shot Distillation in Open-book Question Answering (COFFEQA), a novel strategy that aptly uses counterfactuals to provide additional supervision around challenging factual samples. In the generative QA setting, we define a counterfactual as a minimally modified context that induces the teacher to change its response to an alternative answer. We provide geometric insights on how factual-counterfactual pairs can constrain the deviation between the teacher&#x27;s and student&#x27;s decision boundaries. We further introduce a new metric, Context Following Difficulty (CFD) that further validates counterfactuals prior to distillation based on agreement with the intended alternative answer and dependence on the modified context. COFFEQA uses CFD-validated factual-counterfactual pairs for few-shot distillation. Experiments across five in-domain and three out-of-domain QA benchmarks using T5 and Qwen2.5 families show that COFFEQA outperforms factual-only distillation baselines under the same few-shot budget. For instance, on TriviaQA, COFFEQA improves over the factual-only baseline by 8.77 average EM points and 9.98 average F1 points under the T5 setting with 32 few-shot pairs.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Knowledge distillation aims to train a smaller student model to mimic a larger teacher model for resource-constrained environments.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Universal Textual Teaching for LLMs</div>
+<div class="meta-line">Authors: Zhanyi Lu, Huan Wang</div>
+<div class="meta-line">First: 2026-10-08T15:11:16+00:00 · Latest: 2026-10-08T15:11:16+00:00</div>
+<div class="meta-line">Comments: Webpage: https://alexlu99.github.io/UTT/</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.12114v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.12114v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a> · <a href="https://alexlu99.github.io/UTT/">Project1</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Knowledge distillation (KD) transfers knowledge from stronger Teacher models to weaker Student models, but most methods require training the Student parameters, thereby binding the distilled knowledge to a specific architecture and checkpoint. This implicit representation is difficult to interpret or reuse across models and limits KD for API-only or costly-to-train models. This paper studies knowledge transfer for large language models (LLMs). We introduce Universal Textual Teaching (UTT), a parameter-update-free framework that distills observed Teacher-Student knowledge gaps into a textual, interpretable, and reusable natural-language artifact called Primer. Specifically, UTT first identifies representative gap cases through paired evaluations, and iteratively updates the Primer via multi-role interactions: the Student attempts each task, the Prompter turns evaluation feedback into a teaching instruction, the Teacher provides a targeted demonstration, and the Synthesizer consolidates validated lessons. Empirically, on the challenging math (Omni-MATH-2) and code generation (KernelBench) tasks, extensive results confirm the effectiveness of the method: UTT remarkably raises the Student&#x27;s accuracy from 9.4% to 48.6% and Fast1 accuracy from 9% to 35% on KernelBench, while increasing mathematical reasoning accuracy from 27.6% to 51.7%. UTT also performs better than representative prompt engineering and parameter-based KD methods. Of note, UTT is shown to be generalizable across different Teachers and Students: a Primer synthesized for one Teacher-Student pair can generalize to other Students that do not participate in the synthesis.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Knowledge distillation (KD) transfers knowledge from stronger Teacher models to weaker Student models, but most methods require training the Student parameters, thereby binding the distilled knowledge to a specific architecture and checkpoint.</div>
+</details>
+</div></div>
+    <details style="margin-top:16px" class="detail"><summary>History</summary>
+      <div class="history-list"><a href="archive/20261019_0514.html">20261019_0514</a>
+<a href="archive/20261018_0512.html">20261018_0512</a>
+<a href="archive/20261017_0553.html">20261017_0553</a>
+<a href="archive/20261016_0555.html">20261016_0555</a>
+<a href="archive/20261015_0601.html">20261015_0601</a>
+<a href="archive/20261014_0712.html">20261014_0712</a>
+<a href="archive/20261013_0906.html">20261013_0906</a>
+<a href="archive/20261012_0639.html">20261012_0639</a>
+<a href="archive/20261011_0611.html">20261011_0611</a>
+<a href="archive/20261010_0700.html">20261010_0700</a>
+<a href="archive/20261009_0738.html">20261009_0738</a>
+<a href="archive/20261008_0727.html">20261008_0727</a>
+<a href="archive/20261007_0653.html">20261007_0653</a>
+<a href="archive/20261006_0833.html">20261006_0833</a>
+<a href="archive/20261005_0611.html">20261005_0611</a>
+<a href="archive/20261004_0558.html">20261004_0558</a>
+<a href="archive/20261003_0649.html">20261003_0649</a>
+<a href="archive/20261002_0659.html">20261002_0659</a>
+<a href="archive/20261001_0647.html">20261001_0647</a>
+<a href="archive/20260930_0649.html">20260930_0649</a>
+<a href="archive/20260929_0738.html">20260929_0738</a>
+<a href="archive/20260928_0550.html">20260928_0550</a>
+<a href="archive/20260927_0546.html">20260927_0546</a>
+<a href="archive/20260926_0557.html">20260926_0557</a>
+<a href="archive/20260925_0557.html">20260925_0557</a>
+<a href="archive/20260924_0559.html">20260924_0559</a>
+<a href="archive/20260923_0546.html">20260923_0546</a>
+<a href="archive/20260922_0625.html">20260922_0625</a>
+<a href="archive/20260921_0509.html">20260921_0509</a>
+<a href="archive/20260920_0514.html">20260920_0514</a>
+<a href="archive/20260919_0524.html">20260919_0524</a>
+<a href="archive/20260918_0553.html">20260918_0553</a>
+<a href="archive/20260916_0554.html">20260916_0554</a>
+<a href="archive/20260913_0510.html">20260913_0510</a>
+<a href="archive/20260912_0532.html">20260912_0532</a>
+<a href="archive/20260911_0521.html">20260911_0521</a>
+<a href="archive/20260910_0529.html">20260910_0529</a>
+<a href="archive/20260909_0533.html">20260909_0533</a>
+<a href="archive/20260908_0553.html">20260908_0553</a>
+<a href="archive/20260907_0501.html">20260907_0501</a>
+<a href="archive/20260906_0455.html">20260906_0455</a>
+<a href="archive/20260905_0512.html">20260905_0512</a>
+<a href="archive/20260904_0534.html">20260904_0534</a>
+<a href="archive/20260903_0531.html">20260903_0531</a>
+<a href="archive/20260902_0534.html">20260902_0534</a>
+<a href="archive/20260901_0706.html">20260901_0706</a>
+<a href="archive/20260831_0550.html">20260831_0550</a>
+<a href="archive/20260830_0530.html">20260830_0530</a>
+<a href="archive/20260829_0959.html">20260829_0959</a>
+<a href="archive/20260828_1025.html">20260828_1025</a>
+<a href="archive/20260827_0535.html">20260827_0535</a>
+<a href="archive/20260826_0327.html">20260826_0327</a>
+<a href="archive/20260825_0325.html">20260825_0325</a>
+<a href="archive/20260824_0319.html">20260824_0319</a>
+<a href="archive/20260823_0319.html">20260823_0319</a>
+<a href="archive/20260822_0322.html">20260822_0322</a>
+<a href="archive/20260821_0327.html">20260821_0327</a>
+<a href="archive/20260820_0321.html">20260820_0321</a>
+<a href="archive/20260819_0325.html">20260819_0325</a>
+<a href="archive/20260818_0323.html">20260818_0323</a>
+<a href="archive/20260817_0318.html">20260817_0318</a>
+<a href="archive/20260816_0318.html">20260816_0318</a>
+<a href="archive/20260815_0345.html">20260815_0345</a>
+<a href="archive/20260814_0355.html">20260814_0355</a>
+<a href="archive/20260813_0400.html">20260813_0400</a>
+<a href="archive/20260812_0359.html">20260812_0359</a>
+<a href="archive/20260811_0352.html">20260811_0352</a>
+<a href="archive/20260810_0329.html">20260810_0329</a>
+<a href="archive/20260809_0325.html">20260809_0325</a>
+<a href="archive/20260808_0354.html">20260808_0354</a>
+<a href="archive/20260807_0839.html">20260807_0839</a>
+<a href="archive/20260806_0423.html">20260806_0423</a>
+<a href="archive/20260805_0422.html">20260805_0422</a>
+<a href="archive/20260804_0424.html">20260804_0424</a>
+<a href="archive/20260803_0409.html">20260803_0409</a>
+<a href="archive/20260802_0408.html">20260802_0408</a>
+<a href="archive/20260801_0419.html">20260801_0419</a>
+<a href="archive/20260731_0414.html">20260731_0414</a>
+<a href="archive/20260730_0410.html">20260730_0410</a>
+<a href="archive/20260729_0414.html">20260729_0414</a>
+<a href="archive/20260728_0419.html">20260728_0419</a>
+<a href="archive/20260727_0412.html">20260727_0412</a>
+<a href="archive/20260726_0409.html">20260726_0409</a>
+<a href="archive/20260725_0417.html">20260725_0417</a>
+<a href="archive/20260724_0410.html">20260724_0410</a>
+<a href="archive/20260723_0410.html">20260723_0410</a>
+<a href="archive/20260722_0418.html">20260722_0418</a>
+<a href="archive/20260721_0418.html">20260721_0418</a>
+<a href="archive/20260720_0406.html">20260720_0406</a>
+<a href="archive/20260719_0403.html">20260719_0403</a>
+<a href="archive/20260718_0403.html">20260718_0403</a>
+<a href="archive/20260717_0359.html">20260717_0359</a>
+<a href="archive/20260716_0405.html">20260716_0405</a>
+<a href="archive/20260715_0408.html">20260715_0408</a>
+<a href="archive/20260714_0410.html">20260714_0410</a>
+<a href="archive/20260713_0405.html">20260713_0405</a>
+<a href="archive/20260712_0404.html">20260712_0404</a>
+<a href="archive/20260711_0420.html">20260711_0420</a>
+<a href="archive/20260710_0444.html">20260710_0444</a>
+<a href="archive/20260709_0420.html">20260709_0420</a>
+<a href="archive/20260708_0448.html">20260708_0448</a>
+<a href="archive/20260707_0450.html">20260707_0450</a>
+<a href="archive/20260706_0411.html">20260706_0411</a>
+<a href="archive/20260705_0407.html">20260705_0407</a>
+<a href="archive/20260704_0414.html">20260704_0414</a>
+<a href="archive/20260703_0417.html">20260703_0417</a>
+<a href="archive/20260702_0448.html">20260702_0448</a>
+<a href="archive/20260701_0456.html">20260701_0456</a>
+<a href="archive/20260630_0449.html">20260630_0449</a>
+<a href="archive/20260629_0411.html">20260629_0411</a>
+<a href="archive/20260627_0444.html">20260627_0444</a>
+<a href="archive/20260626_0454.html">20260626_0454</a>
+<a href="archive/20260625_0445.html">20260625_0445</a>
+<a href="archive/20260624_0500.html">20260624_0500</a>
+<a href="archive/20260623_0531.html">20260623_0531</a>
+<a href="archive/20260622_0423.html">20260622_0423</a>
+<a href="archive/20260621_0415.html">20260621_0415</a>
+<a href="archive/20260620_0426.html">20260620_0426</a>
+<a href="archive/20260619_0523.html">20260619_0523</a>
+<a href="archive/20260618_0507.html">20260618_0507</a>
+<a href="archive/20260617_0541.html">20260617_0541</a>
+<a href="archive/20260616_0542.html">20260616_0542</a>
+<a href="archive/20260615_0417.html">20260615_0417</a>
+<a href="archive/20260614_0414.html">20260614_0414</a>
+<a href="archive/20260613_0502.html">20260613_0502</a>
+<a href="archive/20260612_0518.html">20260612_0518</a>
+<a href="archive/20260611_1330.html">20260611_1330</a>
+<a href="archive/20260611_0528.html">20260611_0528</a>
+<a href="archive/20260610_0504.html">20260610_0504</a>
+<a href="archive/20260609_0514.html">20260609_0514</a>
+<a href="archive/20260608_0421.html">20260608_0421</a>
+<a href="archive/20260607_0418.html">20260607_0418</a>
+<a href="archive/20260606_0451.html">20260606_0451</a>
+<a href="archive/20260604_0557.html">20260604_0557</a>
+<a href="archive/20260603_0556.html">20260603_0556</a>
+<a href="archive/20260602_0615.html">20260602_0615</a>
+<a href="archive/20260601_0419.html">20260601_0419</a>
+<a href="archive/20260531_0414.html">20260531_0414</a>
+<a href="archive/20260530_0512.html">20260530_0512</a>
+<a href="archive/20260529_0515.html">20260529_0515</a>
+<a href="archive/20260527_0459.html">20260527_0459</a>
+<a href="archive/20260526_0426.html">20260526_0426</a>
+<a href="archive/20260525_0417.html">20260525_0417</a>
+<a href="archive/20260524_0411.html">20260524_0411</a>
+<a href="archive/20260523_0445.html">20260523_0445</a>
+<a href="archive/20260522_0454.html">20260522_0454</a>
+<a href="archive/20260521_0508.html">20260521_0508</a>
+<a href="archive/20260520_0449.html">20260520_0449</a>
+<a href="archive/20260519_0442.html">20260519_0442</a>
+<a href="archive/20260518_0409.html">20260518_0409</a>
+<a href="archive/20260517_0425.html">20260517_0425</a>
+<a href="archive/20260516_0436.html">20260516_0436</a>
+<a href="archive/20260515_0457.html">20260515_0457</a>
+<a href="archive/20260514_0507.html">20260514_0507</a>
+<a href="archive/20260513_0503.html">20260513_0503</a>
+<a href="archive/20260512_0505.html">20260512_0505</a>
+<a href="archive/20260511_0418.html">20260511_0418</a>
+<a href="archive/20260510_0414.html">20260510_0414</a>
+<a href="archive/20260509_0426.html">20260509_0426</a>
+<a href="archive/20260508_0435.html">20260508_0435</a>
+<a href="archive/20260507_0454.html">20260507_0454</a>
+<a href="archive/20260506_0427.html">20260506_0427</a>
+<a href="archive/20260505_0436.html">20260505_0436</a>
+<a href="archive/20260504_0410.html">20260504_0410</a>
+<a href="archive/20260503_0414.html">20260503_0414</a>
+<a href="archive/20260502_0426.html">20260502_0426</a>
+<a href="archive/20260501_0429.html">20260501_0429</a>
+<a href="archive/20260430_0430.html">20260430_0430</a>
+<a href="archive/20260429_0437.html">20260429_0437</a>
+<a href="archive/20260428_0429.html">20260428_0429</a>
+<a href="archive/20260427_0405.html">20260427_0405</a>
+<a href="archive/20260426_0404.html">20260426_0404</a>
+<a href="archive/20260425_0410.html">20260425_0410</a>
+<a href="archive/20260424_0430.html">20260424_0430</a>
+<a href="archive/20260423_0426.html">20260423_0426</a>
+<a href="archive/20260422_0424.html">20260422_0424</a>
+<a href="archive/20260421_0418.html">20260421_0418</a>
+<a href="archive/20260420_0359.html">20260420_0359</a>
+<a href="archive/20260419_0358.html">20260419_0358</a>
+<a href="archive/20260418_0415.html">20260418_0415</a>
+<a href="archive/20260417_0421.html">20260417_0421</a>
+<a href="archive/20260416_0425.html">20260416_0425</a>
+<a href="archive/20260415_0426.html">20260415_0426</a>
+<a href="archive/20260414_0423.html">20260414_0423</a>
+<a href="archive/20260413_0352.html">20260413_0352</a>
+<a href="archive/20260412_0347.html">20260412_0347</a>
+<a href="archive/20260411_0356.html">20260411_0356</a>
+<a href="archive/20260410_0412.html">20260410_0412</a>
+<a href="archive/20260409_0411.html">20260409_0411</a>
+<a href="archive/20260407_0404.html">20260407_0404</a>
+<a href="archive/20260406_0347.html">20260406_0347</a>
+<a href="archive/20260405_0344.html">20260405_0344</a>
+<a href="archive/20260404_0350.html">20260404_0350</a>
+<a href="archive/20260403_0400.html">20260403_0400</a>
+<a href="archive/20260401_0408.html">20260401_0408</a>
+<a href="archive/20260331_0407.html">20260331_0407</a>
+<a href="archive/20260329_0347.html">20260329_0347</a>
+<a href="archive/20260328_0350.html">20260328_0350</a>
+<a href="archive/20260326_0357.html">20260326_0357</a>
+<a href="archive/20260325_0405.html">20260325_0405</a>
+<a href="archive/20260324_0400.html">20260324_0400</a>
+<a href="archive/20260323_0342.html">20260323_0342</a>
+<a href="archive/20260322_0340.html">20260322_0340</a>
+<a href="archive/20260321_0347.html">20260321_0347</a>
+<a href="archive/20260320_0356.html">20260320_0356</a>
+<a href="archive/20260319_0358.html">20260319_0358</a>
+<a href="archive/20260318_0405.html">20260318_0405</a>
+<a href="archive/20260317_0401.html">20260317_0401</a>
+<a href="archive/20260316_0343.html">20260316_0343</a>
+<a href="archive/20260315_0341.html">20260315_0341</a>
+<a href="archive/20260314_0344.html">20260314_0344</a>
+<a href="archive/20260313_0352.html">20260313_0352</a>
+<a href="archive/20260312_0352.html">20260312_0352</a>
+<a href="archive/20260311_0347.html">20260311_0347</a>
+<a href="archive/20260310_0350.html">20260310_0350</a>
+<a href="archive/20260309_0338.html">20260309_0338</a>
+<a href="archive/20260308_0337.html">20260308_0337</a>
+<a href="archive/20260307_0347.html">20260307_0347</a>
+<a href="archive/20260306_0402.html">20260306_0402</a>
+<a href="archive/20260305_0348.html">20260305_0348</a>
+<a href="archive/20260304_0348.html">20260304_0348</a>
+<a href="archive/20260303_0348.html">20260303_0348</a>
+<a href="archive/20260302_0336.html">20260302_0336</a>
+<a href="archive/20260301_0339.html">20260301_0339</a>
+<a href="archive/20260228_0348.html">20260228_0348</a>
+<a href="archive/20260227_0354.html">20260227_0354</a>
+<a href="archive/20260226_0402.html">20260226_0402</a>
+<a href="archive/20260225_0404.html">20260225_0404</a>
+<a href="archive/20260224_0406.html">20260224_0406</a>
+<a href="archive/20260223_0338.html">20260223_0338</a>
+<a href="archive/20260222_0339.html">20260222_0339</a>
+<a href="archive/20260221_0345.html">20260221_0345</a>
+<a href="archive/20260220_0348.html">20260220_0348</a>
+<a href="archive/20260219_0358.html">20260219_0358</a>
+<a href="archive/20260218_0358.html">20260218_0358</a>
+<a href="archive/20260217_0343.html">20260217_0343</a>
+<a href="archive/20260216_0339.html">20260216_0339</a>
+<a href="archive/20260215_0338.html">20260215_0338</a>
+<a href="archive/20260213_0401.html">20260213_0401</a>
+<a href="archive/20260212_0404.html">20260212_0404</a>
+<a href="archive/20260210_0409.html">20260210_0409</a>
+<a href="archive/20260208_0339.html">20260208_0339</a>
+<a href="archive/20260207_0349.html">20260207_0349</a>
+<a href="archive/20260206_0347.html">20260206_0347</a>
+<a href="archive/20260205_0346.html">20260205_0346</a>
+<a href="archive/20260204_0354.html">20260204_0354</a>
+<a href="archive/20260202_0337.html">20260202_0337</a>
+<a href="archive/20260201_0333.html">20260201_0333</a>
+<a href="archive/20260131_0345.html">20260131_0345</a>
+<a href="archive/20260130_0341.html">20260130_0341</a>
+<a href="archive/20260129_0344.html">20260129_0344</a>
+<a href="archive/20260128_0341.html">20260128_0341</a>
+<a href="archive/20260127_0338.html">20260127_0338</a>
+<a href="archive/20260126_0330.html">20260126_0330</a>
+<a href="archive/20260125_0329.html">20260125_0329</a>
+<a href="archive/20260124_0337.html">20260124_0337</a>
+<a href="archive/20260123_0337.html">20260123_0337</a>
+<a href="archive/20260122_0343.html">20260122_0343</a>
+<a href="archive/20260121_0424.html">20260121_0424</a>
+<a href="archive/20260119_0329.html">20260119_0329</a>
+<a href="archive/20260118_0327.html">20260118_0327</a>
+<a href="archive/20260117_0332.html">20260117_0332</a>
+<a href="archive/20260116_0339.html">20260116_0339</a>
+<a href="archive/20260115_0334.html">20260115_0334</a>
+<a href="archive/20260114_0333.html">20260114_0333</a>
+<a href="archive/20260113_0334.html">20260113_0334</a>
+<a href="archive/20260112_0331.html">20260112_0331</a>
+<a href="archive/20260111_0329.html">20260111_0329</a>
+<a href="archive/20260110_0333.html">20260110_0333</a>
+<a href="archive/20260109_0334.html">20260109_0334</a>
+<a href="archive/20260108_0335.html">20260108_0335</a>
+<a href="archive/20260107_0330.html">20260107_0330</a>
+<a href="archive/20260106_0336.html">20260106_0336</a>
+<a href="archive/20260105_0328.html">20260105_0328</a>
+<a href="archive/20260104_0328.html">20260104_0328</a>
+<a href="archive/20260103_0325.html">20260103_0325</a>
+<a href="archive/20260102_0339.html">20260102_0339</a>
+<a href="archive/20260101_0329.html">20260101_0329</a>
+<a href="archive/20251231_0333.html">20251231_0333</a>
+<a href="archive/20251230_0332.html">20251230_0332</a>
+<a href="archive/20251229_0329.html">20251229_0329</a>
+<a href="archive/20251228_0332.html">20251228_0332</a>
+<a href="archive/20251227_0329.html">20251227_0329</a>
+<a href="archive/20251226_0330.html">20251226_0330</a>
+<a href="archive/20251225_0329.html">20251225_0329</a>
+<a href="archive/20251224_0331.html">20251224_0331</a>
+<a href="archive/20251223_0332.html">20251223_0332</a>
+<a href="archive/20251222_0328.html">20251222_0328</a>
+<a href="archive/20251221_0329.html">20251221_0329</a>
+<a href="archive/20251220_0330.html">20251220_0330</a>
+<a href="archive/20251219_0330.html">20251219_0330</a>
+<a href="archive/20251218_0345.html">20251218_0345</a>
+<a href="archive/20251217_0332.html">20251217_0332</a>
+<a href="archive/20251216_0333.html">20251216_0333</a>
+<a href="archive/20251215_0333.html">20251215_0333</a>
+<a href="archive/20251214_0327.html">20251214_0327</a>
+<a href="archive/20251212_0333.html">20251212_0333</a>
+<a href="archive/20251211_0331.html">20251211_0331</a>
+<a href="archive/20251210_0332.html">20251210_0332</a>
+<a href="archive/20251209_0331.html">20251209_0331</a>
+<a href="archive/20251208_0328.html">20251208_0328</a>
+<a href="archive/20251207_0327.html">20251207_0327</a>
+<a href="archive/20251206_0330.html">20251206_0330</a>
+<a href="archive/20251205_0331.html">20251205_0331</a>
+<a href="archive/20251204_0331.html">20251204_0331</a>
+<a href="archive/20251203_0333.html">20251203_0333</a>
+<a href="archive/20251202_0335.html">20251202_0335</a>
+<a href="archive/20251201_0328.html">20251201_0328</a>
+<a href="archive/20251130_0327.html">20251130_0327</a>
+<a href="archive/20251129_0328.html">20251129_0328</a>
+<a href="archive/20251128_0327.html">20251128_0327</a>
+<a href="archive/20251127_0327.html">20251127_0327</a>
+<a href="archive/20251126_0329.html">20251126_0329</a>
+<a href="archive/20251125_0327.html">20251125_0327</a>
+<a href="archive/20251124_0327.html">20251124_0327</a>
+<a href="archive/20251123_0326.html">20251123_0326</a>
+<a href="archive/20251122_0328.html">20251122_0328</a>
+<a href="archive/20251121_0328.html">20251121_0328</a>
+<a href="archive/20251120_0329.html">20251120_0329</a>
+<a href="archive/20251119_0328.html">20251119_0328</a>
+<a href="archive/20251118_0328.html">20251118_0328</a>
+<a href="archive/20251117_0326.html">20251117_0326</a>
+<a href="archive/20251116_0325.html">20251116_0325</a>
+<a href="archive/20251115_0327.html">20251115_0327</a>
+<a href="archive/20251114_0328.html">20251114_0328</a>
+<a href="archive/20251113_0330.html">20251113_0330</a>
+<a href="archive/20251112_0329.html">20251112_0329</a>
+<a href="archive/20251111_0328.html">20251111_0328</a>
+<a href="archive/20251110_0325.html">20251110_0325</a>
+<a href="archive/20251109_0326.html">20251109_0326</a>
+<a href="archive/20251108_0328.html">20251108_0328</a>
+<a href="archive/20251107_0328.html">20251107_0328</a>
+<a href="archive/20251106_0329.html">20251106_0329</a>
+<a href="archive/20251105_0326.html">20251105_0326</a>
+<a href="archive/20251104_0327.html">20251104_0327</a>
+<a href="archive/20251103_0324.html">20251103_0324</a>
+<a href="archive/20251102_0326.html">20251102_0326</a>
+<a href="archive/20251101_0324.html">20251101_0324</a>
+<a href="archive/20251031_0328.html">20251031_0328</a>
+<a href="archive/20251030_0330.html">20251030_0330</a>
+<a href="archive/20251029_0329.html">20251029_0329</a>
+<a href="archive/20251028_0329.html">20251028_0329</a>
+<a href="archive/20251027_0322.html">20251027_0322</a>
+<a href="archive/20251026_0327.html">20251026_0327</a>
+<a href="archive/20251025_0331.html">20251025_0331</a>
+<a href="archive/20251024_0329.html">20251024_0329</a>
+<a href="archive/20251023_0329.html">20251023_0329</a>
+<a href="archive/20251022_0330.html">20251022_0330</a>
+<a href="archive/20251021_0331.html">20251021_0331</a>
+<a href="archive/20251020_0328.html">20251020_0328</a>
+<a href="archive/20251019_0321.html">20251019_0321</a>
+<a href="archive/20251018_0327.html">20251018_0327</a>
+<a href="archive/20251017_0320.html">20251017_0320</a>
+<a href="archive/20251016_0328.html">20251016_0328</a>
+<a href="archive/20251015_0328.html">20251015_0328</a>
+<a href="archive/20251014_0323.html">20251014_0323</a>
+<a href="archive/20251011_0328.html">20251011_0328</a>
+<a href="archive/20251010_0330.html">20251010_0330</a>
+<a href="archive/20251009_0321.html">20251009_0321</a>
+<a href="archive/20251008_0343.html">20251008_0343</a>
+<a href="archive/20251007_0353.html">20251007_0353</a>
+<a href="archive/20251006_0325.html">20251006_0325</a>
+<a href="archive/20251005_0350.html">20251005_0350</a>
+<a href="archive/20251004_0352.html">20251004_0352</a>
+<a href="archive/20251003_0352.html">20251003_0352</a>
+<a href="archive/20251002_0356.html">20251002_0356</a>
+<a href="archive/20251001_0321.html">20251001_0321</a>
+<a href="archive/20250925_0335.html">20250925_0335</a>
+<a href="archive/20250924_0350.html">20250924_0350</a>
+<a href="archive/20250923_0348.html">20250923_0348</a>
+<a href="archive/20250922_0346.html">20250922_0346</a>
+<a href="archive/20250921_0345.html">20250921_0345</a>
+<a href="archive/20250920_0342.html">20250920_0342</a>
+<a href="archive/20250919_0346.html">20250919_0346</a>
+<a href="archive/20250918_0342.html">20250918_0342</a>
+<a href="archive/20250917_0336.html">20250917_0336</a>
+<a href="archive/20250916_0333.html">20250916_0333</a>
+<a href="archive/20250915_0333.html">20250915_0333</a>
+<a href="archive/20250914_0328.html">20250914_0328</a>
+<a href="archive/20250913_0322.html">20250913_0322</a>
+<a href="archive/20250912_0335.html">20250912_0335</a>
+<a href="archive/20250911_0337.html">20250911_0337</a>
+<a href="archive/20250910_0338.html">20250910_0338</a>
+<a href="archive/20250909_0341.html">20250909_0341</a>
+<a href="archive/20250908_0342.html">20250908_0342</a>
+<a href="archive/20250907_0333.html">20250907_0333</a>
+<a href="archive/20250906_0350.html">20250906_0350</a>
+<a href="archive/20250905_0319.html">20250905_0319</a>
+<a href="archive/20250904_0323.html">20250904_0323</a>
+<a href="archive/20250903_0355.html">20250903_0355</a>
+<a href="archive/20250902_0325.html">20250902_0325</a>
+<a href="archive/20250901_0355.html">20250901_0355</a>
+<a href="archive/20250831_0355.html">20250831_0355</a>
+<a href="archive/20250830_0356.html">20250830_0356</a>
+<a href="archive/20250829_0355.html">20250829_0355</a>
+<a href="archive/20250828_0333.html">20250828_0333</a>
+<a href="archive/20250827_1654.html">20250827_1654</a>
+<a href="archive/20250827_1602.html">20250827_1602</a>
+<a href="archive/20250827_1557.html">20250827_1557</a>
+<a href="archive/20250827_0320.html">20250827_0320</a>
+<a href="archive/20250826_0320.html">20250826_0320</a>
+<a href="archive/20250825_1752.html">20250825_1752</a>
+<a href="archive/20250825_1709.html">20250825_1709</a>
+<a href="archive/20250825_1652.html">20250825_1652</a>
+<a href="archive/20250825_1647.html">20250825_1647</a>
+<a href="archive/20250825_1645.html">20250825_1645</a>
+<a href="archive/20250825_1631.html">20250825_1631</a>
+<a href="archive/20250825_1606.html">20250825_1606</a>
+<a href="archive/20250825_1559.html">20250825_1559</a>
+<a href="archive/20250825_1558.html">20250825_1558</a>
+<a href="archive/20250825_1556.html">20250825_1556</a>
+<a href="archive/20250825_1531.html">20250825_1531</a>
+<a href="archive/20250825_1525.html">20250825_1525</a>
+<a href="archive/20250825_1516.html">20250825_1516</a>
+<a href="archive/20250825_1450.html">20250825_1450</a>
+<a href="archive/20250825_1444.html">20250825_1444</a>
+<a href="archive/20250825_1438.html">20250825_1438</a>
+<a href="archive/20250825_1414.html">20250825_1414</a>
+<a href="archive/20250825_1413.html">20250825_1413</a>
+<a href="archive/20250825_1410.html">20250825_1410</a>
+<a href="archive/20250825_1408.html">20250825_1408</a>
+<a href="archive/20250825_1405.html">20250825_1405</a>
+<a href="archive/20250825_1401.html">20250825_1401</a>
+<a href="archive/20250825_1355.html">20250825_1355</a>
+<a href="archive/20250825_1347.html">20250825_1347</a>
+<a href="archive/20250825_1345.html">20250825_1345</a>
+<a href="archive/20250825_1344.html">20250825_1344</a>
+<a href="archive/20250825_1343.html">20250825_1343</a>
+<a href="archive/20250825_1340.html">20250825_1340</a>
+<a href="archive/20250825_1339.html">20250825_1339</a>
+<a href="archive/20250825_1333.html">20250825_1333</a>
+<a href="archive/20250825_1323.html">20250825_1323</a>
+<a href="archive/20250825_1317.html">20250825_1317</a>
+<a href="archive/20250825_1243.html">20250825_1243</a>
+<a href="archive/20250824_0342.html">20250824_0342</a>
+<a href="archive/20250823_0343.html">20250823_0343</a>
+<a href="archive/20250823_0142.html">20250823_0142</a>
+<a href="archive/20250822_2331.html">20250822_2331</a>
+<a href="archive/20250822_2308.html">20250822_2308</a>
+<a href="archive/20250822_2258.html">20250822_2258</a>
+<a href="archive/20250822_2241.html">20250822_2241</a>
+<a href="archive/20250822_2228.html">20250822_2228</a>
+<a href="archive/20250822_2206.html">20250822_2206</a>
+<a href="archive/20250822_2147.html">20250822_2147</a>
+<a href="archive/20250822_2111.html">20250822_2111</a>
+<a href="archive/20250822_1259.html">20250822_1259</a>
+<a href="archive/20250822_1233.html">20250822_1233</a>
+<a href="archive/20250822_1229.html">20250822_1229</a>
+<a href="archive/20250822_1223.html">20250822_1223</a>
+<a href="archive/20250822_1210.html">20250822_1210</a>
+<a href="archive/20250822_1201.html">20250822_1201</a>
+<a href="archive/20250822_1111.html">20250822_1111</a>
+<a href="archive/20250822_1058.html">20250822_1058</a>
+<a href="archive/20250822_1052.html">20250822_1052</a>
+<a href="archive/20250822_1045.html">20250822_1045</a>
+<a href="archive/20250822_0657.html">20250822_0657</a>
+<a href="archive/20250822_0553.html">20250822_0553</a></div>
+    </details>
+    <div class="footer">Generated by arxiv-tracker</div>
+  </div>
+</body></html>
