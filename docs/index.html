@@ -74,12 +74,58 @@ summary{cursor:pointer;color:var(--acc)}
   <button class="btn" onclick="__expandAll(false)">Collapse All</button>
 </div>
 
-        <span class="badge">2026-10-21 06:01</span>
+        <span class="badge">2026-10-22 06:04</span>
       </div>
     </div>
     <div class="hr"></div>
     <div>Latest digest</div>
     <div class="row"><div class="card">
+<div class="title">LLaVA-CKD: Bottom-Up Cascaded Knowledge Distillation for Vision-Language Models</div>
+<div class="meta-line">Authors: Nikolaos Gkalelis, Vasileios Mezaris</div>
+<div class="meta-line">First: 2026-05-11T14:28:44+00:00 · Latest: 2026-10-20T11:01:38+00:00</div>
+<div class="meta-line">Comments: IEEE Access, vol.14, 2026</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2605.10641v2">Abs</a> · <a href="https://arxiv.org/pdf/2605.10641v2">PDF</a> · <a href="https://github.com/IDT-ITI/LLaVA-CKD">Code1</a> · <a href="https://huggingface.co/huggingface">Code2</a> · <a href="https://huggingface.co/docs/hub/spaces">Code3</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Large Vision-Language Models (VLMs) are successful in addressing a multitude of vision-language understanding tasks, such as Visual Question Answering (VQA), but their memory and compute requirements remain a concern for practical deployment. A promising class of techniques for mitigating this concern is Knowledge Distillation, where knowledge from a high-capacity Teacher network is transferred to a considerably smaller Student network. However, the capacity gap between the two networks is both a blessing and a curse: the smaller the Student network, the better its efficiency, and the stronger (typically, also larger) the Teacher, the more knowledge it carries; yet, beyond a point, the larger capacity gap between the two leads to worse knowledge transfer. To counter this effect, we propose a bottom-up cascaded knowledge distillation (CKD) framework. Instead of treating knowledge transfer as an activity involving one high-capacity Teacher (or an ensemble of such), inspired by human formal education systems, we introduce one (potentially, more) additional Teacher(s) of intermediate capacity that gradually bring the Student network to the next level, where the next (higher-capacity) Teacher can take over. We provide a theoretical analysis to motivate why progressive reduction of the Teacher-Student gap may improve distillation. We apply the proposed framework on models built upon the LLaVA methodology and evaluate the derived models on seven standard, publicly available VQA benchmarks, demonstrating competitive performance with recent compact VLMs. Source code for cascaded distillation and trained models are available at https://github.com/IDT-ITI/LLaVA-CKD.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Large Vision-Language Models (VLMs) are successful in addressing a multitude of vision-language understanding tasks, such as Visual Question Answering (VQA), but their memory and compute requirements remain a concern for practical deployment.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Unsupervised Head Network Personalization for Split Computing via Federated Learning</div>
+<div class="meta-line">Authors: Yutaro Horikawa, Takayuki Nishio</div>
+<div class="meta-line">First: 2026-10-20T09:57:52+00:00 · Latest: 2026-10-20T09:57:52+00:00</div>
+<div class="meta-line">Comments: 12 pages, 8 figures, 4 tables. This work has been submitted to the IEEE for possible publication</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.27952v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.27952v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Split Computing (SC) is a distributed inference method designed for balancing computational load and reducing latency by partitioning a neural network into head and tail networks and deploying them across both a mobile device and a server, respectively. Due to the limited bandwidth and computational power of mobile devices, the head network is often replaced with a neural network that requires lower computational and communication resources. However, it is challenging to prepare a sufficient quantity and quality of labeled data on the mobile device side for training the replacement head network. Furthermore, the data prepared by mobile users often contains sensitive privacy information, making data aggregation difficult. In this paper, we propose a data-efficient head network training method for SC. This method utilizes federated learning and knowledge distillation to train the head network using a small amount of non-IID and unlabeled data from mobile devices, ensuring that the training datasets are not exposed. Moreover, by introducing personalization, we enhance the accuracy to levels comparable to or exceeding those of existing methods. The experimental evaluations demonstrate that, despite data constraints imposed only on our method, it achieves accuracy comparable to the baselines. Furthermore, it significantly reduces the communication requirements by 95% on mobile devices, with only a 3-5 percentage point drop in accuracy from the original model.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Split Computing (SC) is a distributed inference method designed for balancing computational load and reducing latency by partitioning a neural network into head and tail networks and deploying them across both a mobile device and a server, respectively.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Can Native Safety Travel? Reusing Safety Pretraining Across Models via On-Policy Distillation</div>
+<div class="meta-line">Authors: Bingqi Shang, Yang Zhang, Yiwei Chen, Changsheng Wang, Shiyu Chang, Bingquan Shen, Sijia Liu</div>
+<div class="meta-line">First: 2026-10-20T03:13:04+00:00 · Latest: 2026-10-20T03:13:04+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.27555v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.27555v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Safety pretraining has emerged as a promising paradigm for embedding safety deeply into a model during pretraining, yielding robustness to subsequent fine-tuning that conventional safety post-training often lacks. We refer to this safety acquired during model pretraining as native safety. Yet native safety is expensive to acquire, confined to the model in which it was pretrained, and often accompanied by lower general utility. In this work, we rethink the practical value of safety-pretrained models and introduce, for the first time, the native safety reuse problem: Can native safety be transferred from a specialized, potentially smaller, safety-pretrained &quot;teacher&quot; to standard-pretrained &quot;students,&quot; enabling them to inherit its robustness while preserving their general utility? We show that native safety can &quot;travel&quot; through on-policy distillation. A standard-pretrained student generates responses to safety-pretraining prompts, while a small safety-pretrained teacher supervises the student&#x27;s token-level predictions along its own generated trajectories; cross-tokenizer alignment further enables transfer across model families. The resulting students exhibit substantially greater safety robustness than their safety-post-trained counterparts while retaining higher general utility than the teacher: subsequent fine-tuning raises the average attack success rate (ASR) of the 1.7B student by only 5.00%, compared with 11.58% for safety post-training, and its average utility of 48.20% far exceeds the aligned teacher&#x27;s 27.42%. Unlike conventional large-to-small knowledge distillation, our framework enables selective, small-to-large safety transfer: it reuses the robust safety expertise of a smaller pretrained teacher without inheriting its utility limitations. These findings establish native safety as a reusable model property rather than one permanently tied to the originally pretrained model.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Safety pretraining has emerged as a promising paradigm for embedding safety deeply into a model during pretraining, yielding robustness to subsequent fine-tuning that conventional safety post-training often lacks.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">COSMOS: Model-Agnostic Personalized Federated Learning with Clustered Server Models and Pseudo-Label-Only Communication</div>
+<div class="meta-line">Authors: Ben Rachmut, Luise Ge, Ning Zhang, William Yeoh, Yevgeniy Vorobeychik</div>
+<div class="meta-line">First: 2026-05-11T19:16:36+00:00 · Latest: 2026-10-19T18:56:19+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2605.11165v4">Abs</a> · <a href="https://arxiv.org/pdf/2605.11165v4">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Federated learning (FL) in heterogeneous environments remains challenging because client models often differ in both architecture and data distribution. While recent approaches attempt to address this challenge through client clustering and knowledge distillation, simultaneously handling architectural and statistical heterogeneity remains difficult. We introduce COSMOS, a model-agnostic framework that enables server-side personalization using only pseudo-label communication. Clients train local models and predict on the public data; the server clusters clients by prediction similarity, trains a cluster-specific model for each group using its own compute, and distills the resulting models back to clients. We provide the first theoretical analysis showing that distillation from the learned cluster models can yield exponential personalization risk contraction, going beyond the convergence-to-stationarity guarantees typically provided in model-agnostic FL. Experiments across benchmarks demonstrate that COSMOS consistently outperforms all model-agnostic FL baselines while remaining competitive with state-of-the-art personalized FL methods. More broadly, our results highlight personalized server-side learning with pseudo-labels as a promising paradigm for scalable and model-agnostic federated learning in highly heterogeneous environments.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Federated learning (FL) in heterogeneous environments remains challenging because client models often differ in both architecture and data distribution.</div>
+</details>
+</div>
+<div class="card">
 <div class="title">PDNet: Exploring Pruning and Distillation for Real-Time Worker Activity Recognition in Industrial Assembly</div>
 <div class="meta-line">Authors: Malek Baba, Thinesh Thiyakesan Ponbagavathi, Alina Roitberg</div>
 <div class="meta-line">Venue: Proceedings of the 21st International Conference on Computer Vision Theory and Applications (VISAPP 2026), Volume 3, pages 624-630</div>
@@ -387,54 +433,10 @@ summary{cursor:pointer;color:var(--acc)}
 <details class="detail"><summary>Summary / 总结</summary>
 <div class="mono">Multimodal large language models (MLLMs) have achieved strong performance on diverse vision-language tasks, but their computational demands limit deployment under constrained budgets, particularly on edge devices.</div>
 </details>
-</div>
-<div class="card">
-<div class="title">Efficient Multi-Granularity Knowledge Transfer for Radiology Report Generation</div>
-<div class="meta-line">Authors: Xubin Zhong, Zheyu Zhang, Wenjian Qin, Ning Wen</div>
-<div class="meta-line">First: 2026-10-08T06:09:28+00:00 · Latest: 2026-10-13T06:40:20+00:00</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.11303v2">Abs</a> · <a href="https://arxiv.org/pdf/2610.11303v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Radiology report generation can automatically generate clinical descriptions from X-ray images, thereby significantly improving the efficiency of radiologists. This task is challenging because it requires medical knowledge to accurately identify diseases and describe them in a professional manner. However, existing methods often overlook the importance of enhancing medical knowledge in describing pivotal areas, a capability that requires models to effectively extract and aggregate knowledge at multiple levels of granularity. Accordingly, we herein propose a novel and compact Efficient Multi-Granularity Knowledge Transfer (\textbf{EMGKT}) method to address the above issues. First, we encode global knowledge embeddings using a medical vision-language model, which provides contextual medical knowledge. Moreover, we devise a novel Fine-Grained Knowledge Distillation (FGKD) training task which efficiently extract fine-grained knowledge. Specifically, the FGKD training task contains teacher embeddings and student embeddings. Teacher embeddings are encoded using extra priors; while student embeddings are learned from the teacher embeddings through knowledge distillation. During inference, the student embeddings are used to enhance fine-grained knowledge while the teacher embeddings are discarded, resulting in negligible computational costs and no need for extra priors. Finally, we further develop a mixture of disease diagnosis expert classifiers to enhance knowledge extraction. The classifiers are initialized using disease embeddings and are modeled as different experts to address various granularity features. Notably, \textbf{EMGKT} can be efficiently applied to most existing methods. Extensive experiments are conducted on two widely-used public datasets and various baselines, which demonstrates the effectiveness and transferability of \textbf{EMGKT}.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Radiology report generation can automatically generate clinical descriptions from X-ray images, thereby significantly improving the efficiency of radiologists.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">DisaggKD: Efficient Knowledge Distillation through Teacher-Student Disaggregation and a Fused Loss</div>
-<div class="meta-line">Authors: Ruixuan Tu, Yuyang Dong</div>
-<div class="meta-line">First: 2026-10-13T03:17:08+00:00 · Latest: 2026-10-13T03:17:08+00:00</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.17644v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.17644v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Knowledge distillation (KD) frameworks place teacher and student on the same GPUs, so per-GPU memory limits the teachers that fit. DisaggKD separates them across nodes: teacher replicas stream hidden states to the student, a KD loss over row windows and vocabulary shards equals the full-vocabulary loss in exact arithmetic without forming the full-vocabulary logits, and a prefetch ring paces producer and trainer. Closed-form memory and traffic models locate the memory limits of each layout. On the Qwen3.5-35B-A3B to 9B pair, the disaggregated layout matches the LM loss of the colocated run with the same loss and is faster than that run; our fused loss also lets a colocated run train on as few nodes at faster speed, while the split is memory efficient when the student spans several nodes. On the larger pairs, colocated runs with a fused loss still run OOM where the split trains, because teacher weights and student states fill the budget.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Knowledge distillation (KD) frameworks place teacher and student on the same GPUs, so per-GPU memory limits the teachers that fit.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">NeuroRule: Making Black-Box Neural Networks Explainable through Rule-set Evolution</div>
-<div class="meta-line">Authors: Tapaswini Kodavanti, Hormoz Shahrzad, Risto Miikkulainen</div>
-<div class="meta-line">First: 2026-09-22T01:52:52+00:00 · Latest: 2026-10-12T02:11:46+00:00</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2609.26841v2">Abs</a> · <a href="https://arxiv.org/pdf/2609.26841v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">High-capacity neural network models have achieved state-of-the-art performance across diverse classification tasks, yet they frequently operate as black-box models, lacking the transparency necessary for critical decision-making. Such opacity creates a persistent trade-off between performance and explainability. This paper proposes a solution to address this gap: the NeuroRule knowledge distillation framework that results in explainable rule-sets from neural network models. NeuroRule adapts the EVOTER rule-set evolution infrastructure to treat neural networks as targets for the evolution process, distilling their performance into concise sets of propositional logic expressions. There are three primary contributions: (1) an evolutionary method for distilling black-box neural network models into explicit rule-set models; (2) a method for making rule sets more explainable by including a conciseness objective to evolution; and (3) a demonstration that the distillation is viable even without access to the original neural network training data. The paper thus establishes that black-box neural network models can be made explainable and therefore useful in real-world applications where trustworthiness is paramount.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">High-capacity neural network models have achieved state-of-the-art performance across diverse classification tasks, yet they frequently operate as black-box models, lacking the transparency necessary for critical decision-making.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">Representational Difference Distillation</div>
-<div class="meta-line">Authors: Abdulkarim Mugisha, Divin Irakiza</div>
-<div class="meta-line">First: 2026-10-11T23:57:03+00:00 · Latest: 2026-10-11T23:57:03+00:00</div>
-<div class="meta-line">Comments: 9 pages, 7 figures, 1 table</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.15997v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.15997v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Knowledge distillation transfers representational knowledge from a large teacher network to a compact student. Existing relational and contrastive distillation methods treat all samples uniformly, spending equal gradient on well-matched and poorly-matched regions of the representation space alike. We propose Representational Difference Distillation (RDD), which diagnoses where teacher and student representations structurally disagree and concentrates the distillation signal on those regions. RDD uses two asymmetric affinity matrices that capture opposing directions of misalignment: one identifies samples the student incorrectly considers similar, the other identifies teacher relationships the student has yet to learn. These affinities determine which sample pairs the distillation loss aligns and how strongly it corrects each misaligned sample. On CIFAR-100 with resnet32x4 to resnet8x4, RDD reaches 75.58% test accuracy in our runs, on par with CRD (75.45%) and above KD and RKD. We additionally explore curriculum-based and sampling-based variants, finding that weighting the loss is more effective than filtering the data.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Knowledge distillation transfers representational knowledge from a large teacher network to a compact student.</div>
-</details>
 </div></div>
     <details style="margin-top:16px" class="detail"><summary>History</summary>
-      <div class="history-list"><a href="archive/20261020_0646.html">20261020_0646</a>
+      <div class="history-list"><a href="archive/20261021_0601.html">20261021_0601</a>
+<a href="archive/20261020_0646.html">20261020_0646</a>
 <a href="archive/20261019_0514.html">20261019_0514</a>
 <a href="archive/20261018_0512.html">20261018_0512</a>
 <a href="archive/20261017_0553.html">20261017_0553</a>
