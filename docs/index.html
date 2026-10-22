@@ -74,12 +74,47 @@ summary{cursor:pointer;color:var(--acc)}
   <button class="btn" onclick="__expandAll(false)">Collapse All</button>
 </div>
 
-        <span class="badge">2026-10-22 06:04</span>
+        <span class="badge">2026-10-23 06:08</span>
       </div>
     </div>
     <div class="hr"></div>
     <div>Latest digest</div>
     <div class="row"><div class="card">
+<div class="title">How Far Can Foundation Models Be Distilled for Efficient Jet Tagging?</div>
+<div class="meta-line">Authors: Jay Agarwal, Siddharth Khare, Dhruv Kumar</div>
+<div class="meta-line">First: 2026-10-21T09:00:56+00:00 · Latest: 2026-10-21T09:00:56+00:00</div>
+<div class="meta-line">Comments: 34 pages, 16 figures, 23 tables. Code and model weights: https://github.com/JayAgarwal25/distilling-jet-taggers</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.29439v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.29439v1">PDF</a> · <a href="https://github.com/JayAgarwal25/distilling-jet-taggers">Code1</a> · <a href="https://huggingface.co/huggingface">Code2</a> · <a href="https://huggingface.co/docs/hub/spaces">Code3</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Jet tagging is one of the most important applications of machine learning at the Large Hadron Collider. Recent models build in more physics knowledge or rely on large-scale pretraining, but the experiments place strict limits on their inference cost. Knowledge distillation can transfer their performance to small students that are cheap to run. We ask which properties of a teacher help the student, how small a student can get and how close it can come to the state of the art. On a jet tagging benchmark, we distil six teachers that differ in architecture, symmetry and pretraining, including two foundation models, into five small students. Every teacher improves every student, and the gain depends mainly on the strength of the teacher. We then shrink our two strongest distilled students, Transformer and L-GATr-slim, in width and in depth. With 20 thousand parameters, a distilled L-GATr-slim outperforms every published jet tagger trained from scratch at a fraction of the inference cost of every teacher. Even with two thousand parameters, it matches ParT, a model with a thousand times as many parameters. We also study what the students learn from their teachers. Our benchmark of inference cost shows that students of the same size can differ by almost an order of magnitude in speed. We release the code and the weights of all trained models.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Jet tagging is one of the most important applications of machine learning at the Large Hadron Collider.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Two for One: Privileged Learning for Resource-Constrained Screening</div>
+<div class="meta-line">Authors: Lisa Y. W. Tang</div>
+<div class="meta-line">First: 2026-10-21T03:09:41+00:00 · Latest: 2026-10-21T03:09:41+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.29126v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.29126v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Machine learning systems are often developed under data-rich conditions but deployed when only incomplete information is available. A natural example arises in colour fundus photography (CFP), where both eyes are commonly imaged because they can provide complementary information for ocular disease assessment. Prior approaches that exploit bilateral information either fuse both eyes in a single model or use knowledge distillation to compress a dual-eye teacher into a lightweight student that still requires both images at test time. However, bilateral acquisition may not always be feasible. We thus propose a privileged learning framework in which a teacher model has access to bilateral CFP images during training and learns representations informed by information from both eyes, while the student is trained to transfer this knowledge from the bilateral teacher using only a single-eye image as input. At inference, the student operates exclusively on this single-eye input and does not require the contralateral image. Experimental results show consistent improvements in area under the receiver operating characteristic curve over conventional monocular training, with the largest gains observed for left-eye images for the detection of age-related macular degeneration (0.931 vs. 0.966) and diabetic retinopathy (0.789 vs. 0.836).%, while requiring only a single-eye image at inference. By enabling models to benefit from bilateral information during training while requiring only a single-eye image at inference, our approach may support more reliable deployment in resource-constrained clinical and screening environments.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Machine learning systems are often developed under data-rich conditions but deployed when only incomplete information is available.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">D-Skill: Distilling Teacher Knowledge through Agent Skills</div>
+<div class="meta-line">Authors: Shuo Yuan, Dacheng Li, Joseph E. Gonzalez</div>
+<div class="meta-line">First: 2026-10-20T20:52:03+00:00 · Latest: 2026-10-20T20:52:03+00:00</div>
+<div class="meta-line">Comments: 21 pages, 4 figures, 9 tables</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.28914v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.28914v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Frontier language-model agents excel at complex tasks, but high inference costs make transferring their capabilities to smaller models essential. Traditional knowledge distillation achieves this through parameter updates, requiring access to the student&#x27;s weights and additional training compute while encoding the transferred knowledge implicitly in the parameters. We introduce D-Skill, a framework that treats the teacher as a black box and distills its behavioral advantage into an interpretable natural-language skill by analyzing paired rollouts and identifying behavioral divergences and agreements. The resulting lessons are consolidated offline, with any compatible skill-update backend, into a skill document that is provided to the student at inference time. D-Skill constructs the skill entirely offline from fixed trajectories, without labels, further environment interaction, or weight updates after rollout collection. Across SpreadsheetBench-Verified, ALFWorld, and chess puzzles spanning multiple teacher-student pairs, D-Skill closes 75%-95% of the teacher-student gap without touching model weights. After a single offline pass over the paired traces, D-Skill outperforms one-epoch SFT baselines and remains competitive with multi-epoch SFT. Under the same model family, the resulting student also incurs 5.7x-8.3x lower inference cost per task than the teacher. Our results demonstrate that natural-language skill distillation offers a performant, interpretable, and efficient alternative to weight-based capability transfer.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Frontier language-model agents excel at complex tasks, but high inference costs make transferring their capabilities to smaller models essential.</div>
+</details>
+</div>
+<div class="card">
 <div class="title">LLaVA-CKD: Bottom-Up Cascaded Knowledge Distillation for Vision-Language Models</div>
 <div class="meta-line">Authors: Nikolaos Gkalelis, Vasileios Mezaris</div>
 <div class="meta-line">First: 2026-05-11T14:28:44+00:00 · Latest: 2026-10-20T11:01:38+00:00</div>
@@ -400,42 +435,10 @@ summary{cursor:pointer;color:var(--acc)}
 <details class="detail"><summary>Summary / 总结</summary>
 <div class="mono">Multimodal knowledge graphs (MMKGs) organize information across different modalities to support multimodal Graph Retrieval-Augmented Generation (RAG), which aims to improve the performance of multimodal large language models (MLLMs).</div>
 </details>
-</div>
-<div class="card">
-<div class="title">Demystifying On-Policy Distillation: Where Does the Teacher&#x27;s Advantage Live?</div>
-<div class="meta-line">Authors: Yiping Li, Fan Zhao, Zhibo Hou, Zhiyu An, Wan Du</div>
-<div class="meta-line">First: 2026-10-13T20:11:48+00:00 · Latest: 2026-10-13T20:11:48+00:00</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.19145v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.19145v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">On-policy distillation (OPD) is increasingly studied as a cheaper alternative to reinforcement learning, yet it remains a form of knowledge distillation (KD) that relies on teacher supervision. We revisit OPD from the KD perspective by asking where the teacher&#x27;s advantage lies along student-generated trajectories. Controlled token flips at teacher-student disagreements directly measure the accuracy gained from teacher corrections. Single-token flips yield a modest average gain on selected failed trajectories, whereas repeated flips raise accuracy from 28.4% to 74.5%, close to the teacher&#x27;s 76.9%. Gains continue to accumulate with more flips, but mass- and KL-based selection outperform random flips by 15-18 percentage points at counts of similar magnitude. Selective intervention remains useful after OPD, but greater argmax agreement does not consistently improve accuracy across model pairs. We advocate training schedules that learn more valuable teacher corrections while maintaining distributional stability. Controlled flips and fork-resolution analysis evaluate OPD beyond accuracy by measuring which teacher preferences the student acquires and what further correction can recover.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">On-policy distillation (OPD) is increasingly studied as a cheaper alternative to reinforcement learning, yet it remains a form of knowledge distillation (KD) that relies on teacher supervision.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">Multi-View Relational Distillation for Spatial Reasoning with Vision-Language Models</div>
-<div class="meta-line">Authors: Kiet T. Nguyen, Hanbo Shim, Jinwoo Kim, Seunghoon Hong</div>
-<div class="meta-line">First: 2026-08-11T12:34:41+00:00 · Latest: 2026-10-13T11:26:41+00:00</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2608.10864v2">Abs</a> · <a href="https://arxiv.org/pdf/2608.10864v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Vision-language models (VLMs) have achieved strong image and video understanding, yet their visual-spatial representations remain geometrically fragile, leading to failures in spatial reasoning needed for embodied AI, robotics, and autonomous driving. Prior approaches to geometry grounding either fine-tune VLMs on spatial question answering, which can perpetuate spurious visual representations, or fuse features from large geometry-grounded vision models, which substantially increases model size at inference. Knowledge distillation from geometry-grounded vision models offers an alternative, but directly matching multi-view teacher features can disrupt the pretrained alignment between visual and textual representations, degrading object- and language-semantic capabilities. We propose multi-view relational distillation (MVRD), which distills patch-wise cosine similarities across views instead of the teacher features themselves. These relations encode geometric correspondences adequate for spatial understanding, while leaving the student representation underdetermined, allowing it to remain close to its pretrained vision- language space. Across representative VLMs, MVRD improves visual-spatial reasoning, outperforming supervised fine-tuning and feature distillation while approaching feature fusion methods with considerably fewer added parameters and lower latency. We show that MVRD makes visual representations more geometric while retaining language alignment, and generalizes to 3D scene understanding tasks such as object grounding, dense captioning, and question answering.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Vision-language models (VLMs) have achieved strong image and video understanding, yet their visual-spatial representations remain geometrically fragile, leading to failures in spatial reasoning needed for embodied AI, robotics, and autonomous driving.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">DVTR-KD: Distilling Vision-Language Models via Intermediate Visual Token Reconstruction</div>
-<div class="meta-line">Authors: Haolan Wei, Jiahui Wang, Junli Zha, Xinkai Lu, Yunxiao Zou, Chao Zhou, Xiang Song</div>
-<div class="meta-line">First: 2026-10-13T07:18:14+00:00 · Latest: 2026-10-13T07:18:14+00:00</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.17853v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.17853v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Multimodal large language models (MLLMs) have achieved strong performance on diverse vision-language tasks, but their computational demands limit deployment under constrained budgets, particularly on edge devices. Many works focus on Knowledge Distillation (KD) and try to transfer knowledge from powerful teacher models to students. In addition to reducing model size, visual token compression provides a complementary route to efficiency, but introduces mismatched visual token counts that complicate direct token-wise knowledge transfer. To mitigate this, we propose DVTR-KD, a knowledge distillation framework based on \textbf{D}ense \textbf{V}isual \textbf{T}oken \textbf{R}econstruction, which reconstructs the teacher&#x27;s dense visual tokens from the student&#x27;s compressed tokens. We reconstruct visual states after the final LLM layer and at the input to an intermediate layer identified as important for visual-information readout. At the intermediate layer, reconstruction is supervised through the teacher&#x27;s response predictions rather than by direct token-wise KL or MSE matching. An auxiliary attention-readout loss complements this response-level supervision by aligning how the student and the original teacher integrate contextual information when predicting responses. Evaluations on diverse benchmarks demonstrate that DVTR-KD improves the performance of token-compressed students while retaining the inference efficiency afforded by visual token compression.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Multimodal large language models (MLLMs) have achieved strong performance on diverse vision-language tasks, but their computational demands limit deployment under constrained budgets, particularly on edge devices.</div>
-</details>
 </div></div>
     <details style="margin-top:16px" class="detail"><summary>History</summary>
-      <div class="history-list"><a href="archive/20261021_0601.html">20261021_0601</a>
+      <div class="history-list"><a href="archive/20261022_0604.html">20261022_0604</a>
+<a href="archive/20261021_0601.html">20261021_0601</a>
 <a href="archive/20261020_0646.html">20261020_0646</a>
 <a href="archive/20261019_0514.html">20261019_0514</a>
 <a href="archive/20261018_0512.html">20261018_0512</a>
