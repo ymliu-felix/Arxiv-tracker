@@ -74,12 +74,72 @@ summary{cursor:pointer;color:var(--acc)}
   <button class="btn" onclick="__expandAll(false)">Collapse All</button>
 </div>
 
-        <span class="badge">2026-10-26 05:21</span>
+        <span class="badge">2026-10-27 07:00</span>
       </div>
     </div>
     <div class="hr"></div>
     <div>Latest digest</div>
     <div class="row"><div class="card">
+<div class="title">Knowledge Distillation across Item and Code Spaces for Parallel Generative Recommendation</div>
+<div class="meta-line">Authors: Yixuan Xu, Hailin Liu, Linxiang Peng, Can Yang</div>
+<div class="meta-line">First: 2026-10-23T17:37:55+00:00 · Latest: 2026-10-23T17:37:55+00:00</div>
+<div class="meta-line">Comments: 12 pages, 2 figures</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.32943v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.32943v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Generative recommendation with semantic IDs represents each item as a sequence of discrete codes derived from its semantic representation and predicts these codes to generate recommendations. Existing semantic-ID recommenders are typically trained with hard labels for the observed next item. Although such supervision identifies the target, it provides no explicit distributional information about alternative items conditioned on the same user history. Sequential recommenders can supply this item-level predictive knowledge, but transferring it to semantic-ID generation is challenging because the teacher and student operate in item and code spaces, respectively. We propose two complementary knowledge-distillation objectives for parallel semantic-ID recommenders, which predict all code positions simultaneously without autoregressive prefix conditioning. Item Distribution Matching (IDM) reconstructs a catalogue-level item distribution from the student&#x27;s parallel code predictions and aligns it with the teacher&#x27;s item distribution. Code Marginal Matching (CMM) projects the teacher&#x27;s item probabilities onto each code position using fixed item-to-code assignments, then matches the resulting code marginals to the corresponding student heads. Both objectives transfer the teacher&#x27;s soft distributional knowledge while preserving the student&#x27;s parallel prediction structure. Experiments on benchmark datasets show that both methods consistently outperform existing state-of-the-art approaches. On average, IDM improves Recall@10 by 15.39%, while CMM improves NDCG@10 by 8.28%. These results demonstrate that distillation in either reconstructed item space or code-marginal space can substantially strengthen hard-label supervision for parallel generative recommendation.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Generative recommendation with semantic IDs represents each item as a sequence of discrete codes derived from its semantic representation and predicts these codes to generate recommendations.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Yalda-Embedding: Open Development of a Competitive Persian Retrieval Model</div>
+<div class="meta-line">Authors: Yalda Taheri, Mohammad Hassan Heydari, Armon Rasooli</div>
+<div class="meta-line">First: 2026-10-23T17:30:40+00:00 · Latest: 2026-10-23T17:30:40+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.32933v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.32933v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Despite advances in multilingual text representations, effective dense retrieval for Persian remains constrained by the limited availability of language-specific training resources and compact embedding models. We present Yalda Embedding, a 595.8-million-parameter Persian retrieval model adapted from Qwen3-Embedding-0.6B using more than one million query-document pairs. On eight Persian retrieval tasks from FaMTEB, the model achieves the highest macro-average among the evaluated 0.6B models, scoring 0.5488 and outperforming Qwen3-Embedding-0.6B and F2LLM-v2-0.6B on every task. It also approaches Qwen3-Embedding-4B, winning on four tasks, tying on one, and trailing by 0.0075 in macro-average. An incremental ablation study examines contrastive batch size, optimization stabilization, and relational knowledge distillation from F2LLM-v2-8B. Under the one-epoch training setup, contrastive fine-tuning alone yields a modest mean improvement over initialization and regressions on two tasks. The final distilled configuration improves all eight tasks over the non-distilled model, raising the mean from 0.4813 to 0.5488 without increasing inference-time model size. These gains include hard-negative evaluation tasks despite training without explicitly mined or supplied hard negatives. We release model weights, training and evaluation code, the pairwise dataset, and its teacher-embedded counterpart, enabling inspection of data composition and training procedures, independent evaluation, and reuse without repeating expensive teacher inference.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Despite advances in multilingual text representations, effective dense retrieval for Persian remains constrained by the limited availability of language-specific training resources and compact embedding models.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">MEDMKG: Benchmarking Medical Knowledge Exploitation with Multimodal Knowledge Graph</div>
+<div class="meta-line">Authors: Xiaochen Wang, Yuan Zhong, Lingwei Zhang, Lisong Dai, Ting Wang, Fenglong Ma</div>
+<div class="meta-line">First: 2025-05-22T18:41:46+00:00 · Latest: 2026-10-23T16:47:05+00:00</div>
+<div class="meta-line">Comments: Accepted by ACM Multimedia&#x27;26</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2505.17214v2">Abs</a> · <a href="https://arxiv.org/pdf/2505.17214v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Medical deep learning models depend heavily on domain-specific knowledge to perform well on knowledge-intensive clinical tasks. Prior work has primarily leveraged unimodal knowledge graphs, such as the Unified Medical Language System (UMLS), to enhance model performance. However, integrating multimodal medical knowledge graphs remains largely underexplored, mainly due to the lack of resources linking imaging data with clinical concepts. To address this gap, we propose MEDMKG, a Medical Multimodal Knowledge Graph that unifies visual and textual medical information through a multi-stage construction pipeline. MEDMKG fuses the rich multimodal data from MIMIC-CXR with the structured clinical knowledge from UMLS, utilizing both rule-based tools and large language models for accurate concept extraction and relationship modeling. To ensure graph quality and compactness, we introduce Neighbor-aware Filtering (NaF), a novel filtering algorithm tailored for multimodal knowledge graphs. We evaluate MEDMKG across three tasks under two experimental settings, benchmarking twenty-four baseline methods and four state-of-the-art vision-language backbones on six datasets. Results show that MEDMKG not only improves performance in downstream medical tasks but also offers a strong foundation for developing adaptive and robust strategies for multimodal knowledge integration in medical artificial intelligence.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Medical deep learning models depend heavily on domain-specific knowledge to perform well on knowledge-intensive clinical tasks.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Augmentation Strategy for DINO in Glaucoma Classification</div>
+<div class="meta-line">Authors: Ashish Kumar Meena, Chandra Sekhar Seelamantula</div>
+<div class="meta-line">Venue: MICCAI 2026</div>
+<div class="meta-line">First: 2026-10-23T11:33:28+00:00 · Latest: 2026-10-23T11:33:28+00:00</div>
+<div class="meta-line">Comments: 11 pages, 3 figures. Accepted at the 17th International Workshop on Machine Learning in Medical Imaging (MLMI 2026), held in conjunction with MICCAI 2026</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.32511v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.32511v1">PDF</a> · <a href="https://github.com/ashish-256/task_dino">Code1</a> · <a href="https://huggingface.co/huggingface">Code2</a> · <a href="https://huggingface.co/docs/hub/spaces">Code3</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Self-supervised learning (SSL) offers a promising approach to medical image representation learning, yet augmentation strategies of SSL frameworks validated on natural images do not reliably transfer to specialized medical imaging domains. We analyze DINO, a knowledge-distillation based SSL framework, and empirically demonstrate that its default augmentation strategy produces unreliable representations for retinal fundus images, degrading downstream glaucoma classification performance. Guided by the principle that effective cropped views should share minimal redundant information while retaining clinically relevant signal, we redesign DINO&#x27;s augmentation strategy. Our approach biases the learned representations toward diagnostically critical features rather than low-level image statistics. We evaluate our method for glaucoma classification by training a linear classifier on the frozen representations, achieving strong generalization across seven benchmark datasets. URL for code and weights: https://github.com/ashish-256/task_dino</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Self-supervised learning (SSL) offers a promising approach to medical image representation learning, yet augmentation strategies of SSL frameworks validated on natural images do not reliably transfer to specialized medical imaging domains.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">See What I Need, Dream What I Want: A Navigation Foundation Model on a Self-Constructed Representation Space</div>
+<div class="meta-line">Authors: Jiawei Chen, Yinxi Wang, Zihan Yang, Meijun Gao, Yaowei Liu, Shuming Zhang, Zecheng Li, Xiangju Mi, Yuxuan Liu, Runzhong Huang, Tianlin Li, Xun Zhang, Zhengyang Wang, Xu Miao, Tong Yang</div>
+<div class="meta-line">First: 2026-10-22T18:00:39+00:00 · Latest: 2026-10-22T18:00:39+00:00</div>
+<div class="meta-line">Comments: 28 pages. Project page: https://wang-yinxi.github.io/representnav/</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.31762v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.31762v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a> · <a href="https://wang-yinxi.github.io/representnav/">Project1</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">What visual representation should a navigation policy act on? Navigation policies built on vision foundation models largely leave representation design to the encoders&#x27; pretraining objectives. We present RepresentNav, a navigation foundation model built on a self-constructed representation space: a visual representation constructed by the policy&#x27;s own objectives from vision foundation models. RepresentNav builds this space with Representation Residuals, a compact three-layer transformer that attends over features spanning the full depth of multiple complementary vision foundation models, so that the policy learns to see what it needs for navigation. In the same space it dreams what it wants: before every action a latent chain-of-thought predicts the representation of the scene a moment ahead. The dream is trained end-to-end with the policy as a joint-embedding predictive architecture (JEPA), with a next-representation prediction loss and a regularizer on its targets. RepresentNav sets a new state of the art on VLNVerse, VLN-CE R2R, EVT-Bench, and two point-goal benchmarks, and its gains carry over to a physical robot amid clutter and moving people. On VLNVerse fine-grained, RepresentNav achieves 83.80% success, outperforming the previous state of the art by 20.05 percentage points, and on EVT-Bench distracted tracking it reaches 85.5% with a single camera (+10.1). With the same encoders, the self-constructed space clearly outperforms concatenating their outputs and learns to weight their layers unevenly, and a dream in it cuts collisions by a quarter. A single dreamed latent decodes into the depth, semantics, and 3D occupancy of the scene a moment ahead, more accurately than pretrained encoders applied to the real future frame, although occupancy is never supervised, and the rollout tracks the robot&#x27;s own motion over the next second: the dream emerges as a compact latent world model.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">What visual representation should a navigation policy act on?</div>
+</details>
+</div>
+<div class="card">
 <div class="title">One-shot federated unsupervised domain adaptation with Smoothed Knowledge Distillation and teacher refinement</div>
 <div class="meta-line">Authors: Ali Abedi, Q. M. Jonathan Wu, Ning Zhang, Farhad Pourpanah</div>
 <div class="meta-line">Venue: www</div>
@@ -374,71 +434,10 @@ summary{cursor:pointer;color:var(--acc)}
 <details class="detail"><summary>Summary / 总结</summary>
 <div class="mono">Speed-limit sign recognition on an automotive camera system-on-chip (SoC) must fit a detector and a classifier (the reader) into the memory, arithmetic, and energy budgets of the device.</div>
 </details>
-</div>
-<div class="card">
-<div class="title">SPADE-KD: Peer-to-Peer Collaborative Learning under Heterogeneous Settings</div>
-<div class="meta-line">Authors: Harikrishna Kuttivelil, Katia Obraczka</div>
-<div class="meta-line">Venue: AAAI 2027</div>
-<div class="meta-line">First: 2026-10-15T23:17:37+00:00 · Latest: 2026-10-15T23:17:37+00:00</div>
-<div class="meta-line">Comments: Previously submitted to AAAI 2027</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.24013v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.24013v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Peer-to-peer collaborative learning is an emerging distributed deep learning paradigm that eliminates the need for a central aggregator and disseminator, avoiding the single-point-of-failure and bottleneck issues they can bring. Many such approaches use parameter averaging, requiring clients to have homogeneous model architectures, whereas others use knowledge distillation as an alternative while leaning on shared public data or centralized control infrastructure. Many of these approaches also make a one-size-fits-all assumption, i.e., jointly training a single, globally optimal solution for all clients, when in reality, clients&#x27; underlying data distributions might differ such that a globally optimal solution may not be locally optimal for all clients. To enable collaborative learning in environments with both model architecture and data distribution heterogeneity, we present SPADE-KD -- a fully decentralized model distillation framework that optimizes collaboration towards personalized rather than global performance. SPADE-KD leverages two mechanisms -- adaptive distillation and utility-driven peer selection. Adaptive distillation modulates the strength of each incoming model transfer by the performance advantage of the incoming model compared to the native model measured by their task losses, such that a client will distill more aggressively from incoming models that outperform it on its own local data. Utility-driven peer selection uses the loss-informed utility derived from adaptive distillation to rank prospective partners, focusing on exchanges that measurably improve the local model while suppressing low-utility transfers. Using federated classification tasks, we demonstrate that SPADE-KD consistent outperforms naive decentralized distillation with lower loss and faster convergence and that its individual components are more effective together than independently.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Peer-to-peer collaborative learning is an emerging distributed deep learning paradigm that eliminates the need for a central aggregator and disseminator, avoiding the single-point-of-failure and bottleneck issues they can bring.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">Clean Data Can Still Carry Backdoors: Support-Persistent Backdoors for Model Reuse</div>
-<div class="meta-line">Authors: Junhoo Lee, Baekseung Kim, Seungyeon Kim, Nojun Kwak</div>
-<div class="meta-line">Venue: NeurIPS 2026</div>
-<div class="meta-line">First: 2026-10-15T04:04:19+00:00 · Latest: 2026-10-15T04:04:19+00:00</div>
-<div class="meta-line">Comments: Accepted to NeurIPS 2026</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.21208v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.21208v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Traditional backdoor attacks inject artificial trigger patterns into training data, causing models to misclassify triggered inputs while maintaining normal behavior on clean samples. Since these artificial triggers are absent in clean datasets, standard knowledge distillation (KD) typically eliminates them, leading to the common belief that KD serves as an effective purification defense. In this paper, we propose DAR (Discover-and-Relabel), a support-persistent backdoor method that retains its behavior even after clean-data distillation. DAR identifies naturally abundant patterns in low-dimensional feature subspaces using subspace clustering and applies label-only poisoning to samples that inherently satisfy the discovered rule. At test time, the backdoor is activated by locally modifying the corresponding subspace of the target images. By instantiating spatial and frequency operators, DAR achieves attack accuracy comparable to state-of-the-art backdoor attacks in ImageNet classification and CLIP-based prompt tuning. Notably, DAR keeps attack success above 96% after clean KD and remains defense-resistant in practice. Project page: https://junhoo.me/backdoor</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Traditional backdoor attacks inject artificial trigger patterns into training data, causing models to misclassify triggered inputs while maintaining normal behavior on clean samples.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">LLMR: Knowledge Distillation with a Large Language Model-Induced Reward</div>
-<div class="meta-line">Authors: Dongheng Li, Yongchang Hao, Lili Mou</div>
-<div class="meta-line">Venue: COLING 2024</div>
-<div class="meta-line">First: 2024-09-19T06:27:58+00:00 · Latest: 2026-10-15T03:54:48+00:00</div>
-<div class="meta-line">Comments: Accepted by LREC COLING 2024</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2409.12500v2">Abs</a> · <a href="https://arxiv.org/pdf/2409.12500v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Large language models have become increasingly popular and demonstrated remarkable performance in various natural language processing (NLP) tasks. However, these models are typically computationally expensive and difficult to be deployed in resource-constrained environments. In this paper, we propose LLMR, a novel knowledge distillation (KD) method based on a reward function induced from large language models. We conducted experiments on multiple datasets in the dialogue generation and summarization tasks. Empirical results demonstrate that our LLMR approach consistently outperforms traditional KD methods in different tasks and datasets.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Large language models have become increasingly popular and demonstrated remarkable performance in various natural language processing (NLP) tasks.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">Does Latent Chain-of-Thought Actually Reason? A Single, Unifying Taxonomy for Latent Reasoning</div>
-<div class="meta-line">Authors: Jingjie Qiu, Sheldon Yu, Xunyi Jiang, Jiajin Liu, Zihan Huang, Zhendong Chu, Tong Yu, Julian McAuley, Junda Wu</div>
-<div class="meta-line">First: 2026-10-15T03:37:32+00:00 · Latest: 2026-10-15T03:37:32+00:00</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.21182v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.21182v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Latent chain-of-thought replaces written reasoning steps with continuous hidden states, giving models additional steps to compute before answering. It remains unclear what computation these steps actually perform. High task accuracy and decodable intermediate answers do not establish that a model uses its latent chain to reach an answer. We study this question across twenty-one model-task configurations covering three training recipes, three reasoning tasks, and two backbones. We combine chain deletion and content replacement with probes and trajectory analysis to test whether the chain affects the answer, what it encodes, and how its states change. On logical tasks, COCONUT often carries an answer that is already readable before the chain begins. Its states settle early, and deleting the chain leaves predictions almost unchanged. Per-step supervision produces an ordered layout of reasoning steps and can make the model depend on the chain. Yet even an ordered chain can act as a placeholder, with deletion hurting performance while content replacement leaves answers unchanged. On arithmetic tasks, all tested recipes show dependence on chain content. These results show why readable latent states alone are insufficient evidence of reasoning. We introduce a taxonomy that separates what a chain represents from how the model uses it. Seen this way, earlier reports no longer compete: placeholder tokens, collapsed superposition and step-dependent causal roles are each consistent with a different kind of chain, each obtained on a different task, training recipe or measurement. Once a study says which property it tested, whether the model uses the chain, what the chain holds, or how its state moves, claims about latent reasoning can be compared.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Latent chain-of-thought replaces written reasoning steps with continuous hidden states, giving models additional steps to compute before answering.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">HERO: Preserving Structure and Semantics in Heterogeneous Continual Graph Learning</div>
-<div class="meta-line">Authors: Guiquan Sun, Xikun Zhang, Jingchao Ni, Dongjin Song</div>
-<div class="meta-line">First: 2025-05-23T04:37:57+00:00 · Latest: 2026-10-14T17:48:39+00:00</div>
-<div class="meta-line">Comments: under review</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2505.17458v4">Abs</a> · <a href="https://arxiv.org/pdf/2505.17458v4">PDF</a> · <a href="https://github.com/gqBond/HCGL">Code1</a> · <a href="https://huggingface.co/huggingface">Code2</a> · <a href="https://huggingface.co/docs/hub/spaces">Code3</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Machine learning on heterogeneous graphs has advanced rapidly, driven by the diverse entities, relations, and semantics inherent in real-world data. However, most existing studies assume static graphs, whereas real-world graph data are often continuously updated. Continual learning in this setting is particularly challenging because historical knowledge is encoded not only in target-node representations, but also in their heterogeneous structural contexts and relation-dependent semantic responses. To this end, we introduce HERO, a heterogeneous continual graph learning framework that preserves historical knowledge at both structural and semantic levels while adapting to incoming tasks. We analyze experience replay as an approximation to the unavailable historical gradient and decompose its error into target-selection and context-reconstruction terms. This analysis shows that replaying target nodes alone is generally insufficient for relation-sensitive HGNNs, as removing typed neighborhood context can alter both representations and historical gradients. Motivated by this, HERO employs DiSCo to select representative target nodes and reconstruct compact heterogeneous contexts through relation-aware multi-type neighbor expansion. To further preserve knowledge that cannot be captured by replayed subgraphs alone, HERO aligns task-conditioned predictions and heterogeneous semantic responses through multi-level knowledge distillation. A lightweight look-ahead adaptation step is additionally used to improve plasticity on incoming tasks. Experiments on four datasets with three HGNN backbones show that HERO achieves the best or tied-best average performance among state-of-the-art baselines, while maintaining competitive forgetting. Our code is available at https://github.com/gqBond/HCGL.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Machine learning on heterogeneous graphs has advanced rapidly, driven by the diverse entities, relations, and semantics inherent in real-world data.</div>
-</details>
 </div></div>
     <details style="margin-top:16px" class="detail"><summary>History</summary>
-      <div class="history-list"><a href="archive/20261025_0524.html">20261025_0524</a>
+      <div class="history-list"><a href="archive/20261026_0521.html">20261026_0521</a>
+<a href="archive/20261025_0524.html">20261025_0524</a>
 <a href="archive/20261024_0549.html">20261024_0549</a>
 <a href="archive/20261023_0608.html">20261023_0608</a>
 <a href="archive/20261022_0604.html">20261022_0604</a>
