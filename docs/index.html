@@ -74,12 +74,69 @@ summary{cursor:pointer;color:var(--acc)}
   <button class="btn" onclick="__expandAll(false)">Collapse All</button>
 </div>
 
-        <span class="badge">2026-10-28 06:50</span>
+        <span class="badge">2026-10-29 06:57</span>
       </div>
     </div>
     <div class="hr"></div>
     <div>Latest digest</div>
     <div class="row"><div class="card">
+<div class="title">Ground-to-Satellite Knowledge Distillation for Crop Classification under Temporal and Geographic Shift</div>
+<div class="meta-line">Authors: Miro Miranda, Rocco Sedona, Valerio Marsocci, Gabriele Cavallaro, Claudia Paris</div>
+<div class="meta-line">First: 2026-10-27T10:57:49+00:00 · Latest: 2026-10-27T10:57:49+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.37021v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.37021v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Continuous and up-to-date crop type mapping is essential for agricultural monitoring but is often hampered by limited reference data. The growing availability of ground-level field photographs offers a promising way to address this challenge. When combined with satellite time series, these images provide complementary perspectives on the same parcel, capturing crop characteristics from distinctly different perspectives. However, field photographs are not always available for each satellite pixel at inference time, limiting their potential in scalable crop type mapping. We investigate whether ground photographs can provide privileged supervision for crop classification built on pretrained satellite embeddings. A photo teacher based on frozen CLIP features supervises classifiers trained on AlphaEarth and TESSERA representations; photographs are used only during training. On a paired field photo and satellite imagery dataset with 17 crop classes, knowledge distillation consistently improves over satellite-only classification; for frozen embeddings the margin grows under temporal shift, reaching up to +5.5 macro-F1 points, and widens in geographic holdouts (+3.7 vs +3.0 in-distribution). These results show that ground-view supervision can complement satellite embeddings and improve their robustness without changing inference requirements.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Continuous and up-to-date crop type mapping is essential for agricultural monitoring but is often hampered by limited reference data.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Benchmarking Model Compression Techniques Across Heterogeneous Edge Platforms: A Predictive Maintenance Use Case for Rotating Machinery</div>
+<div class="meta-line">Authors: Matheus Calheira Guimarães de Oliveira, Marco Aurélio da Silva Cruz, Regis Cardoso, Lucas Cambuim, Rafael Macieira, Arthur Paim, Helaine Neves, Alex Santos, Lilian Guarieiro, Jean Schmith, Prashant Kumar, Erick G. Sperandio Nascimento</div>
+<div class="meta-line">First: 2026-10-21T17:45:57+00:00 · Latest: 2026-10-27T08:20:17+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.30228v2">Abs</a> · <a href="https://arxiv.org/pdf/2610.30228v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">To enable Industry 5.0, where autonomous systems are widely adopted and integrated with people to promote sustainable development in industries, it is imperative to adapt complex deep learning models to operate efficiently on resource-constrained hardware for edge inference. However, adapting these models remains challenging due to the hardware heterogeneity of edge computing in industrial settings, performance degradation caused by model compression, and the lack of clear guidance on which compression techniques are practical and effective for applications such as predictive maintenance. To address these challenges, this paper presents a comprehensive comparative analysis of four state-of-the-art model compression techniques applied to a high-performance convolutional neural network for predictive maintenance using a real-world dataset of rotating machinery, equipment typically used in industry. The compressed models were evaluated across a heterogeneous set of nine computing platforms, ranging from highly constrained edge computing devices to general purpose and high-performance processors, reflecting the diversity and fragmentation typical of industrial edge environments. By jointly prioritizing classification performance, inference speed, and compression ratio, we found that compression using knowledge distillation emerged as the most effective approach. The model had more than 90% speedup across all devices while maintaining a 91.22% balanced F-score, with a very small drop in predictive performance relative to the uncompressed model, along with a 98.9% size reduction. Through successful deployment across multiple edge platforms and a systematic comparison of compression strategies, we demonstrated a clear path to achieving Industry 5.0 targets, drastically cutting computational costs and, consequently, energy consumption without sacrificing predictive performance.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">To enable Industry 5.0, where autonomous systems are widely adopted and integrated with people to promote sustainable development in industries, it is imperative to adapt complex deep learning models to operate efficiently on resource-constrained hardware for edge inference.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">REALM: Retrospective Encoder Alignment for LFP Modeling</div>
+<div class="meta-line">Authors: Peicheng Wu, Zhenyu Bu, Runze Ma, Lin Du</div>
+<div class="meta-line">First: 2026-05-14T14:16:22+00:00 · Latest: 2026-10-27T03:35:01+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2605.14867v4">Abs</a> · <a href="https://arxiv.org/pdf/2605.14867v4">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Spike activity has been the dominant neural signal for behavior decoding because its high spatiotemporal resolution supports accurate decoding. However, as intracortical brain-computer interfaces (iBCIs) move toward higher channel counts and wireless operation, the high sampling rates required to record spikes create substantial power and bandwidth demands. Local field potentials (LFPs) offer complementary advantages, including greater long-term stability, lower energy consumption, and lower bandwidth requirements. However, LFP-based decoders often achieve lower accuracy and rely on non-causal architectures that cannot be used directly for real-time deployment. We propose REALM, a retrospective knowledge distillation (RKD) framework for causal LFP behavior decoding. Inspired by offline-to-online distillation in speech recognition, REALM transfers non-causal representational knowledge from a pretrained, multi-session bidirectional LFP teacher to a causal student model. We first pretrain a bidirectional Mamba-2 teacher across multiple recording sessions using continuous masked autoencoding (CMAE), and then distill its representation into a compact causal student using a combined objective of representation alignment and autoencoding. REALM achieves the highest mean accuracy among the compared decoders in both label-free and fine-tuned pipelines, with statistically significant improvements over each baseline, including the state-of-the-art CrossModalDistill. It does so using LFPs alone throughout pretraining, distillation, and decoding, with less than half the parameters of CrossModalDistill&#x27;s published student and one-tenth of its pretraining time. These results show that a causal LFP-only model can achieve decoding accuracy competitive with a non-causal multi-modal model, offering a practical and scalable approach for next-generation wireless and implantable iBCIs.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Spike activity has been the dominant neural signal for behavior decoding because its high spatiotemporal resolution supports accurate decoding.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">From Solver Trajectories to Teaching Trajectories: Cognition-Aligned Reasoning Distillation</div>
+<div class="meta-line">Authors: Yashuo Luo, Qianren Mao, Ziqi Qin, Junnan Liu, Haitao Li, Qili Zhang, Yuan Gao, Zhijun Chen, Xu Wang</div>
+<div class="meta-line">First: 2026-10-27T00:46:23+00:00 · Latest: 2026-10-27T00:46:23+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.36445v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.36445v1">PDF</a> · <a href="https://github.com/LiteSSLHub/CARD">Code1</a> · <a href="https://huggingface.co/huggingface">Code2</a> · <a href="https://huggingface.co/docs/hub/spaces">Code3</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Knowledge distillation from large reasoning models (LRMs) often uses raw teacher trajectories as supervision. However, this practice creates a mismatch between the goal of distillation and the nature of teacher trajectories. Advanced LRMs typically improve their reasoning capabilities through reward-driven post-training, such as RLHF. This training optimizes them as strong solvers, rather than as teachers that produce reasoning processes smaller models can easily learn. Since smaller models have different &quot;cognitive capacities&quot; compared to their larger teachers, directly imitating raw teacher trajectories can sometimes be ineffective and often requires a substantial number of high-quality samples. To bridge this mismatch, we propose Cognition-Aligned Reasoning Distillation (CARD), an RL-based framework that transforms solver trajectories into teaching trajectories aligned with the student&#x27;s cognition. Avoiding expensive resampling, our framework directly transforms existing trajectories. We optimize CARD with two reward signals: (1) a Distribution Alignment Reward that matches the student&#x27;s predictive distribution, and (2) a Logical Coherence Reward that reduces misleading failed reasoning steps. Comprehensive evaluations across multiple student models and settings demonstrate that CARD outperforms distillation from raw teacher trajectories in in-domain settings while achieving substantial gains in out-of-distribution performance. Code is available at https://github.com/LiteSSLHub/CARD.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Knowledge distillation from large reasoning models (LRMs) often uses raw teacher trajectories as supervision.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Strong Teacher Not Needed? On Distillation in LLM Pretraining</div>
+<div class="meta-line">Authors: Taiming Lu, Zhuang Liu</div>
+<div class="meta-line">Venue: NeurIPS 2026</div>
+<div class="meta-line">First: 2026-05-22T17:16:35+00:00 · Latest: 2026-10-26T22:40:35+00:00</div>
+<div class="meta-line">Comments: NeurIPS 2026</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2605.23857v2">Abs</a> · <a href="https://arxiv.org/pdf/2605.23857v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Knowledge distillation generally assumes a strong-to-weak relationship where stronger teachers yield better students. In this work, we examine this assumption about distillation in large language model pretraining. By varying architecture sizes and training token budgets, we create strong-to-weak, same-level, and weak-to-strong teacher-student relationships, and study distillation&#x27;s effectiveness under each. We find that the teacher need not be strong: with proper mixing of the language modeling and knowledge distillation losses, even small and undertrained teachers improve larger students. At the same time, a stronger teacher is not always better: pushing the teacher further, through more parameters or more training tokens, can saturate or even reverse the distillation gains. We further observe that distillation improves generalization (out-of-distribution and downstream performance) more readily than in-domain fitting. Together, these results challenge the common belief that distillation pretraining always requires a strong teacher.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Knowledge distillation generally assumes a strong-to-weak relationship where stronger teachers yield better students.</div>
+</details>
+</div>
+<div class="card">
 <div class="title">MuSID-KD: Multigranularity Knowledge Distillation for Generative Recommendation with Semantic IDs</div>
 <div class="meta-line">Authors: Fengshi Zhang, Xiyan Ding, Shuxiao Xie, Wei Zhang</div>
 <div class="meta-line">First: 2026-10-26T11:09:39+00:00 · Latest: 2026-10-26T11:09:39+00:00</div>
@@ -137,14 +194,15 @@ summary{cursor:pointer;color:var(--acc)}
 </details>
 </div>
 <div class="card">
-<div class="title">REALM: Retrospective Encoder Alignment for LFP Modeling</div>
-<div class="meta-line">Authors: Peicheng Wu, Zhenyu Bu, Runze Ma, Lin Du</div>
-<div class="meta-line">First: 2026-05-14T14:16:22+00:00 · Latest: 2026-10-25T19:01:03+00:00</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2605.14867v3">Abs</a> · <a href="https://arxiv.org/pdf/2605.14867v3">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<div class="title">Knowledge distillation across teacher architectures for compact diabetic retinopathy grading</div>
+<div class="meta-line">Authors: Mossa Manisa, Habiba Jahan Priya, A. K. M. Fakhrul Hossain</div>
+<div class="meta-line">First: 2026-10-25T10:31:26+00:00 · Latest: 2026-10-25T10:31:26+00:00</div>
+<div class="meta-line">Comments: 17 pages, 3 figures, 18 tables. Submitted to PLOS ONE</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.35961v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.35961v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
 <details class="detail"><summary>Abstract</summary>
-<div class="mono">Spike activity has been the dominant neural signal for behavior decoding because its high spatiotemporal resolution supports accurate decoding. However, as intracortical brain-computer interfaces (iBCIs) move toward higher channel counts and wireless operation, the high sampling rates required to record spikes create substantial power and bandwidth demands. Local field potentials (LFPs) offer complementary advantages, including greater long-term stability, lower energy consumption, and lower bandwidth requirements. However, LFP-based decoders often achieve lower accuracy and rely on non-causal architectures that cannot be used directly for real-time deployment. We propose REALM, a retrospective knowledge distillation (RKD) framework for causal LFP behavior decoding. Inspired by offline-to-online distillation in speech recognition, REALM transfers non-causal representational knowledge from a pretrained, multi-session bidirectional LFP teacher to a causal student model. We first pretrain a bidirectional Mamba-2 teacher across multiple recording sessions using continuous masked autoencoding (CMAE), and then distill its representation into a compact causal student using a combined objective of representation alignment and autoencoding. REALM achieves the highest mean accuracy among the compared decoders in both label-free and fine-tuned pipelines, with statistically significant improvements over each baseline, including the state-of-the-art CrossModalDistill. It does so using LFPs alone throughout pretraining, distillation, and decoding, with less than half the parameters of CrossModalDistill&#x27;s published student and one-tenth of its pretraining time. These results show that a causal LFP-only model can achieve decoding accuracy competitive with a non-causal multi-modal model, offering a practical and scalable approach for next-generation wireless and implantable iBCIs.</div></details>
+<div class="mono">Diabetic retinopathy grading from retinal fundus photographs is important but difficult to deploy on resource-constrained hardware. We conducted a controlled study of offline response-based knowledge distillation for five-class diabetic retinopathy grading on APTOS 2019, comparing ResNet-50, MobileNetV3-Large, and Swin Transformer-Tiny (Swin-T) teachers distilled into a MobileNetV3-Small student. A 3 x 4 x 2 grid of teacher, temperature, and hard-label weight was screened at one seed, while six configurations and the no-distillation baseline were evaluated across three seeds. The highest observed single-seed quadratic weighted kappa was 0.9093 (macro-F1 0.6851) for Swin-T at temperature 4 and hard-label weight 0.7; the corresponding three-seed mean was 0.9024, compared with 0.8804 for the baseline. The student used 1.52 M parameters and 5.94 MB, representing an 18.07x parameter reduction relative to Swin-T. Temperature and hard-label weight effects were teacher- and configuration-dependent, while small performance differences were sensitive to random seed. Knowledge distillation produced a compact student with competitive performance under the evaluated protocol, but independent external validation remains necessary.</div></details>
 <details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Spike activity has been the dominant neural signal for behavior decoding because its high spatiotemporal resolution supports accurate decoding.</div>
+<div class="mono">Diabetic retinopathy grading from retinal fundus photographs is important but difficult to deploy on resource-constrained hardware.</div>
 </details>
 </div>
 <div class="card">
@@ -337,17 +395,6 @@ summary{cursor:pointer;color:var(--acc)}
 </details>
 </div>
 <div class="card">
-<div class="title">Benchmarking Model Compression Techniques Across Heterogeneous Edge Platforms: A Predictive Maintenance Use Case for Rotating Machinery</div>
-<div class="meta-line">Authors: Matheus Calheira Guimarães de Oliveira, Marco Aurélio da Silva Cruz, Regis Cardoso, Lucas Cambuim, Rafael Macieira, Arthur Paim, Helaine Neves, Alex Santos, Lilian Guarieiro, Jean Schmith, Prashant Kumar, Erick G. Sperandio Nascimento</div>
-<div class="meta-line">First: 2026-10-21T17:45:57+00:00 · Latest: 2026-10-21T17:45:57+00:00</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.30228v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.30228v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">To enable Industry 5.0, where autonomous systems are widely adopted and integrated with people to promote sustainable development in industries, it is imperative to adapt complex deep learning models to operate efficiently on resource-constrained hardware for edge inference. However, adapting these models remains challenging due to the hardware heterogeneity of edge computing in industrial settings, performance degradation caused by model compression, and the lack of clear guidance on which compression techniques are practical and effective for applications such as predictive maintenance. To address these challenges, this paper presents a comprehensive comparative analysis of four state-of-the-art model compression techniques applied to a high-performance convolutional neural network for predictive maintenance using a real-world dataset of rotating machinery, equipment typically used in industry. The compressed models were evaluated across a heterogeneous set of nine computing platforms, ranging from highly constrained edge computing devices to general purpose and high-performance processors, reflecting the diversity and fragmentation typical of industrial edge environments. By jointly prioritizing classification performance, inference speed, and compression ratio, we found that compression using knowledge distillation emerged as the most effective approach. The model had more than 90% speedup across all devices while maintaining a 91.22% balanced F-score, with a very small drop in predictive performance relative to the uncompressed model, along with a 98.9% size reduction. Through successful deployment across multiple edge platforms and a systematic comparison of compression strategies, we demonstrated a clear path to achieving Industry 5.0 targets, drastically cutting computational costs and, consequently, energy consumption without sacrificing predictive performance.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">To enable Industry 5.0, where autonomous systems are widely adopted and integrated with people to promote sustainable development in industries, it is imperative to adapt complex deep learning models to operate efficiently on resource-constrained hardware for edge inference.</div>
-</details>
-</div>
-<div class="card">
 <div class="title">How Far Can Foundation Models Be Distilled for Efficient Jet Tagging?</div>
 <div class="meta-line">Authors: Jay Agarwal, Siddharth Khare, Dhruv Kumar</div>
 <div class="meta-line">First: 2026-10-21T09:00:56+00:00 · Latest: 2026-10-21T09:00:56+00:00</div>
@@ -381,55 +428,10 @@ summary{cursor:pointer;color:var(--acc)}
 <details class="detail"><summary>Summary / 总结</summary>
 <div class="mono">Frontier language-model agents excel at complex tasks, but high inference costs make transferring their capabilities to smaller models essential.</div>
 </details>
-</div>
-<div class="card">
-<div class="title">LLaVA-CKD: Bottom-Up Cascaded Knowledge Distillation for Vision-Language Models</div>
-<div class="meta-line">Authors: Nikolaos Gkalelis, Vasileios Mezaris</div>
-<div class="meta-line">First: 2026-05-11T14:28:44+00:00 · Latest: 2026-10-20T11:01:38+00:00</div>
-<div class="meta-line">Comments: IEEE Access, vol.14, 2026</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2605.10641v2">Abs</a> · <a href="https://arxiv.org/pdf/2605.10641v2">PDF</a> · <a href="https://github.com/IDT-ITI/LLaVA-CKD">Code1</a> · <a href="https://huggingface.co/huggingface">Code2</a> · <a href="https://huggingface.co/docs/hub/spaces">Code3</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Large Vision-Language Models (VLMs) are successful in addressing a multitude of vision-language understanding tasks, such as Visual Question Answering (VQA), but their memory and compute requirements remain a concern for practical deployment. A promising class of techniques for mitigating this concern is Knowledge Distillation, where knowledge from a high-capacity Teacher network is transferred to a considerably smaller Student network. However, the capacity gap between the two networks is both a blessing and a curse: the smaller the Student network, the better its efficiency, and the stronger (typically, also larger) the Teacher, the more knowledge it carries; yet, beyond a point, the larger capacity gap between the two leads to worse knowledge transfer. To counter this effect, we propose a bottom-up cascaded knowledge distillation (CKD) framework. Instead of treating knowledge transfer as an activity involving one high-capacity Teacher (or an ensemble of such), inspired by human formal education systems, we introduce one (potentially, more) additional Teacher(s) of intermediate capacity that gradually bring the Student network to the next level, where the next (higher-capacity) Teacher can take over. We provide a theoretical analysis to motivate why progressive reduction of the Teacher-Student gap may improve distillation. We apply the proposed framework on models built upon the LLaVA methodology and evaluate the derived models on seven standard, publicly available VQA benchmarks, demonstrating competitive performance with recent compact VLMs. Source code for cascaded distillation and trained models are available at https://github.com/IDT-ITI/LLaVA-CKD.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Large Vision-Language Models (VLMs) are successful in addressing a multitude of vision-language understanding tasks, such as Visual Question Answering (VQA), but their memory and compute requirements remain a concern for practical deployment.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">Unsupervised Head Network Personalization for Split Computing via Federated Learning</div>
-<div class="meta-line">Authors: Yutaro Horikawa, Takayuki Nishio</div>
-<div class="meta-line">First: 2026-10-20T09:57:52+00:00 · Latest: 2026-10-20T09:57:52+00:00</div>
-<div class="meta-line">Comments: 12 pages, 8 figures, 4 tables. This work has been submitted to the IEEE for possible publication</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.27952v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.27952v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Split Computing (SC) is a distributed inference method designed for balancing computational load and reducing latency by partitioning a neural network into head and tail networks and deploying them across both a mobile device and a server, respectively. Due to the limited bandwidth and computational power of mobile devices, the head network is often replaced with a neural network that requires lower computational and communication resources. However, it is challenging to prepare a sufficient quantity and quality of labeled data on the mobile device side for training the replacement head network. Furthermore, the data prepared by mobile users often contains sensitive privacy information, making data aggregation difficult. In this paper, we propose a data-efficient head network training method for SC. This method utilizes federated learning and knowledge distillation to train the head network using a small amount of non-IID and unlabeled data from mobile devices, ensuring that the training datasets are not exposed. Moreover, by introducing personalization, we enhance the accuracy to levels comparable to or exceeding those of existing methods. The experimental evaluations demonstrate that, despite data constraints imposed only on our method, it achieves accuracy comparable to the baselines. Furthermore, it significantly reduces the communication requirements by 95% on mobile devices, with only a 3-5 percentage point drop in accuracy from the original model.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Split Computing (SC) is a distributed inference method designed for balancing computational load and reducing latency by partitioning a neural network into head and tail networks and deploying them across both a mobile device and a server, respectively.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">Can Native Safety Travel? Reusing Safety Pretraining Across Models via On-Policy Distillation</div>
-<div class="meta-line">Authors: Bingqi Shang, Yang Zhang, Yiwei Chen, Changsheng Wang, Shiyu Chang, Bingquan Shen, Sijia Liu</div>
-<div class="meta-line">First: 2026-10-20T03:13:04+00:00 · Latest: 2026-10-20T03:13:04+00:00</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.27555v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.27555v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Safety pretraining has emerged as a promising paradigm for embedding safety deeply into a model during pretraining, yielding robustness to subsequent fine-tuning that conventional safety post-training often lacks. We refer to this safety acquired during model pretraining as native safety. Yet native safety is expensive to acquire, confined to the model in which it was pretrained, and often accompanied by lower general utility. In this work, we rethink the practical value of safety-pretrained models and introduce, for the first time, the native safety reuse problem: Can native safety be transferred from a specialized, potentially smaller, safety-pretrained &quot;teacher&quot; to standard-pretrained &quot;students,&quot; enabling them to inherit its robustness while preserving their general utility? We show that native safety can &quot;travel&quot; through on-policy distillation. A standard-pretrained student generates responses to safety-pretraining prompts, while a small safety-pretrained teacher supervises the student&#x27;s token-level predictions along its own generated trajectories; cross-tokenizer alignment further enables transfer across model families. The resulting students exhibit substantially greater safety robustness than their safety-post-trained counterparts while retaining higher general utility than the teacher: subsequent fine-tuning raises the average attack success rate (ASR) of the 1.7B student by only 5.00%, compared with 11.58% for safety post-training, and its average utility of 48.20% far exceeds the aligned teacher&#x27;s 27.42%. Unlike conventional large-to-small knowledge distillation, our framework enables selective, small-to-large safety transfer: it reuses the robust safety expertise of a smaller pretrained teacher without inheriting its utility limitations. These findings establish native safety as a reusable model property rather than one permanently tied to the originally pretrained model.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Safety pretraining has emerged as a promising paradigm for embedding safety deeply into a model during pretraining, yielding robustness to subsequent fine-tuning that conventional safety post-training often lacks.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">COSMOS: Model-Agnostic Personalized Federated Learning with Clustered Server Models and Pseudo-Label-Only Communication</div>
-<div class="meta-line">Authors: Ben Rachmut, Luise Ge, Ning Zhang, William Yeoh, Yevgeniy Vorobeychik</div>
-<div class="meta-line">First: 2026-05-11T19:16:36+00:00 · Latest: 2026-10-19T18:56:19+00:00</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2605.11165v4">Abs</a> · <a href="https://arxiv.org/pdf/2605.11165v4">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Federated learning (FL) in heterogeneous environments remains challenging because client models often differ in both architecture and data distribution. While recent approaches attempt to address this challenge through client clustering and knowledge distillation, simultaneously handling architectural and statistical heterogeneity remains difficult. We introduce COSMOS, a model-agnostic framework that enables server-side personalization using only pseudo-label communication. Clients train local models and predict on the public data; the server clusters clients by prediction similarity, trains a cluster-specific model for each group using its own compute, and distills the resulting models back to clients. We provide the first theoretical analysis showing that distillation from the learned cluster models can yield exponential personalization risk contraction, going beyond the convergence-to-stationarity guarantees typically provided in model-agnostic FL. Experiments across benchmarks demonstrate that COSMOS consistently outperforms all model-agnostic FL baselines while remaining competitive with state-of-the-art personalized FL methods. More broadly, our results highlight personalized server-side learning with pseudo-labels as a promising paradigm for scalable and model-agnostic federated learning in highly heterogeneous environments.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Federated learning (FL) in heterogeneous environments remains challenging because client models often differ in both architecture and data distribution.</div>
-</details>
 </div></div>
     <details style="margin-top:16px" class="detail"><summary>History</summary>
-      <div class="history-list"><a href="archive/20261027_0700.html">20261027_0700</a>
+      <div class="history-list"><a href="archive/20261028_0650.html">20261028_0650</a>
+<a href="archive/20261027_0700.html">20261027_0700</a>
 <a href="archive/20261026_0521.html">20261026_0521</a>
 <a href="archive/20261025_0524.html">20261025_0524</a>
 <a href="archive/20261024_0549.html">20261024_0549</a>
