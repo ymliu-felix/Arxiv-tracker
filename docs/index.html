@@ -74,12 +74,96 @@ summary{cursor:pointer;color:var(--acc)}
   <button class="btn" onclick="__expandAll(false)">Collapse All</button>
 </div>
 
-        <span class="badge">2026-10-30 07:05</span>
+        <span class="badge">2026-10-31 06:46</span>
       </div>
     </div>
     <div class="hr"></div>
     <div>Latest digest</div>
     <div class="row"><div class="card">
+<div class="title">Soil Moisture Estimation in Precision Agriculture: A Knowledge Distillation Approach</div>
+<div class="meta-line">Authors: Mohammed Rakib, Vrinda Nagula, Arunkumar Bagavathi</div>
+<div class="meta-line">Venue: Rakib, Mohammed; Nagula, Vrinda; and Bagavathi, Arunkumar, &quot;Soil Moisture Estimation in Precision Agriculture: A Knowledge Distillation Approach&quot; (2025). MWAIS 2025 Proceedings. 24</div>
+<div class="meta-line">First: 2026-10-29T16:53:56+00:00 · Latest: 2026-10-29T16:53:56+00:00</div>
+<div class="meta-line">Comments: Accepted by MWAIS 2025</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.40432v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.40432v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Accurate soil moisture estimation is critical for precision agriculture, influencing irrigation, fertilization, and harvesting strategies. Traditional methods primarily rely on meteorological and soil property data, while recent approaches incorporate visual modalities such as aerial and geospatial imagery. However, these high-resolution images are expensive and computationally demanding to analyze. In this work, we propose Soil Moisture Distillation (SMD), a Knowledge Distillation (KD)-based multimodal learning framework that leverages unimodal teachers to enhance multimodal soil moisture estimation. SMD surpasses not only traditional multimodal fusion techniques, including MIS-ME, but also outperforms unimodal models, demonstrating the benefits of guided unimodal knowledge transfer. Additionally, we conduct a comparative analysis of soil patches and crop images, showing that crop images provide superior visual cues, leading to improved prediction accuracy. SMD achieves a 2% improvement in MAPE for soil patches and 1.2% for crops over state-of-the-art baselines, highlighting the effectiveness of leveraging both meteorological and visual data through knowledge distillation for enhanced soil moisture forecasting.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Accurate soil moisture estimation is critical for precision agriculture, influencing irrigation, fertilization, and harvesting strategies.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">BEACON: Distilled Begin/End-Aware Structured Decoding for Continuous Sign Language Segmentation</div>
+<div class="meta-line">Authors: Guohou Zhang, Kalin Stefanov</div>
+<div class="meta-line">Venue: WACV</div>
+<div class="meta-line">First: 2026-10-29T07:55:11+00:00 · Latest: 2026-10-29T07:55:11+00:00</div>
+<div class="meta-line">Comments: Accepted at the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2027. 12 pages, 4 figures, including supplementary material</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.39553v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.39553v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">In segmentation-based continuous sign language recognition, an untrimmed video is first partitioned into lexical units; segmentation is therefore a means to an end---downstream recognition. However, segmenters are usually judged by local boundary detection rather than by the quality of the lexical segments and the recognition they enable. We present BEACON, a begin/end-aware segmenter that combines four-class Outside/Begin/Inside/End (BIOE) labeling, constrained Viterbi decoding over eight legal transitions, and boundary knowledge distilled from a binary teacher into a shared student. Under strict no-cut evaluation with validation-based model selection, BEACON improves segment-F1 by 14.58/14.59 points and boundary-F1 by 2.17/1.22 points, and reduces the downstream word error rate (WER) by 9.10/4.15 points relative to the state-of-the-art in the PHOENIX-14/BSL Corpus. To examine which segmentation metric better reflects downstream recognition, we evaluated five distinct architecture families. Segment-F1 aligns more consistently with lower WER than boundary-F1 in both corpora (Spearman $ρ=-1.0/-0.9$ versus $-0.9/-0.8$). These results support evaluating sign language segmentation in terms of segment quality and downstream recognition utility rather than local boundary accuracy alone.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">In segmentation-based continuous sign language recognition, an untrimmed video is first partitioned into lexical units; segmentation is therefore a means to an end---downstream recognition.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Distilling Large-Scale Machine Learning Interatomic Potentials to Predict Long-Timescale Electrolyte Transport Properties</div>
+<div class="meta-line">Authors: Ishan Amin, Yue Jian, Nitesh Kumar, Christine Zhang, Jianwei Lai, Casey S. Mezerkor, Aaron M. Melemed, Jonathan R. Thurston, Neil P. Dasgupta, J. David Bazak, Ethan J. Crumlin, Samuel Blau, Aditi S. Krishnapriyan</div>
+<div class="meta-line">First: 2026-10-29T07:12:15+00:00 · Latest: 2026-10-29T07:12:15+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.39513v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.39513v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Accurately predicting the transport properties of liquid electrolytes is critical for next-generation battery design and requires force fields that are both quantum-mechanically accurate and fast enough for long-timescale simulation. Recent large-scale pretrained machine learning interatomic potentials (MLIPs) approach density-functional-theory accuracy, but remain too slow to access the necessary timescales to converge transport properties. We provide a knowledge distillation procedure to transfer the accuracy of a large-scale &quot;teacher&quot; MLIP into fast, system-specific &quot;students&quot;, without any additional ab initio data. Our distilled models run ~40x faster, reproduce teacher-predicted structural observables, and produce stable 20 ns trajectories in days, rather than the months the teacher would require. Across a diverse set of sodium- and lithium-ion electrolytes, student-predicted self-diffusivities, ionic conductivities, and shear viscosities track experiment and outperform classical force-field predictions, establishing distillation as a practical route to accurate, long-timescale simulations necessary for high-throughput electrolyte screening.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Accurately predicting the transport properties of liquid electrolytes is critical for next-generation battery design and requires force fields that are both quantum-mechanically accurate and fast enough for long-timescale simulation.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">The Model Organism Lottery: Model Organism Interpretability Strongly Depends on Training Methodology</div>
+<div class="meta-line">Authors: Andrzej Szablewski, Gabriel Konar-Steenberg, Raffaello Fornasiere, Nikita Menon, Stefan Heimersheim</div>
+<div class="meta-line">First: 2026-07-01T15:01:30+00:00 · Latest: 2026-10-29T00:11:11+00:00</div>
+<div class="meta-line">Comments: 11 pages, 6 figures, references and appendices</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2607.01033v2">Abs</a> · <a href="https://arxiv.org/pdf/2607.01033v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Model organisms (MOs) - language models trained to exhibit undesired or unnatural behaviours - are frequently used as testbeds for evaluating white-box interpretability techniques. Current MOs are typically constructed via post-hoc supervised fine-tuning (SFT). Prior research has shown that interpretability methods can easily identify hidden behaviours in these MOs. However, recent work suggests that such post-hoc training methods may make interpretability unrealistically easy. We investigate this claim by constructing a suite of 61 $\verb|OLMo2-1B|$- and $\verb|gemma-3-1b-it|$-based MOs trained with seven different techniques, including standard post-hoc SFT, post-hoc DPO, and more realistic integration of MO data into the OLMo post-training DPO phase. We also use these to train 96 further variants via knowledge distillation. We use these MO variants to benchmark activation oracles, activation steering, the logit lens, and the Jacobian lens. Our findings show that (i) MO interpretability depends strongly on training objective, target behaviour, model architecture, and training data generation pipeline; (ii) substantial variance remains even after controlling for differences in the strength of target behaviour expression; and (iii) both our more realistic $\textit{integrated training}$ and knowledge distillation often yield less interpretable MOs than standard post-hoc methods. Our results cast substantial doubt on the validity of current MOs as interpretability proxies and suggest actionable steps towards more robust benchmarks.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Model organisms (MOs) - language models trained to exhibit undesired or unnatural behaviours - are frequently used as testbeds for evaluating white-box interpretability techniques.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Information-Theoretic Reliability--Safety Bounds and Finite-Alignment Dynamics in AI Knowledge Distillation</div>
+<div class="meta-line">Authors: Miao-Miao Yi, Zhen-Yu Cai, Y -M. Du, C. P. Sun</div>
+<div class="meta-line">First: 2026-10-28T11:04:21+00:00 · Latest: 2026-10-28T11:04:21+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.38651v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.38651v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">The reliability and safety of artificial intelligence (AI), together with their transfer and evolution through knowledge distillation, have attracted growing attention. We establish an information-theoretic bound on the reliability--safety trade-off and characterize the dynamics of this trade-off under knowledge distillation. We first prove a universal trade-off inequality that is independent of the specific model form. Its boundary is determined solely by a single parameter Kh, which quantifies the hidden layer&#x27;s ability to distinguish benign from hazardous inputs. We then develop a canonical Boltzmann-machine model of AI response behavior and derive two exact relations between reliability and safety. The trade-off curve is determined by the hazard discrimination capacity K, while the overall answer tendency controls the operating point along the curve. These relations agree well with existing experimental data. In knowledge distillation, we find that teacher responses induce a renormalization of the student model&#x27;s trade-off parameters. We further use a renormalization-group approach to study multigenerational distillation, deriving exact recursion relations and the associated renormalization-group-like flows for two representative direct intergenerational distillation protocols at arbitrary teacher--student alignment strength. These flows reveal fixed-point structures, long-term dynamics, and critical behavior, yielding testable predictions for the critical transition between capability loss and stable transmission.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">The reliability and safety of artificial intelligence (AI), together with their transfer and evolution through knowledge distillation, have attracted growing attention.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">You Don&#x27;t Need Aligned Representations: Knowledge Distillation via Random Prototype Spaces</div>
+<div class="meta-line">Authors: Hamza Etcibasi, Ramazan Gokberk Cinbis</div>
+<div class="meta-line">Venue: NeurIPS 2026</div>
+<div class="meta-line">First: 2026-10-27T20:27:47+00:00 · Latest: 2026-10-27T20:27:47+00:00</div>
+<div class="meta-line">Comments: To appear at NeurIPS 2026. 10 pages main text plus appendices. Code: https://github.com/HamzaEtcibasi/RPKD</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.37937v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.37937v1">PDF</a> · <a href="https://github.com/HamzaEtcibasi/RPKD">Code1</a> · <a href="https://huggingface.co/huggingface">Code2</a> · <a href="https://huggingface.co/docs/hub/spaces">Code3</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">A widely held assumption in knowledge distillation is that teacher and student representations must occupy a compatible or explicitly aligned feature space. We propose RPKD (Random Prototype Knowledge Distillation), which discards this assumption by comparing both networks against a shared bank of randomly initialized, frozen prototype vectors. Alignment is therefore carried out in an external reference space rather than in the teacher&#x27;s native feature coordinates: the teacher side is projected by fixed random maps that carry no trainable parameters, and only the student adapts. Two branches handle the transfer: a logit branch aligning global prototype similarity distributions and a feature branch matching spatially-resolved prototype activation maps. Both operate within the same fixed prototype space, which can be interpreted as a random feature embedding that approximately preserves inter-sample similarity structure, so the prototype bank and the distillation objective stay unchanged across teacher-student pairs while only the input projections are instantiated per architecture. In low-category settings, decoupling the prototype vocabulary from the task label space yields richer supervision than the label space alone, an advantage absent from logit-based methods, whose supervisory signal collapses as class count shrinks. This advantage is especially relevant in real-world scenarios where the label space is typically constrained. Extensive experiments demonstrate the effectiveness of RPKD, achieving a maximum gain of +7.98% over OFA on CIFAR-100, +12.44% on ImageNet-100, and +1.28% on ImageNet-1K. Source code is available at https://github.com/HamzaEtcibasi/RPKD</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">A widely held assumption in knowledge distillation is that teacher and student representations must occupy a compatible or explicitly aligned feature space.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Depth through Recurrence: Towards Ultra-Efficient On-Device ASR</div>
+<div class="meta-line">Authors: Chen Feng, Tianyi Xu, Ramchalam Kinattinkara Ramakrishnan, Yicheng Lin, Shaojie Zhuo, Zhaocong Yuan, Chenzheng Su, Xiaopeng Zhang</div>
+<div class="meta-line">First: 2026-10-27T18:45:35+00:00 · Latest: 2026-10-27T18:45:35+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.37833v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.37833v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Modern automatic speech recognition (ASR) systems have achieved remarkable accuracy by scaling model depth and capacity, but at the cost of increased memory, energy, and computational demands. On edge devices where ASR is often most needed, such as watches and glasses, deploying such large models is infeasible due to extremely constrained resources. This raises a fundamental question: can we achieve high representational power in deep ASR models without scaling up parameterization? In this work, we revisit the role of depth and identify layer wise representational dynamics, in which most layers learn functionally similar transformations. Motivated by this insight, we propose a block-recurrent ASR architecture that replaces parameterized depth with a small set of recurrent blocks, each consisting of weight-shared layers, thereby preserving effective depth while drastically reducing model size. Through representation-guided grouping and knowledge distillation, block-recurrent models retain the accuracy of large reference models while using an order of magnitude fewer parameters. Across Open ASR Leaderboard benchmarks, a model with only two shared blocks recovers 97.4% of the accuracy of large models on average. The compact backbone further enables efficient on-device personalization through lightweight MoE-LoRA adaptation, allowing user-specific models to match or surpass the accuracy of general-purpose ASR systems with significantly lower inference cost. By reusing weights across recurrent steps, the proposed architecture reduces memory-access overhead and inference energy consumption. Together, these results show that high quality ASR can be achieved without large parameterization, and that structured recurrence provides a principled path towards ultra-compressed, energy-efficient, and personalized speech recognition on the edge.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Modern automatic speech recognition (ASR) systems have achieved remarkable accuracy by scaling model depth and capacity, but at the cost of increased memory, energy, and computational demands.</div>
+</details>
+</div>
+<div class="card">
 <div class="title">Ground-to-Satellite Knowledge Distillation for Crop Classification under Temporal and Geographic Shift</div>
 <div class="meta-line">Authors: Miro Miranda, Rocco Sedona, Valerio Marsocci, Gabriele Cavallaro, Claudia Paris</div>
 <div class="meta-line">First: 2026-10-27T10:57:49+00:00 · Latest: 2026-10-27T10:57:49+00:00</div>
@@ -343,94 +427,10 @@ summary{cursor:pointer;color:var(--acc)}
 <details class="detail"><summary>Summary / 总结</summary>
 <div class="mono">Medical deep learning models depend heavily on domain-specific knowledge to perform well on knowledge-intensive clinical tasks.</div>
 </details>
-</div>
-<div class="card">
-<div class="title">Augmentation Strategy for DINO in Glaucoma Classification</div>
-<div class="meta-line">Authors: Ashish Kumar Meena, Chandra Sekhar Seelamantula</div>
-<div class="meta-line">Venue: MICCAI 2026</div>
-<div class="meta-line">First: 2026-10-23T11:33:28+00:00 · Latest: 2026-10-23T11:33:28+00:00</div>
-<div class="meta-line">Comments: 11 pages, 3 figures. Accepted at the 17th International Workshop on Machine Learning in Medical Imaging (MLMI 2026), held in conjunction with MICCAI 2026</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.32511v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.32511v1">PDF</a> · <a href="https://github.com/ashish-256/task_dino">Code1</a> · <a href="https://huggingface.co/huggingface">Code2</a> · <a href="https://huggingface.co/docs/hub/spaces">Code3</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Self-supervised learning (SSL) offers a promising approach to medical image representation learning, yet augmentation strategies of SSL frameworks validated on natural images do not reliably transfer to specialized medical imaging domains. We analyze DINO, a knowledge-distillation based SSL framework, and empirically demonstrate that its default augmentation strategy produces unreliable representations for retinal fundus images, degrading downstream glaucoma classification performance. Guided by the principle that effective cropped views should share minimal redundant information while retaining clinically relevant signal, we redesign DINO&#x27;s augmentation strategy. Our approach biases the learned representations toward diagnostically critical features rather than low-level image statistics. We evaluate our method for glaucoma classification by training a linear classifier on the frozen representations, achieving strong generalization across seven benchmark datasets. URL for code and weights: https://github.com/ashish-256/task_dino</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Self-supervised learning (SSL) offers a promising approach to medical image representation learning, yet augmentation strategies of SSL frameworks validated on natural images do not reliably transfer to specialized medical imaging domains.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">See What I Need, Dream What I Want: A Navigation Foundation Model on a Self-Constructed Representation Space</div>
-<div class="meta-line">Authors: Jiawei Chen, Yinxi Wang, Zihan Yang, Meijun Gao, Yaowei Liu, Shuming Zhang, Zecheng Li, Xiangju Mi, Yuxuan Liu, Runzhong Huang, Tianlin Li, Xun Zhang, Zhengyang Wang, Xu Miao, Tong Yang</div>
-<div class="meta-line">First: 2026-10-22T18:00:39+00:00 · Latest: 2026-10-22T18:00:39+00:00</div>
-<div class="meta-line">Comments: 28 pages. Project page: https://wang-yinxi.github.io/representnav/</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.31762v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.31762v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a> · <a href="https://wang-yinxi.github.io/representnav/">Project1</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">What visual representation should a navigation policy act on? Navigation policies built on vision foundation models largely leave representation design to the encoders&#x27; pretraining objectives. We present RepresentNav, a navigation foundation model built on a self-constructed representation space: a visual representation constructed by the policy&#x27;s own objectives from vision foundation models. RepresentNav builds this space with Representation Residuals, a compact three-layer transformer that attends over features spanning the full depth of multiple complementary vision foundation models, so that the policy learns to see what it needs for navigation. In the same space it dreams what it wants: before every action a latent chain-of-thought predicts the representation of the scene a moment ahead. The dream is trained end-to-end with the policy as a joint-embedding predictive architecture (JEPA), with a next-representation prediction loss and a regularizer on its targets. RepresentNav sets a new state of the art on VLNVerse, VLN-CE R2R, EVT-Bench, and two point-goal benchmarks, and its gains carry over to a physical robot amid clutter and moving people. On VLNVerse fine-grained, RepresentNav achieves 83.80% success, outperforming the previous state of the art by 20.05 percentage points, and on EVT-Bench distracted tracking it reaches 85.5% with a single camera (+10.1). With the same encoders, the self-constructed space clearly outperforms concatenating their outputs and learns to weight their layers unevenly, and a dream in it cuts collisions by a quarter. A single dreamed latent decodes into the depth, semantics, and 3D occupancy of the scene a moment ahead, more accurately than pretrained encoders applied to the real future frame, although occupancy is never supervised, and the rollout tracks the robot&#x27;s own motion over the next second: the dream emerges as a compact latent world model.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">What visual representation should a navigation policy act on?</div>
-</details>
-</div>
-<div class="card">
-<div class="title">One-shot federated unsupervised domain adaptation with Smoothed Knowledge Distillation and teacher refinement</div>
-<div class="meta-line">Authors: Ali Abedi, Q. M. Jonathan Wu, Ning Zhang, Farhad Pourpanah</div>
-<div class="meta-line">Venue: www</div>
-<div class="meta-line">First: 2026-10-22T03:06:22+00:00 · Latest: 2026-10-22T03:06:22+00:00</div>
-<div class="meta-line">Comments: Published in Engineering Applications of Artificial Intelligence, Vol. 167, 113946 (2026). DOI: 10.1016/j.engappai.2026.113946. Available at: https://www.sciencedirect.com/science/article/pii/S0952197626002277 and Code is available at: https://github.com/A-Abedi/SKD_ETR</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.30646v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.30646v1">PDF</a> · <a href="https://github.com/A-Abedi/SKD_ETR">Code1</a> · <a href="https://huggingface.co/huggingface">Code2</a> · <a href="https://huggingface.co/docs/hub/spaces">Code3</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Federated unsupervised domain adaptation (FUDA) addresses the challenge of adapting models to an unlabeled target domain using decentralized source domains while preserving data privacy. However, existing FUDA methods typically require multiple communication rounds, rely on complex aggregation strategies, and often struggle with noisy pseudo labels and inconsistent source knowledge. To address these challenges, we propose SKD-ETR, a novel one-shot FUDA framework that combines Smoothed Knowledge Distillation (SKD) and Exponential moving average-based Teacher Refinement (ETR). SKD trains a student model on the target domain using smoothed soft pseudo labels generated by the ensemble of source models. This reduces overconfidence, mitigates noise, and improves robustness. ETR further refines each source model by interpolating its parameters toward the student via exponential moving average (EMA), thereby transferring target-domain knowledge back to the teachers. This bidirectional refinement enhances pseudo-label quality and student generalization without additional communication overhead. SKD-ETR eliminates complex aggregation by initializing the student model randomly and performing a single-round distillation process. Extensive experiments on OfficeHome, Office-Caltech, and DomainNet demonstrate that SKD-ETR achieves competitive performance while being communication- and computation-efficient, and robust under noisy supervision. The code for this paper is available at https://github.com/A-Abedi/SKD_ETR.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Federated unsupervised domain adaptation (FUDA) addresses the challenge of adapting models to an unlabeled target domain using decentralized source domains while preserving data privacy.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">How to Backdoor Image Knowledge Distillation</div>
-<div class="meta-line">Authors: Qian Ma, Chen Wu, Prasenjit Mitra, Sencun Zhu</div>
-<div class="meta-line">First: 2025-04-30T05:19:23+00:00 · Latest: 2026-10-22T01:32:21+00:00</div>
-<div class="meta-line">Comments: Accepted as a regular paper for the 2026 IEEE International Conference on Big Data</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2504.21323v4">Abs</a> · <a href="https://arxiv.org/pdf/2504.21323v4">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Knowledge distillation is widely used to transfer behavior from a large teacher model to a smaller student. It is often assumed to be safe when the teacher is clean, because classic backdoor attacks rely on poisoned labels and triggers in supervised training, whereas distillation trains the student to match a teacher&#x27;s outputs. We show that this assumption can fail when the distillation dataset itself is poisoned. Our attack injects triggered and manipulated images that a clean teacher already predicts as an attacker chosen target label, which causes the student to learn a backdoor even though the teacher remains unaffected. We evaluate this threat across multiple manipulation strategies, including targeted adversarial perturbations and targeted GAN based class transitions, and study how distillation settings influence both accuracy and attack success. We show that the attack remains effective even at a 10% poisoning rates. The results demonstrate that a clean teacher alone is not a sufficient safeguard: poisoned distillation data can produce a strongly backdoored student while maintaining competitive performance on clean images. These findings show that the integrity and provenance of distillation data are part of the security boundary of data intensive KD pipelines, even when the teacher itself is trusted.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Knowledge distillation is widely used to transfer behavior from a large teacher model to a smaller student.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">How Far Can Foundation Models Be Distilled for Efficient Jet Tagging?</div>
-<div class="meta-line">Authors: Jay Agarwal, Siddharth Khare, Dhruv Kumar</div>
-<div class="meta-line">First: 2026-10-21T09:00:56+00:00 · Latest: 2026-10-21T09:00:56+00:00</div>
-<div class="meta-line">Comments: 34 pages, 16 figures, 23 tables. Code and model weights: https://github.com/JayAgarwal25/distilling-jet-taggers</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.29439v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.29439v1">PDF</a> · <a href="https://github.com/JayAgarwal25/distilling-jet-taggers">Code1</a> · <a href="https://huggingface.co/huggingface">Code2</a> · <a href="https://huggingface.co/docs/hub/spaces">Code3</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Jet tagging is one of the most important applications of machine learning at the Large Hadron Collider. Recent models build in more physics knowledge or rely on large-scale pretraining, but the experiments place strict limits on their inference cost. Knowledge distillation can transfer their performance to small students that are cheap to run. We ask which properties of a teacher help the student, how small a student can get and how close it can come to the state of the art. On a jet tagging benchmark, we distil six teachers that differ in architecture, symmetry and pretraining, including two foundation models, into five small students. Every teacher improves every student, and the gain depends mainly on the strength of the teacher. We then shrink our two strongest distilled students, Transformer and L-GATr-slim, in width and in depth. With 20 thousand parameters, a distilled L-GATr-slim outperforms every published jet tagger trained from scratch at a fraction of the inference cost of every teacher. Even with two thousand parameters, it matches ParT, a model with a thousand times as many parameters. We also study what the students learn from their teachers. Our benchmark of inference cost shows that students of the same size can differ by almost an order of magnitude in speed. We release the code and the weights of all trained models.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Jet tagging is one of the most important applications of machine learning at the Large Hadron Collider.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">Two for One: Privileged Learning for Resource-Constrained Screening</div>
-<div class="meta-line">Authors: Lisa Y. W. Tang</div>
-<div class="meta-line">First: 2026-10-21T03:09:41+00:00 · Latest: 2026-10-21T03:09:41+00:00</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.29126v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.29126v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Machine learning systems are often developed under data-rich conditions but deployed when only incomplete information is available. A natural example arises in colour fundus photography (CFP), where both eyes are commonly imaged because they can provide complementary information for ocular disease assessment. Prior approaches that exploit bilateral information either fuse both eyes in a single model or use knowledge distillation to compress a dual-eye teacher into a lightweight student that still requires both images at test time. However, bilateral acquisition may not always be feasible. We thus propose a privileged learning framework in which a teacher model has access to bilateral CFP images during training and learns representations informed by information from both eyes, while the student is trained to transfer this knowledge from the bilateral teacher using only a single-eye image as input. At inference, the student operates exclusively on this single-eye input and does not require the contralateral image. Experimental results show consistent improvements in area under the receiver operating characteristic curve over conventional monocular training, with the largest gains observed for left-eye images for the detection of age-related macular degeneration (0.931 vs. 0.966) and diabetic retinopathy (0.789 vs. 0.836).%, while requiring only a single-eye image at inference. By enabling models to benefit from bilateral information during training while requiring only a single-eye image at inference, our approach may support more reliable deployment in resource-constrained clinical and screening environments.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Machine learning systems are often developed under data-rich conditions but deployed when only incomplete information is available.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">D-Skill: Distilling Teacher Knowledge through Agent Skills</div>
-<div class="meta-line">Authors: Shuo Yuan, Dacheng Li, Joseph E. Gonzalez</div>
-<div class="meta-line">First: 2026-10-20T20:52:03+00:00 · Latest: 2026-10-20T20:52:03+00:00</div>
-<div class="meta-line">Comments: 21 pages, 4 figures, 9 tables</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.28914v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.28914v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Frontier language-model agents excel at complex tasks, but high inference costs make transferring their capabilities to smaller models essential. Traditional knowledge distillation achieves this through parameter updates, requiring access to the student&#x27;s weights and additional training compute while encoding the transferred knowledge implicitly in the parameters. We introduce D-Skill, a framework that treats the teacher as a black box and distills its behavioral advantage into an interpretable natural-language skill by analyzing paired rollouts and identifying behavioral divergences and agreements. The resulting lessons are consolidated offline, with any compatible skill-update backend, into a skill document that is provided to the student at inference time. D-Skill constructs the skill entirely offline from fixed trajectories, without labels, further environment interaction, or weight updates after rollout collection. Across SpreadsheetBench-Verified, ALFWorld, and chess puzzles spanning multiple teacher-student pairs, D-Skill closes 75%-95% of the teacher-student gap without touching model weights. After a single offline pass over the paired traces, D-Skill outperforms one-epoch SFT baselines and remains competitive with multi-epoch SFT. Under the same model family, the resulting student also incurs 5.7x-8.3x lower inference cost per task than the teacher. Our results demonstrate that natural-language skill distillation offers a performant, interpretable, and efficient alternative to weight-based capability transfer.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Frontier language-model agents excel at complex tasks, but high inference costs make transferring their capabilities to smaller models essential.</div>
-</details>
 </div></div>
     <details style="margin-top:16px" class="detail"><summary>History</summary>
-      <div class="history-list"><a href="archive/20261029_0657.html">20261029_0657</a>
+      <div class="history-list"><a href="archive/20261030_0705.html">20261030_0705</a>
+<a href="archive/20261029_0657.html">20261029_0657</a>
 <a href="archive/20261028_0650.html">20261028_0650</a>
 <a href="archive/20261027_0700.html">20261027_0700</a>
 <a href="archive/20261026_0521.html">20261026_0521</a>
