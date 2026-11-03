@@ -74,12 +74,169 @@ summary{cursor:pointer;color:var(--acc)}
   <button class="btn" onclick="__expandAll(false)">Collapse All</button>
 </div>
 
-        <span class="badge">2026-11-03 09:27</span>
+        <span class="badge">2026-11-04 07:53</span>
       </div>
     </div>
     <div class="hr"></div>
     <div>Latest digest</div>
     <div class="row"><div class="card">
+<div class="title">CRAD: Class-wise Reliability-Aware Distillation for Decentralized Heterogeneous Federated Learning</div>
+<div class="meta-line">Authors: Baraa Bilbeisi, Mengchen Fan, Baocheng Geng, Qing Tian</div>
+<div class="meta-line">Venue: WACV 2027</div>
+<div class="meta-line">First: 2026-08-31T22:36:30+00:00 · Latest: 2026-11-02T18:52:00+00:00</div>
+<div class="meta-line">Comments: Accepted to WACV 2027</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2609.00446v2">Abs</a> · <a href="https://arxiv.org/pdf/2609.00446v2">PDF</a> · <a href="https://github.com/bbilbeis/CRAD">Code1</a> · <a href="https://huggingface.co/huggingface">Code2</a> · <a href="https://huggingface.co/docs/hub/spaces">Code3</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Conventional federated learning (FL) relies on parameter averaging, which forces clients to be doubly homogeneous: it demands an identical architecture and degrades under non-IID data. Real-world deployments usually break both assumptions. We sidestep both by building a decentralized knowledge distillation framework in which each client evaluates its peers&#x27; model snapshots on its own local data and distills from the resulting soft predictions. Because knowledge is transferred through the shared class posterior, clients are free to run different architectures; and because every teacher is evaluated on the student&#x27;s own device, raw data never leaves the client, with no central server or public dataset required. Within this setting, we identify and address an under-examined problem: how to combine the peer teacher predictions. Existing methods, like uniform averaging, ignore how knowledge reliability varies across teachers and classes. We propose Class-wise Reliability-Aware Distillation (CRAD), which, per class, first discards teachers that disagree with the peer consensus and then takes a weighted average of the rest, weighting each teacher by its per-class reliability (precision, or inverse variance). Since the variance of an accuracy from $n$ samples scales as $1/n$, support enters automatically: among the teachers that survive filtering, a teacher is trusted for a class to the degree that it is both accurate and well-evidenced for it. On CIFAR-10, CIFAR-100, and PathMNIST, across heterogeneous architectures under severe non-IID skew, CRAD consistently outperforms competing methods in global accuracy. Our code is publicly available at https://github.com/bbilbeis/CRAD.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Conventional federated learning (FL) relies on parameter averaging, which forces clients to be doubly homogeneous: it demands an identical architecture and degrades under non-IID data.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Contrastive Adapter Training and Consensus Knowledge Distillation for Multi-Source-Free Domain Adaptation in Skin Cancer Diagnosis</div>
+<div class="meta-line">Authors: Ali Abedi, Q. M. Jonathan Wu, Ning Zhang, Farhad Pourpanah</div>
+<div class="meta-line">Venue: www</div>
+<div class="meta-line">First: 2026-11-02T17:58:16+00:00 · Latest: 2026-11-02T17:58:16+00:00</div>
+<div class="meta-line">Comments: Published in Artificial Intelligence in Medicine, Vol. 180, 103465 (2026). DOI: https://doi.org/10.1016/j.artmed.2026.103465. Available at: https://www.sciencedirect.com/science/article/pii/S093336572600117X and Code is available at: https://github.com/A-Abedi/CAT_CKD</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2611.03528v1">Abs</a> · <a href="https://arxiv.org/pdf/2611.03528v1">PDF</a> · <a href="https://github.com/A-Abedi/CAT_CKD">Code1</a> · <a href="https://huggingface.co/huggingface">Code2</a> · <a href="https://huggingface.co/docs/hub/spaces">Code3</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Skin cancer diagnosis, particularly differentiating melanoma from benign nevi, is challenging due to the visual similarity between lesions. Although convolutional neural networks (CNNs) and vision transformers (ViTs) have shown promising performance, their effectiveness often deteriorates on data from heterogeneous clinical sources. Conventional domain adaptation methods address domain shift but require access to source data during adaptation, which is often infeasible due to privacy regulations. Multi-source-free unsupervised domain adaptation (MSFDA) addresses this limitation by leveraging multiple labeled source domains to generalize to an unlabeled target domain without requiring access to source data. However, existing MSFDA methods rely on full backbone fine-tuning, leading to catastrophic forgetting and overfitting on small clinical datasets, and address domain shift at the aggregation stage without establishing a shared domain-invariant feature space. Furthermore, their reliance on hard pseudo-labels or confidence-weighted aggregation introduces noisy supervision signals under domain shift. To address these limitations, we propose CAT-CKD, consisting of two components: (1) contrastive adapter training (CAT), which trains lightweight ConvPass adapters within a frozen ViT backbone using supervised contrastive learning (SCL) to establish a shared domain-invariant feature space before source-specific model training, and (2) consensus knowledge distillation (CKD), which aggregates logits from multiple source models into a consensus supervisory signal and adapts a student model on unlabeled target data using KL divergence. Experiments on five publicly available skin lesion datasets show that CAT-CKD achieves an average AUROC of 86.1%, outperforming existing MSFDA methods while requiring only 4.3M trainable parameters. The code is available at https://github.com/A-Abedi/CAT_CKD.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Skin cancer diagnosis, particularly differentiating melanoma from benign nevi, is challenging due to the visual similarity between lesions.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">CL3DOD: Understanding the Stability-Plasticity Dilemma in Outdoor Class-Incremental 3D Object Detection</div>
+<div class="meta-line">Authors: Muhammad Ahmed Ullah Khan, Khalil Ahmed, Didier Stricker, Muhammad Zeshan Afzal</div>
+<div class="meta-line">First: 2026-11-02T14:48:10+00:00 · Latest: 2026-11-02T14:48:10+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2611.03229v1">Abs</a> · <a href="https://arxiv.org/pdf/2611.03229v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Class-incremental learning (CIL) for outdoor 3D object detection remains largely underexplored. Existing outdoor studies are limited to single-benchmark evaluations, with SDCoT++ considering KITTI and CL2OD considering nuScenes under different incremental settings. This makes it difficult to assess whether observed continual-learning behavior generalizes across autonomous-driving benchmarks. To the best of our knowledge, we provide the first unified cross-benchmark analysis of outdoor class-incremental 3D object detection across multiple autonomous-driving benchmarks, covering both two-task and multi-stage settings. We investigate: (1) how severely existing 3D detectors forget previously learned classes, (2) how incremental training exposes the stability-plasticity dilemma between knowledge retention and new-class acquisition, and (3) which forms of supervision are most effective for balancing these objectives. We introduce CL3DOD, a class-incremental 3D detection framework that restores missing supervision for previous classes using predictions from the previous-stage detector, preserves old-class responses through query-wise knowledge distillation, and employs EMA-based temporal consistency regularization. Experiments on KITTI and nuScenes reveal a consistent stability-plasticity dilemma across both benchmarks. CL3DOD generally achieves a more favorable stability-plasticity balance than controlled incremental baselines and improves upon published prior methods in the reported benchmark comparisons. This advantage persists across multiple incremental stages, demonstrating strong retention of previously learned knowledge while maintaining effective new-class acquisition. Our code, evaluation setup, and incremental task splits will be publicly released.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Class-incremental learning (CIL) for outdoor 3D object detection remains largely underexplored.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">SurgPace: Complexity-Aware Progressive Distillation for Surgical Multimodal Large Language Models</div>
+<div class="meta-line">Authors: Zhicheng He, Xiaohan Xing, Hongqiu Wang, Kun Yuan, Guankun Wang, Yanheng Li, Haoxuan Che, Nassir Navab, Hongliang Ren, Long Bai</div>
+<div class="meta-line">First: 2026-11-02T13:39:14+00:00 · Latest: 2026-11-02T13:39:14+00:00</div>
+<div class="meta-line">Comments: 21 pages, 4 figures, Accepted by Medical Image Analysis</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2611.03125v1">Abs</a> · <a href="https://arxiv.org/pdf/2611.03125v1">PDF</a> · <a href="https://github.com/hezhicheng2002/SurgPace">Code1</a> · <a href="https://huggingface.co/huggingface">Code2</a> · <a href="https://huggingface.co/docs/hub/spaces">Code3</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Multimodal large language models (MLLMs) have shown strong potential in robotic surgery for question answering, scene understanding, and grounded assistance, but their high computational cost limits real clinical deployment. Knowledge distillation provides a practical way to build compact surgical MLLMs, yet direct distillation is not well suited to surgical data because surgical samples vary greatly in difficulty, visual ambiguity, and required clinical context, making uniform teacher-student transfer unstable. In addition, the role of supervision changes during training: early stages require stronger teacher guidance for multimodal alignment, while later stages rely more on task supervision for effective optimization. To address these challenges, we propose SurgPace, a complexity-aware continuous curriculum framework for progressive distillation of surgical vision-language models. SurgPace estimates sample complexity using predictive confidence and Lorentz geometric consistency, and uses the fused score to guide a continuous easy-to-hard training process. We further introduce hierarchical representation alignment, which aligns the student with the teacher at the feature, logit, and probability levels, while gradually shifting the training focus from teacher imitation to task supervision. This design separates sample-level curriculum from objective-level scheduling, leading to more stable and effective distillation. We evaluate SurgPace on Surg-396K, a benchmark built from four public surgical datasets and covering five dialogue paradigms. SurgPace consistently outperforms strong MLLM distillation baselines, demonstrating its effectiveness for building compact, memory-efficient surgical MLLMs with faster decoding under controlled benchmarks. Code is available at https://github.com/hezhicheng2002/SurgPace.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Multimodal large language models (MLLMs) have shown strong potential in robotic surgery for question answering, scene understanding, and grounded assistance, but their high computational cost limits real clinical deployment.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">FTerViT: Fully Ternary Vision Transformer</div>
+<div class="meta-line">Authors: Szymon Ruciński, Pietro Bonazzi, Engin Türetken, Simon Narduzzi, Michele Magno, Nadim Maamari</div>
+<div class="meta-line">Venue: NeurIPS 2026 poster</div>
+<div class="meta-line">First: 2026-05-20T13:41:53+00:00 · Latest: 2026-11-02T10:59:19+00:00</div>
+<div class="meta-line">Comments: Accepted at NeurIPS 2026 (poster)</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2605.21171v2">Abs</a> · <a href="https://arxiv.org/pdf/2605.21171v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Ternary Vision Transformers offer substantial model compression, however state-of-the-art methods only ternarize the encoder layers, leaving patch embeddings, LayerNorm parameters, and classifier heads in full precision. In compact models targeting resource-constrained processors, such as microcontrollers, these remaining full-precision components determine the total memory footprint, severely limiting deployment efficiency and on-device feasibility. In this work, we introduce a fully ternarized Vision Transformer in which all weight matrices and normalization parameters are ternarized, while activations remain 8-bit (FTerViT). To this end, we introduce two novel operators: TernaryBitConv2d with per-channel scaling for patch embedding and TernaryLayerNorm. FTerViT is trained using knowledge distillation, followed by a lightweight quantization-aware recovery phase. On a matched DeiT-S backbone, FTerViT reaches 77.47% ImageNet-1K top-1 at 5.81 MB, +3.27 pp over TerViT. With the stronger DeiT-III-S backbone at 384x384 resolution, our ternary W2A8 model achieves 82.43% at 6.09 MB (~15x compression, -2.42 pp vs. FP32). This backbone- and resolution-advantaged result exceeds prior ternary ViTs by up to 8 pp. Finally, we demonstrate the first implementation of ternary vision transformers on a dual-core Xtensa LX7 microcontroller inside the ESP32-S3 system-on-chip. By deploying FTerViT-Small (based on DeiT-III-Small at 224x224 resolution, 5.81 MB), we achieve 79.64% ImageNet-1K top-1 accuracy.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Ternary Vision Transformers offer substantial model compression, however state-of-the-art methods only ternarize the encoder layers, leaving patch embeddings, LayerNorm parameters, and classifier heads in full precision.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Task-Aware Joint Pruning and Distillation for Efficient Audio Deepfake Detection</div>
+<div class="meta-line">Authors: Miao He, Peng Cheng, Zhongjie Ba, Qing Wen, Li Lu, Xin Yang, Kui Ren</div>
+<div class="meta-line">First: 2026-10-04T14:34:27+00:00 · Latest: 2026-11-02T06:39:39+00:00</div>
+<div class="meta-line">Comments: 6 pages, 4 figures, Proceedings of Interspeech 2026</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.05264v2">Abs</a> · <a href="https://arxiv.org/pdf/2610.05264v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Advances in speech synthesis have made deepfake speeches increasingly convincing, posing growing threats to security. While self-supervised learning (SSL) based detectors achieve state-of-the-art performance, their computational demands (typically 300M+ parameters) prevent deployment on resource-constrained devices. Existing compression methods, designed mainly for content-centric tasks, struggle to maintain competitive performance when directly adapted to deepfake detection. We propose a Task-Aware Joint Pruning and Distillation framework that combines cross-domain knowledge distillation with movement-guided structured pruning to transfer forgery-discriminative knowledge and preserve critical structures under aggressive compression. Our framework reduces the model to 31.9M parameters with 6.3$\times$ FLOPs reduction, with an average performance drop of only 1.30\% across multiple datasets compared to the uncompressed baseline, demonstrating strong potential for on-device deployment.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Advances in speech synthesis have made deepfake speeches increasingly convincing, posing growing threats to security.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Multi-Teacher Reasoning Distillation for LLM Recommendation with Self-Exploration</div>
+<div class="meta-line">Authors: Liangbo Ning, Siyuan Liang, Yi Zhou, Yifeng Zhang, Qing Li, Wenqi Fan, Dacheng Tao</div>
+<div class="meta-line">First: 2026-11-02T03:20:28+00:00 · Latest: 2026-11-02T03:20:28+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2611.02457v1">Abs</a> · <a href="https://arxiv.org/pdf/2611.02457v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Reasoning-augmented recommender systems (RecSys) enhance user preference modeling by generating reasoning trajectories over historical interactions before making recommendations. Knowledge distillation provides a practical paradigm for transferring such reasoning capabilities from powerful large language models to lightweight RecSys. However, existing methods typically rely on a single fixed teacher, remain constrained by the teacher knowledge ceiling, and indiscriminately distill teacher-generated trajectories without assessing their actual utility for downstream recommendation. To address these limitations, we propose MUSE (Multi-Teacher Utility-guided Selection with Self-Exploration), an adaptive reasoning distillation framework that jointly improves reasoning generation and reasoning utilization. MUSE first constructs a diverse reasoning pool using multiple teacher LLMs and progressively augments it via student self-exploration, enabling the student to leverage the strengths of different teachers and gradually explore reasoning strategies beyond teacher imitation. We then develop Rank-Gain Utility Assessment (RGUA), which evaluates each candidate according to the normalized full-catalog rank improvement of the ground-truth item and identifies the most and least recommendation-beneficial trajectories. Based on these utility-aware trajectory pairs, we introduce dual-level contrastive learning objectives that guide the student generator to prefer beneficial reasoning while training the recommendation encoder to more effectively exploit recommendation-relevant preference evidence. Extensive experiments on three real-world datasets demonstrate the effectiveness and robustness of the proposed framework.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Reasoning-augmented recommender systems (RecSys) enhance user preference modeling by generating reasoning trajectories over historical interactions before making recommendations.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Learning Better Certified Models from Empirically-Robust Teachers</div>
+<div class="meta-line">Authors: Alessandro De Palma</div>
+<div class="meta-line">Venue: NeurIPS 2026</div>
+<div class="meta-line">First: 2026-02-02T16:30:53+00:00 · Latest: 2026-11-01T18:29:15+00:00</div>
+<div class="meta-line">Comments: NeurIPS 2026</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2602.02626v2">Abs</a> · <a href="https://arxiv.org/pdf/2602.02626v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Adversarial training attains strong empirical robustness to specific adversarial attacks by training on concrete adversarial perturbations, but it produces neural networks that are not amenable to strong robustness certificates through neural network verification. On the other hand, earlier certified training schemes directly train on bounds from network relaxations to obtain models that are certifiably robust, but display sub-par standard performance. Recent work has shown that state-of-the-art trade-offs between certified robustness and standard performance can be obtained through a family of losses combining adversarial outputs and neural network bounds. Nevertheless, differently from empirical robustness, verifiability still comes at a significant cost in standard performance. In this work, we propose to leverage empirically-robust teachers to improve the performance of certifiably-robust models through knowledge distillation. Using versatile feature-space distillation objectives, we show that distillation from adversarially-trained teachers can significantly improve the performance of state-of-the-art certified training algorithms for ReLU networks on robust computer vision benchmarks.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Adversarial training attains strong empirical robustness to specific adversarial attacks by training on concrete adversarial perturbations, but it produces neural networks that are not amenable to strong robustness certificates through neural network verification.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">T2D: Target-to-Draft Model Pruning &amp; Adaptation for Efficient Speculative Decoding</div>
+<div class="meta-line">Authors: Shahriar Kabir Nahin, Xiao Ye, Muhao Chen, Ben Zhou, Anshuman Chhabra</div>
+<div class="meta-line">First: 2026-10-25T07:00:45+00:00 · Latest: 2026-11-01T04:53:03+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.34103v2">Abs</a> · <a href="https://arxiv.org/pdf/2610.34103v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Speculative decoding significantly accelerates autoregressive text generation in Large Language Models (LLMs), but its efficacy depends largely on two key factors: the distributional alignment between the draft and the target model, and the draft model&#x27;s latency during inference. However, existing approaches typically utilize independently pretrained small draft models or seek to prune the target model to a manually chosen architecture, thereby failing to explicitly balance the trade-off between draft model alignment and token generation efficiency. To address this gap, we formulate draft model design as an optimization problem and propose T2D, a framework that constructs draft models directly from the target model using latency-aware structured pruning and knowledge distillation. In this manner, T2D obtains draft models that are jointly optimized for both measured inference latency and cross-entropy loss on the target model&#x27;s responses, resulting in superlative speculative decoding performance. Through extensive experiments on multi-domain speculative decoding benchmarks and across several target model families of differing scale, we demonstrate how T2D prunes up to 92\% of the target model to obtain highly performant draft models compared to competitive baselines. Moreover, draft models obtained via T2D can also be utilized by other speculative decoding token-alignment and knowledge distillation methods in a plug-and-play fashion, leading to further gains. Our findings underscore the importance of jointly navigating the draft model architecture-alignment frontier to unlock the full potential of speculative decoding for LLMs.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Speculative decoding significantly accelerates autoregressive text generation in Large Language Models (LLMs), but its efficacy depends largely on two key factors: the distributional alignment between the draft and the target model, and the draft model&#x27;s latency during inference.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Label Smoothing in Disguise? Gated Knowledge Distillation for Low-Resource Bangla Generation</div>
+<div class="meta-line">Authors: Dipto Sumit, Zobeida Zaman Chowdhury, Syeda Fabiayee Jahan, Farig Sadeque</div>
+<div class="meta-line">First: 2026-10-31T16:01:58+00:00 · Latest: 2026-10-31T16:01:58+00:00</div>
+<div class="meta-line">Comments: 18 pages, 5 figures</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2611.01065v1">Abs</a> · <a href="https://arxiv.org/pdf/2611.01065v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Gated knowledge distillation (KD) weights teacher signals per token or example, aiming to trust an imperfect teacher only where it seems reliable. We test two gates: EWAD (entropy-weighted agreement-aware distillation), which gates tokens by teacher confidence, and CHAD (counterfactual harm-aware distillation), which gates examples by gradient alignment with validation data. Across six Bangla-centric tasks, three student models (60M to about 2B parameters), and two teacher families, no gate significantly improves plain KD in 45 comparisons. KD also fails to beat cross-entropy (CE) fine-tuning on gold outputs in 40 single-seed comparisons or three-seed runs on four tasks; CE leads on every summarisation metric. The main benefit of KD is regularisation: over ten fixed epochs, CE students lose 0.030 to 0.044 token-F1 from their early-stopped checkpoint, versus 0.005 to 0.025 for distilled students. Teacher-free label smoothing closes most of this gap. In one comparison, a teacher 0.29 token-F1 worse yields students at most 0.009 worse. Thus, gating may change regularisation strength but has little teacher knowledge to select. Findings are limited to Bangla-centric tasks and small students. We will release code, data splits, predictions, and scores.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Gated knowledge distillation (KD) weights teacher signals per token or example, aiming to trust an imperfect teacher only where it seems reliable.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">ZOPGA-KD: Zeroth Order PGA Guided Data Free Knowledge Distillation</div>
+<div class="meta-line">Authors: Tuhin Subhra Mukherjee, Tiya Rose Pulikunnel, Vaidhav Adit, Devanand Thanissery, S. H. Shabbeer Basha</div>
+<div class="meta-line">First: 2026-10-31T13:07:43+00:00 · Latest: 2026-10-31T13:07:43+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2611.00908v1">Abs</a> · <a href="https://arxiv.org/pdf/2611.00908v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Knowledge distillation (KD) enables the transfer of learned representations from a large teacher network to a small student network. In foundational KD, the student network uses the original training data of the teacher model to accomplish this task. However, due to privacy concerns, the original training data is often not available. To overcome this reliance on original training data, several data-free knowledge distillation methods have been developed. Some of these methods operate in the white-box setting, and a few methods generate synthetic data by training a generator network. White-box methods use the teacher model&#x27;s parameters to obtain a synthetic dataset. To avoid relying on teacher parameters, some methods use computationally expensive generative approaches to obtain such a dataset. There also exist certain black-box methods that generate the synthetic data without accessing teacher parameters. These methods are also computationally intensive. We propose a data-free knowledge distillation method that utilizes just the teacher&#x27;s output logits and does not require access to its architecture, parameters, or gradients. We generate synthetic data via Projected Gradient Ascent (PGA) starting from smooth random noise signals. Required gradients are obtained through zeroth-order gradient estimation rather than backpropagating through the teacher&#x27;s parameters. The student is then trained on these synthetically generated samples. We evaluate the proposed method on several benchmark datasets and show that the distillation performance is comparable with approaches that have access to the teacher model parameters.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Knowledge distillation (KD) enables the transfer of learned representations from a large teacher network to a small student network.</div>
+</details>
+</div>
+<div class="card">
+<div class="title">Can Jev Improve Demonstration Retrieval for In-Context Learning?</div>
+<div class="meta-line">Authors: Rui Song, Yingji Li, Hao Xu</div>
+<div class="meta-line">First: 2026-10-31T08:31:09+00:00 · Latest: 2026-10-31T08:31:09+00:00</div>
+<div class="meta-line">Comments: 13 pages, 8 figures</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2611.00737v1">Abs</a> · <a href="https://arxiv.org/pdf/2611.00737v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Demonstration selection plays a crucial role in the effectiveness of in-context learning (ICL) for large language models (LLMs). Extensive research has explored various retrieval strategies to identify informative demonstrations and improve downstream performance. Recently, the emergence of Jev, a decision-oriented language model capable of producing probabilistic judgments, offers a new perspective on evaluating demonstration utility. This motivates us to investigate a fundamental question: Can Jev improve demonstration retrieval for in-context learning? In this paper, we demonstrate that Jev can effectively enhance demonstration retrieval by directly assessing the utility of candidate demonstrations for a given query. However, applying Jev to large-scale retrieval introduces substantial computational overhead, as each candidate requires an additional decision-making inference. To address this limitation, we propose a simple yet effective knowledge distillation approach that transfers Jev&#x27;s utility estimation capability to a lightweight multilayer perceptron (MLP). By learning to approximate Jev&#x27;s probabilistic judgments, the distilled model enables efficient demonstration ranking while maintaining competitive retrieval performance. Our study highlights the potential of decision-oriented language models for demonstration selection and provides an efficient framework for integrating their decision-making capabilities into ICL.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Demonstration selection plays a crucial role in the effectiveness of in-context learning (ICL) for large language models (LLMs).</div>
+</details>
+</div>
+<div class="card">
+<div class="title">BEACON: Distilled Begin/End-Aware Structured Decoding for Continuous Sign Language Segmentation</div>
+<div class="meta-line">Authors: Guohou Zhang, Kalin Stefanov</div>
+<div class="meta-line">Venue: WACV</div>
+<div class="meta-line">First: 2026-10-29T07:55:11+00:00 · Latest: 2026-10-31T06:03:12+00:00</div>
+<div class="meta-line">Comments: Accepted at the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2027. 12 pages, 4 figures, including supplementary material</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.39553v2">Abs</a> · <a href="https://arxiv.org/pdf/2610.39553v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">In segmentation-based continuous sign language recognition, an untrimmed video is first partitioned into lexical units; segmentation is therefore a means to an end---downstream recognition. However, segmenters are usually judged by local boundary detection rather than by the quality of the lexical segments and the recognition they enable. We present BEACON, a begin/end-aware segmenter that combines four-class Outside/Begin/Inside/End (BIOE) labeling, constrained Viterbi decoding over eight legal transitions, and boundary knowledge distilled from a binary teacher into a shared student. Under strict no-cut evaluation with validation-based model selection, BEACON improves segment-F1 by 14.58/14.59 points and boundary-F1 by 2.17/1.22 points, and reduces the downstream word error rate (WER) by 9.10/4.15 points relative to the state-of-the-art in the PHOENIX-14/BSL Corpus. To examine which segmentation metric better reflects downstream recognition, we evaluated five distinct architecture families. Segment-F1 aligns more consistently with lower WER than boundary-F1 in both corpora (Spearman $ρ=-1.0/-0.9$ versus $-0.9/-0.8$). These results support evaluating sign language segmentation in terms of segment quality and downstream recognition utility rather than local boundary accuracy alone.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">In segmentation-based continuous sign language recognition, an untrimmed video is first partitioned into lexical units; segmentation is therefore a means to an end---downstream recognition.</div>
+</details>
+</div>
+<div class="card">
 <div class="title">Trainable Vector Quantization for Large Language Models</div>
 <div class="meta-line">Authors: Anastasiia Prutianova, Alina Bogdanova, Mikhail Shutov, Dmitrii Poimanov, Anatoly Gorkov, Ilia Zharikov</div>
 <div class="meta-line">Venue: Machine Learning and Knowledge Discovery in Databases. Research Track. ECML PKDD 2026. Lecture Notes in Computer Science, vol 16944, pp 245-259. Springer, Cham</div>
@@ -167,19 +324,6 @@ summary{cursor:pointer;color:var(--acc)}
 </details>
 </div>
 <div class="card">
-<div class="title">BEACON: Distilled Begin/End-Aware Structured Decoding for Continuous Sign Language Segmentation</div>
-<div class="meta-line">Authors: Guohou Zhang, Kalin Stefanov</div>
-<div class="meta-line">Venue: WACV</div>
-<div class="meta-line">First: 2026-10-29T07:55:11+00:00 · Latest: 2026-10-29T07:55:11+00:00</div>
-<div class="meta-line">Comments: Accepted at the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2027. 12 pages, 4 figures, including supplementary material</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.39553v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.39553v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">In segmentation-based continuous sign language recognition, an untrimmed video is first partitioned into lexical units; segmentation is therefore a means to an end---downstream recognition. However, segmenters are usually judged by local boundary detection rather than by the quality of the lexical segments and the recognition they enable. We present BEACON, a begin/end-aware segmenter that combines four-class Outside/Begin/Inside/End (BIOE) labeling, constrained Viterbi decoding over eight legal transitions, and boundary knowledge distilled from a binary teacher into a shared student. Under strict no-cut evaluation with validation-based model selection, BEACON improves segment-F1 by 14.58/14.59 points and boundary-F1 by 2.17/1.22 points, and reduces the downstream word error rate (WER) by 9.10/4.15 points relative to the state-of-the-art in the PHOENIX-14/BSL Corpus. To examine which segmentation metric better reflects downstream recognition, we evaluated five distinct architecture families. Segment-F1 aligns more consistently with lower WER than boundary-F1 in both corpora (Spearman $ρ=-1.0/-0.9$ versus $-0.9/-0.8$). These results support evaluating sign language segmentation in terms of segment quality and downstream recognition utility rather than local boundary accuracy alone.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">In segmentation-based continuous sign language recognition, an untrimmed video is first partitioned into lexical units; segmentation is therefore a means to an end---downstream recognition.</div>
-</details>
-</div>
-<div class="card">
 <div class="title">Distilling Large-Scale Machine Learning Interatomic Potentials to Predict Long-Timescale Electrolyte Transport Properties</div>
 <div class="meta-line">Authors: Ishan Amin, Yue Jian, Nitesh Kumar, Christine Zhang, Jianwei Lai, Casey S. Mezerkor, Aaron M. Melemed, Jonathan R. Thurston, Neil P. Dasgupta, J. David Bazak, Ethan J. Crumlin, Samuel Blau, Aditi S. Krishnapriyan</div>
 <div class="meta-line">First: 2026-10-29T07:12:15+00:00 · Latest: 2026-10-29T07:12:15+00:00</div>
@@ -261,6 +405,17 @@ summary{cursor:pointer;color:var(--acc)}
 </details>
 </div>
 <div class="card">
+<div class="title">Dynamic Merging Mutually-Distilled Multi-View Networks for RGB-Event-based Representation Learning</div>
+<div class="meta-line">Authors: Futian Wang, Fan Zhang, Xiao Wang, Yuhe Ding, Shiao Wang, Jingxi Huang, Jin Tang</div>
+<div class="meta-line">First: 2026-10-27T08:28:13+00:00 · Latest: 2026-10-27T08:28:13+00:00</div>
+<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2611.00107v1">Abs</a> · <a href="https://arxiv.org/pdf/2611.00107v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
+<details class="detail"><summary>Abstract</summary>
+<div class="mono">Multi-modal fusion algorithms combining conventional frame-based cameras and event cameras have recently attracted substantial research attention. Typically, existing approaches convert event streams into frames, voxels, or tensors, and then learn the required spatiotemporal information from these transformed event representations for fusion with conventional frame-camera data. Obviously, such paradigms only exploit the limited representational capacity of event data. Moreover, standard training pipelines fail to fully leverage diverse model parameters obtained throughout the learning process. In this paper, we propose a novel mutual distillation method leveraging multi-view teacher network weights to better integrate multiple event representations and achieve model-parameter level fusion. Specifically, we employ multiple encoders to extract different types of event representations and perform mutual knowledge distillation at both the feature-level and logit-level in this process. Afterwards, we perform a dynamic hierarchical model merge strategy on the model parameters from the first stage to yield a unified multi-modal RGB-Event representation model. Experimental results across multiple event-based datasets demonstrate that our proposed framework achieves significant performance improvements.</div></details>
+<details class="detail"><summary>Summary / 总结</summary>
+<div class="mono">Multi-modal fusion algorithms combining conventional frame-based cameras and event cameras have recently attracted substantial research attention.</div>
+</details>
+</div>
+<div class="card">
 <div class="title">Benchmarking Model Compression Techniques Across Heterogeneous Edge Platforms: A Predictive Maintenance Use Case for Rotating Machinery</div>
 <div class="meta-line">Authors: Matheus Calheira Guimarães de Oliveira, Marco Aurélio da Silva Cruz, Regis Cardoso, Lucas Cambuim, Rafael Macieira, Arthur Paim, Helaine Neves, Alex Santos, Lilian Guarieiro, Jean Schmith, Prashant Kumar, Erick G. Sperandio Nascimento</div>
 <div class="meta-line">First: 2026-10-21T17:45:57+00:00 · Latest: 2026-10-27T08:20:17+00:00</div>
@@ -281,158 +436,10 @@ summary{cursor:pointer;color:var(--acc)}
 <details class="detail"><summary>Summary / 总结</summary>
 <div class="mono">Spike activity has been the dominant neural signal for behavior decoding because its high spatiotemporal resolution supports accurate decoding.</div>
 </details>
-</div>
-<div class="card">
-<div class="title">From Solver Trajectories to Teaching Trajectories: Cognition-Aligned Reasoning Distillation</div>
-<div class="meta-line">Authors: Yashuo Luo, Qianren Mao, Ziqi Qin, Junnan Liu, Haitao Li, Qili Zhang, Yuan Gao, Zhijun Chen, Xu Wang</div>
-<div class="meta-line">First: 2026-10-27T00:46:23+00:00 · Latest: 2026-10-27T00:46:23+00:00</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.36445v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.36445v1">PDF</a> · <a href="https://github.com/LiteSSLHub/CARD">Code1</a> · <a href="https://huggingface.co/huggingface">Code2</a> · <a href="https://huggingface.co/docs/hub/spaces">Code3</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Knowledge distillation from large reasoning models (LRMs) often uses raw teacher trajectories as supervision. However, this practice creates a mismatch between the goal of distillation and the nature of teacher trajectories. Advanced LRMs typically improve their reasoning capabilities through reward-driven post-training, such as RLHF. This training optimizes them as strong solvers, rather than as teachers that produce reasoning processes smaller models can easily learn. Since smaller models have different &quot;cognitive capacities&quot; compared to their larger teachers, directly imitating raw teacher trajectories can sometimes be ineffective and often requires a substantial number of high-quality samples. To bridge this mismatch, we propose Cognition-Aligned Reasoning Distillation (CARD), an RL-based framework that transforms solver trajectories into teaching trajectories aligned with the student&#x27;s cognition. Avoiding expensive resampling, our framework directly transforms existing trajectories. We optimize CARD with two reward signals: (1) a Distribution Alignment Reward that matches the student&#x27;s predictive distribution, and (2) a Logical Coherence Reward that reduces misleading failed reasoning steps. Comprehensive evaluations across multiple student models and settings demonstrate that CARD outperforms distillation from raw teacher trajectories in in-domain settings while achieving substantial gains in out-of-distribution performance. Code is available at https://github.com/LiteSSLHub/CARD.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Knowledge distillation from large reasoning models (LRMs) often uses raw teacher trajectories as supervision.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">Strong Teacher Not Needed? On Distillation in LLM Pretraining</div>
-<div class="meta-line">Authors: Taiming Lu, Zhuang Liu</div>
-<div class="meta-line">Venue: NeurIPS 2026</div>
-<div class="meta-line">First: 2026-05-22T17:16:35+00:00 · Latest: 2026-10-26T22:40:35+00:00</div>
-<div class="meta-line">Comments: NeurIPS 2026</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2605.23857v2">Abs</a> · <a href="https://arxiv.org/pdf/2605.23857v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Knowledge distillation generally assumes a strong-to-weak relationship where stronger teachers yield better students. In this work, we examine this assumption about distillation in large language model pretraining. By varying architecture sizes and training token budgets, we create strong-to-weak, same-level, and weak-to-strong teacher-student relationships, and study distillation&#x27;s effectiveness under each. We find that the teacher need not be strong: with proper mixing of the language modeling and knowledge distillation losses, even small and undertrained teachers improve larger students. At the same time, a stronger teacher is not always better: pushing the teacher further, through more parameters or more training tokens, can saturate or even reverse the distillation gains. We further observe that distillation improves generalization (out-of-distribution and downstream performance) more readily than in-domain fitting. Together, these results challenge the common belief that distillation pretraining always requires a strong teacher.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Knowledge distillation generally assumes a strong-to-weak relationship where stronger teachers yield better students.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">DAC-Loop: Distillation-Aware Compression for Remote Sensing CNN</div>
-<div class="meta-line">Authors: Rico Staedeli, Lorena Raichle, Konstantinos Tzevelekakis, Aron Asefaw, Damian Borth</div>
-<div class="meta-line">Venue: IGARSS 2026 - 2026 IEEE International Geoscience and Remote Sensing Symposium</div>
-<div class="meta-line">First: 2026-10-26T10:38:42+00:00 · Latest: 2026-10-26T10:38:42+00:00</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.35175v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.35175v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">While large-scale models achieve strong results in remote sensing scene classification, deploying them on edge devices remains difficult due to limited compute, memory, and energy budgets. Compact CNN backbones are therefore a practical choice in many real-world settings, offering efficient inference with well-optimized implementations on embedded hardware. To push this efficiency further, we investigate how far a knowledge-distilled student model can be compressed while preserving high accuracy. We propose a Distillation-Aware Compression Loop (DAC-Loop) that integrates (i) knowledge distillation applied both before and after structured channel pruning, and (ii) an iterative compression schedule that alternates structured pruning with unstructured sparsification. Across EuroSAT and NWPU-RESISC45, the DAC-Loop consistently improves the accuracy-compression trade-off relative to standard one-shot pruning and single-stage KD recovery, maintaining strong accuracy even beyond 90% parameter reduction. These results demonstrate that combining distillation and pruning in a unified iterative loop offers an effective path toward compact remote sensing models.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">While large-scale models achieve strong results in remote sensing scene classification, deploying them on edge devices remains difficult due to limited compute, memory, and energy budgets.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">ThinkBit: Search Codewords, Recalibrate Scales, Select by Reasoning</div>
-<div class="meta-line">Authors: Rhea Sanjay Sukthanker, Pashmina Cameron</div>
-<div class="meta-line">First: 2026-10-26T05:56:35+00:00 · Latest: 2026-10-26T05:56:35+00:00</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.34886v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.34886v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Reasoning language models generate thousands of tokens per answer, and generation speed is limited by memory bandwidth, so storing weights in two bits instead of bfloat16 can potentially make inference 8$\times$ cheaper. Two-bit methods are usually judged by perplexity and multiple-choice question-answering accuracy, both of which say little about whether a model can still reason through more difficult problems. We present ThinkBit, a strictly scalar two-bit framework built to preserve reasoning, in which every weight is an integer codeword times a bfloat16 scale shared by a group of weights. We first use a sensitivity metric to assign each layer a ternary, 2-bit, or 3-bit tier to allocate bitwidths optimally among layers. This is followed by a layerwise Gumbel-softmax-based scalar quantization algorithm that searches for optimal codewords block by block. Since a layerwise scheme does not capture how quantized layers interact with each other, we recalibrate scales, with the codewords frozen, using a knowledge-distillation-based loss against the teacher model. We then perform a short quantization-aware training (QAT) stage that lets the model mimic the base model&#x27;s distribution by reassigning codewords. Finally, a paired reasoning test on training problems selects the final checkpoint between the recalibration stage and the QAT stage. On Qwen3-1.7B at matched size, our recalibrated checkpoint scores 46.7 on MATH-500 against 30.0 for EfficientQAT trained on the same data, and 73.0 after QAT on reasoning traces; at 0.52 GB it is smaller than every published 2-bit GGUF of the model yet more accurate on MATH-500. We show that this framework scales and up to 14B, a 3.74 GB model scores 94.8 on MATH-500, against 97.5 for the 29.5 GB bfloat16 model.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Reasoning language models generate thousands of tokens per answer, and generation speed is limited by memory bandwidth, so storing weights in two bits instead of bfloat16 can potentially make inference 8$\times$ cheaper.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">RSKD: Grounding Semantic Consistency in Driving VLMs via Distillation</div>
-<div class="meta-line">Authors: Chuchu Xie, Yang Zhong, Kangan Qian, Hao Ye, Kun Jiang, Diange Yang</div>
-<div class="meta-line">First: 2026-10-26T01:25:38+00:00 · Latest: 2026-10-26T01:25:38+00:00</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.34689v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.34689v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Knowledge distillation can transfer large multimodal models to compact models for autonomous driving, but uniform token-level matching can dilute planning-relevant semantics and amplify teacher errors. We propose RSKD, a semantic-consistency-guided distillation framework that routes supervision according to both the task importance of an answer phrase and its semantic consistency with the teacher prediction. Task-critical semantic phrases are localized in the ground-truth answer, and a phrase-level consistency score controls the balance between Jensen--Shannon divergence (JSD) distillation and ground-truth supervision. Teacher information is emphasized only where it is semantically consistent, while semantically inconsistent phrases receive stronger ground-truth supervision. We evaluate RSKD on DrivingVQA, LingoQA, and MapLMv2. RSKD improves over the compared student-based baselines on DrivingVQA and LingoQA and remains competitive on MapLMv2.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Knowledge distillation can transfer large multimodal models to compact models for autonomous driving, but uniform token-level matching can dilute planning-relevant semantics and amplify teacher errors.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">Recursive CLIP: Vision-Language Distillation with Looped Transformer Blocks</div>
-<div class="meta-line">Authors: Szymon Mazurek, Alberto Presta, Michał Byra</div>
-<div class="meta-line">First: 2026-10-25T21:07:02+00:00 · Latest: 2026-10-25T21:07:02+00:00</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.34563v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.34563v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Contrastive vision-language models such as CLIP typically rely on independently parameterized transformer blocks across depth. We investigate the extent to which these blocks can instead be reused recurrently while preserving the transferable capabilities of CLIP. We study recursive transformer backbones in which a small set of $N$ transformer blocks is applied $M$ times per forward pass. By holding $N \cdot M$ fixed to the depth of a standard ViT-B, our models preserve computational depth while progressively increasing parameter sharing. We consider two recursive CLIP model families: rCLIP, where only the vision encoder is recursive, and r$^2$CLIP, where recurrence is also introduced in the text encoder. We study these models under both direct contrastive training and through knowledge distillation from a strong ViT-B/16 teacher pretrained on DFN-2B, using the substantially smaller CC3M and CC12M datasets. We evaluate the resulting models on zero-shot classification and cross-modal retrieval, and further study their adaptability through few-shot learning, visual grounding, and concept unlearning. Our results show that CLIP can tolerate substantial recurrent block reuse, although its effect depends on the encoder and downstream task. Recurrence also provides parameter efficiency by construction, since fewer distinct transformer blocks need to be stored and adapted. Our results establish recurrent block reuse as a practical design space for vision-language models and highlight its implications for knowledge transfer, downstream adaptation, and parameter efficiency.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Contrastive vision-language models such as CLIP typically rely on independently parameterized transformer blocks across depth.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">Knowledge distillation across teacher architectures for compact diabetic retinopathy grading</div>
-<div class="meta-line">Authors: Mossa Manisa, Habiba Jahan Priya, A. K. M. Fakhrul Hossain</div>
-<div class="meta-line">First: 2026-10-25T10:31:26+00:00 · Latest: 2026-10-25T10:31:26+00:00</div>
-<div class="meta-line">Comments: 17 pages, 3 figures, 18 tables. Submitted to PLOS ONE</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.35961v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.35961v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Diabetic retinopathy grading from retinal fundus photographs is important but difficult to deploy on resource-constrained hardware. We conducted a controlled study of offline response-based knowledge distillation for five-class diabetic retinopathy grading on APTOS 2019, comparing ResNet-50, MobileNetV3-Large, and Swin Transformer-Tiny (Swin-T) teachers distilled into a MobileNetV3-Small student. A 3 x 4 x 2 grid of teacher, temperature, and hard-label weight was screened at one seed, while six configurations and the no-distillation baseline were evaluated across three seeds. The highest observed single-seed quadratic weighted kappa was 0.9093 (macro-F1 0.6851) for Swin-T at temperature 4 and hard-label weight 0.7; the corresponding three-seed mean was 0.9024, compared with 0.8804 for the baseline. The student used 1.52 M parameters and 5.94 MB, representing an 18.07x parameter reduction relative to Swin-T. Temperature and hard-label weight effects were teacher- and configuration-dependent, while small performance differences were sensitive to random seed. Knowledge distillation produced a compact student with competitive performance under the evaluated protocol, but independent external validation remains necessary.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Diabetic retinopathy grading from retinal fundus photographs is important but difficult to deploy on resource-constrained hardware.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">SRA: Selective Residual Adaptation for LLM Reasoning Enhancement</div>
-<div class="meta-line">Authors: Zhenxing Dou, Kun He, Mingyang Yi, Yong Liu</div>
-<div class="meta-line">First: 2026-10-25T10:30:10+00:00 · Latest: 2026-10-25T10:30:10+00:00</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.34199v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.34199v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Knowledge distillation transfers reasoning capabilities from large language models to lightweight students. However, distilled small models still struggle with multi-step reasoning. We observe that the distribution divergences between teacher and student models along reasoning paths are highly sparse, and target tokens almost always fall within the student top-$K$ candidate set. Based on this finding, unlike approaches updating student backbones or requiring runtime teacher computation, we propose Selective Residual Adaptation (SRA), a plug-and-play framework that internalizes localized corrections. Concretely, SRA employs a Discrepancy Gate to identify divergence positions alongside a Candidate Residual Adapter for top-$K$ logit calibration to correct the mismatch. Theoretically, we establish error bounds ensuring strict sequence level performance gains. Across mathematical benchmarks on Qwen3 models from 0.6B to 4B, SRA consistently enhances distilled student models, raising average Pass@16 by up to 4.37 percentage points while preserving general capabilities.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Knowledge distillation transfers reasoning capabilities from large language models to lightweight students.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">Improving the Performance of Compressed Transformers with Post-Hoc Embedding Alignment</div>
-<div class="meta-line">Authors: Rohit Raj Rai, Abhishek Dhaka, Amit Awekar</div>
-<div class="meta-line">First: 2026-02-16T10:53:02+00:00 · Latest: 2026-10-25T10:13:57+00:00</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2602.14635v2">Abs</a> · <a href="https://arxiv.org/pdf/2602.14635v2">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Model compression is necessary for deployment of transformer models in resource-constrained environments. However, compression reduces the performance of transformer models on downstream tasks. Existing solutions such as Knowledge Distillation (KD) and Parameter Efficient Fine-Tuning (PEFT) have their own limitations. KD trains the student under the teacher&#x27;s supervision, but needs the teacher&#x27;s training pipeline. PEFT methods such as LoRA adapt a model to a new task, but they do not recover the loss caused by compression. Our intuition is that a compressed model can be improved by aligning its token embeddings with those of a better performing reference model. We learn this alignment with a small feed-forward Alignment Adapter (AlAd) placed after the final layer of the compressed model. AlAd reads a window of neighbouring tokens, so it can use local context. AlAd is trained post-hoc, after the compressed model has been produced. The compressed model can either be kept frozen or jointly fine-tuned with AlAd. We study the effect of AlAd with BERT-base as the reference model and four compressed variants of the BERT family. We evaluate AlAd on three token-level tasks: POS tagging, NER and Extractive Question Answering. AlAd improves performance of compressed models on all three tasks. Joint fine-tuning gives a larger improvement in performance. The performance gain is the largest for the smallest models. AlAd provides a favorable trade-off between the efficiency and the performance of compressed models.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Model compression is necessary for deployment of transformer models in resource-constrained environments.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">T2D: Target-to-Draft Model Pruning &amp; Adaptation for Efficient Speculative Decoding</div>
-<div class="meta-line">Authors: Shahriar Kabir Nahin, Xiao Ye, Muhao Chen, Ben Zhou, Anshuman Chhabra</div>
-<div class="meta-line">First: 2026-10-25T07:00:45+00:00 · Latest: 2026-10-25T07:00:45+00:00</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.34103v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.34103v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Speculative decoding significantly accelerates autoregressive text generation in Large Language Models (LLMs), but its efficacy depends largely on two key factors: the distributional alignment between the draft and the target model, and the draft model&#x27;s latency during inference. However, existing approaches typically utilize independently pretrained small draft models or seek to prune the target model to a manually chosen architecture, thereby failing to explicitly balance the trade-off between draft model alignment and token generation efficiency. To address this gap, we formulate draft model design as an optimization problem and propose T2D, a framework that constructs draft models directly from the target model using latency-aware structured pruning and knowledge distillation. In this manner, T2D obtains draft models that are jointly optimized for both measured inference latency and cross-entropy loss on the target model&#x27;s responses, resulting in superlative speculative decoding performance. Through extensive experiments on multi-domain speculative decoding benchmarks and across several target model families of differing scale, we demonstrate how T2D prunes up to 92\% of the target model to obtain highly performant draft models compared to competitive baselines. Moreover, draft models obtained via T2D can also be utilized by other speculative decoding token-alignment and knowledge distillation methods in a plug-and-play fashion, leading to further gains. Our findings underscore the importance of jointly navigating the draft model architecture-alignment frontier to unlock the full potential of speculative decoding for LLMs.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Speculative decoding significantly accelerates autoregressive text generation in Large Language Models (LLMs), but its efficacy depends largely on two key factors: the distributional alignment between the draft and the target model, and the draft model&#x27;s latency during inference.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">What the Abstention Option Measures: Refusal Loss, Sampling Churn, and Option Capture in Distilled Small Language Models</div>
-<div class="meta-line">Authors: Plawan Kumar Rath</div>
-<div class="meta-line">First: 2026-05-19T23:09:28+00:00 · Latest: 2026-10-24T15:37:00+00:00</div>
-<div class="meta-line">Comments: 29 pages, 9 figures, 15 tables. v3: retitled (previously &quot;The Asymmetric Effects of Knowledge Distillation on Bias in Small Language Models&quot;) and reframed as a measurement study</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2607.28639v3">Abs</a> · <a href="https://arxiv.org/pdf/2607.28639v3">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Small instruction-tuned language models reach phones, cars, and offline assistants through knowledge distillation, and whether a distilled model is fair enough to ship is often decided by a multiple-choice bias score on a benchmark that offers an abstention option. Three mechanisms move behavior around the abstention option: refusal loss, where the student stops declining on items its pre-distillation reference declined; sampling churn, the same change observed between two runs of the reference itself; and option capture, where the student takes an abstention option whenever one is offered. Injecting each mechanism into a reference&#x27;s own records shows that aggregate scores see only outright loss, per-item scores see churn and remapping, and only conditioning on committed answers stops moved refusal mass from reading as fairness. Resampling a reference across inference seeds already turns 10% to 27% of its refusals into stereotype answers, so a per-item refusal metric reported without that floor overstates damage. Option capture is what corpus repair teaches: students trained with refusal exemplars take an offered abstention option on up to 95% of science questions where abstention is never correct, and the habit carries to three further benchmarks. Free-form evaluation shows that the refusals multiple choice loses are not where free-form stereotyping occurs. We distill these findings into a per-condition report anchored to the reference, with measured floors and ceilings, and apply it to four student families against a fine-tuning control: distillation keeps fewer of the reference&#x27;s refusals than fine-tuning on the same prompts where the reference&#x27;s refusals are reliable, by a few points, while the common metrics report improvements whenever refusal mass moves. A bias score quoted for a distilled model should say which of these it reports.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Small instruction-tuned language models reach phones, cars, and offline assistants through knowledge distillation, and whether a distilled model is fair enough to ship is often decided by a multiple-choice bias score on a benchmark that offers an abstention option.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">A Distribution-Matching Perspective on LLM Training Algorithms</div>
-<div class="meta-line">Authors: Yanxing Huang, Bingzhang Yan, Zihan Tang, Wenzhe Li, Peng Li, Yang Liu</div>
-<div class="meta-line">First: 2026-10-24T15:30:39+00:00 · Latest: 2026-10-24T15:30:39+00:00</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.33740v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.33740v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">In this work, we propose a unified framework for training algorithms across different stages of modern large language model development, based on the perspective of distribution matching. We show that a broad class of language model training algorithms can be interpreted as minimizing a certain divergence between the current model and a target distribution, and that characterizing the properties of this target distribution provides substantial insight into the behavior of the corresponding training algorithms. By analyzing specific forms of the target distribution, we establish that On-Policy Distillation (OPD) enjoys an advantage over classical Knowledge Distillation (KD) when the current model distribution is close to the target distribution, while exhibiting a disadvantage when the two distributions are far apart. Furthermore, when the target distribution itself depends on the model being optimized, we show that the accumulation of estimation variance can induce a deterministic degradation of the target distribution. These results provide a theoretical explanation, at least in part, for the long-term behavior of existing Reinforcement Learning (RL) algorithms. With this intuition we further designed Conditional KL (CKL) regularization for mitigating the degradation of the target distribution. CKL can effectively preserve mode diversity while relaxing the constraint imposed by classical KL regularization on reward improvements. We believe this theoretical perspective can bring some new understanding of language model training algorithms and provide useful guidance for future research.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">In this work, we propose a unified framework for training algorithms across different stages of modern large language model development, based on the perspective of distribution matching.</div>
-</details>
-</div>
-<div class="card">
-<div class="title">Promise and Limits of Cross-Architecture Knowledge Distillation for Lightweight Medical Vision Transformers (LiteMed-ViT)</div>
-<div class="meta-line">Authors: Shuaibu Shehu, Elijah M. Flomo, Mohammad Safiya, Anurodh Kumar, Subodh Kumar</div>
-<div class="meta-line">First: 2026-10-24T07:58:46+00:00 · Latest: 2026-10-24T07:58:46+00:00</div>
-<div class="meta-line">Comments: 6 pages, including references. Accepted at the International Conference on Intelligent Computing and Secure Communication Systems (ICICSCS 2026)</div>
-<div class="links" style="margin-top:8px"><a href="https://arxiv.org/abs/2610.33520v1">Abs</a> · <a href="https://arxiv.org/pdf/2610.33520v1">PDF</a> · <a href="https://huggingface.co/huggingface">Code1</a> · <a href="https://huggingface.co/docs/hub/spaces">Code2</a></div>
-<details class="detail"><summary>Abstract</summary>
-<div class="mono">Running deep models for medical image analysis at the point of care is challenging with standard architectures: convolutional neural networks (CNNs) are often too heavy for edge devices, while Vision Transformers (ViTs) require massive training datasets to compensate for missing inductive biases. This study investigates how far the dual-token distillation used to train data-efficient ViTs can be pushed when applied across architectures, from a CNN-based teacher into a lightweight ViT student. LiteMed-ViT is introduced as a dual-token ViT featuring a convolutional stem and a class-balanced distillation objective; at 0.234M parameters, LiteMed-ViT carries 47.8x fewer parameters than its ResNet18 teacher at a memory footprint of just 0.89 MB. Evaluated against three compact CNN baselines on three MedMNIST subsets of varying modality and class balance, LiteMed-ViT attains higher accuracy than all three baselines on BloodMNIST (95.05%) and two on PathMNIST (89.15%). Under MedMNIST-C corruptions, it is at least as robust as every compact CNN across all subsets, outperforming them on BloodMNIST and PathMNIST without declining in relative standing as severity increases. Particular attention is devoted to identifying the exact conditions where performance plateaus. On DermaMNIST, LiteMed-ViT&#x27;s balanced accuracy remains up to 1.9 points below the strongest compact CNNs and does not benefit from higher input resolutions up to 224 pixels, where ResNet18 gains 12.6 points. Stronger teachers do not yield a more accurate student, and overconfident ones lower its DermaMNIST balanced accuracy unless calibrated.</div></details>
-<details class="detail"><summary>Summary / 总结</summary>
-<div class="mono">Running deep models for medical image analysis at the point of care is challenging with standard architectures: convolutional neural networks (CNNs) are often too heavy for edge devices, while Vision Transformers (ViTs) require massive training datasets to compensate for missing inductive biases.</div>
-</details>
 </div></div>
     <details style="margin-top:16px" class="detail"><summary>History</summary>
-      <div class="history-list"><a href="archive/20261102_0634.html">20261102_0634</a>
+      <div class="history-list"><a href="archive/20261103_0927.html">20261103_0927</a>
+<a href="archive/20261102_0634.html">20261102_0634</a>
 <a href="archive/20261101_0608.html">20261101_0608</a>
 <a href="archive/20261031_0646.html">20261031_0646</a>
 <a href="archive/20261030_0705.html">20261030_0705</a>
